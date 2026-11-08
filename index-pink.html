@@ -900,20 +900,18 @@ function markWaves() {
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   let rest = [...document.querySelectorAll(".wave")];
   document.querySelector(".waves").classList.add("js-flicker");
-  let ticking = false;
+  // スクロール位置を短い間隔で見て、画面の下から1/4まで来たら点灯
   const check = () => {
-    ticking = false;
     const line = innerHeight * .75;
     rest = rest.filter(w => {
       const r = w.getBoundingClientRect();
       if (r.top < line && r.bottom > 0) { w.classList.add("is-lit"); return false; }
       return true;
     });
-    if (!rest.length) removeEventListener("scroll", onScroll);
+    if (!rest.length) { clearInterval(timer); removeEventListener("scroll", check); }
   };
-  const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(check); } };
-  addEventListener("scroll", onScroll, {passive: true});
-  addEventListener("resize", onScroll);
+  const timer = setInterval(check, 200);
+  addEventListener("scroll", check, {passive: true});
   check();
 }
 
