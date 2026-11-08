@@ -508,6 +508,10 @@ body{background:var(--void)}
 /* クーポン獲得ボタン: 角ばった金のボタン＋右に▶（見本どおり） */
 .btn.btn-coupon,.btn.btn-coupon.is-wait{min-height:52px;padding:10px 16px;border-radius:3px;background:#d9b65c;background-image:linear-gradient(90deg,#c9a14a 0%,#e6c873 30%,#f7e7a8 50%,#e6c873 70%,#c9a14a 100%);color:#3b3035;font-size:clamp(15px,4.2vw,18px);font-weight:700;letter-spacing:.06em;box-shadow:none}
 .btn.btn-coupon::after{content:"";flex:none;width:0;height:0;margin-left:4px;border-top:.42em solid transparent;border-bottom:.42em solid transparent;border-left:.62em solid currentColor}
+/* 店舗全体: 対象商品を文字で小さく */
+.targets{max-width:560px;margin:22px auto 0;padding:14px 16px 16px;border:1px solid rgba(255,169,173,.4);border-radius:10px;text-align:left}
+.targets p{margin:0;font-size:12.5px;line-height:1.85;letter-spacing:.04em;color:#e9d9df}
+.targets .targets-lb{margin-bottom:6px;font-size:13.5px;font-weight:700;color:var(--neon);text-align:center}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0;margin:0 -.02em}
 .deal-num .cm,.price b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
@@ -732,10 +736,18 @@ body{background:var(--void)}
   <p class="deal-limit">対象商品</p>
   <p class="deal-head">ポイント</p>
   <p class="deal-big"><span class="deal-num">15</span><span class="deal-unit">倍</span></p>
+  <div class="targets">
+    <p class="targets-lb">ポイント15倍の対象商品</p>
+    <p>選べる楽天市場限定セット 洗顔 クリアフォーム／生VC美白クリーム 30g／フュージョンクレンジング 120ml／美白ハンドセラム 35g／VAリンクルアイセラム 10ml／マルチスクエアシートマスク／ピュアマスク 大容量ボックスタイプ 28枚入り／ポケモンパッケージ 美容液／トイストーリーコラボ 美容液</p>
+  </div>
   <div class="deal-sub">
     <p class="deal-head">BIG DEAL対象商品<br>ポイント</p>
     <p class="deal-big is-sub"><span class="deal-num">20</span><span class="deal-unit is-stack"><span>%</span><span>還元</span></span></p>
     <p class="deal-desc">購入金額の20%が<br>ポイントで戻ってきます</p>
+    <div class="targets">
+      <p class="targets-lb">BIG DEAL 20%還元の対象商品</p>
+      <p>生AZ美容液／生VA美容液／美顔器 Deep Boostセット／生VC美白化粧水 120ml／生VCトーンアップUV／生VCホワイトクリアフォーム 120g／クッションファンデーション エアレス／生VCリップ美容液／生VCホワイト乳液 75ml／美白シートマスク 6枚／ピュアマスク 4袋・8袋セット</p>
+    </div>
   </div>
 </section>
 
