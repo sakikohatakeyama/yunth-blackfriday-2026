@@ -439,9 +439,9 @@ body{background:var(--void)}
 .vc-flow strong{font-size:clamp(13px,3.6vw,17px);font-weight:700;line-height:1.35;letter-spacing:.02em;color:var(--neon)}
 .wave-item{display:inline-block;margin:0 0 10px;padding:3px 14px;border:1px solid rgba(255,169,173,.7);border-radius:999px;font-size:clamp(14px,3.9vw,17px);font-weight:500;letter-spacing:.06em;color:#fff}
 .waves{list-style:none;margin:34px 0 0;padding:0;display:grid;gap:22px;text-align:center}
-.wave{position:relative;padding:28px 14px 30px;border:2px solid rgba(255,61,127,.55);border-radius:16px;background:radial-gradient(120% 70% at 50% 0,rgba(255,61,127,.16),transparent 70%),#0b0709;box-shadow:0 0 18px rgba(255,61,127,.35),inset 0 0 18px rgba(255,61,127,.18)}
-.wave-no{margin:0;font-family:"Noto Sans JP",sans-serif;font-weight:700;font-size:min(19vw,112px);line-height:1.05;letter-spacing:.06em;color:#fff3f6;text-shadow:0 0 4px #fff,0 0 10px #ff6fa0,0 0 22px #ff3d7f,0 0 44px #ff3d7f,0 0 70px rgba(255,61,127,.7)}
-.wave:nth-child(2) .wave-no{color:#fff8ec;text-shadow:0 0 4px #fff,0 0 10px #ffd9a8,0 0 22px #ffb35c,0 0 44px #ff9a3d,0 0 70px rgba(255,154,61,.6)}
+.wave{position:relative;padding:28px 14px 30px;border:1px solid rgba(255,169,173,.45);border-radius:16px;background:radial-gradient(120% 60% at 50% 0,rgba(255,61,127,.08),transparent 70%),#0b0709;box-shadow:0 0 10px rgba(255,61,127,.15)}
+.wave-no{margin:0;font-family:"Noto Sans JP",sans-serif;font-weight:700;font-size:min(19vw,112px);line-height:1.05;letter-spacing:.06em;color:#fff3f6;text-shadow:0 0 2px rgba(255,255,255,.6),0 0 8px rgba(255,111,160,.6),0 0 18px rgba(255,61,127,.35)}
+.wave:nth-child(2) .wave-no{color:#fff8ec;text-shadow:0 0 2px rgba(255,255,255,.6),0 0 8px rgba(255,179,92,.55),0 0 18px rgba(255,154,61,.3)}
 .wave-date{display:flex;flex-wrap:wrap;justify-content:center;gap:0 10px;margin:18px 0 0;font-size:clamp(14px,3.9vw,18px);font-weight:500;color:#fff;white-space:nowrap}
 .wave-date span{display:inline-flex;align-items:baseline;gap:3px}
 .wave-date b{font:500 clamp(26px,7.2vw,40px)/1.15 var(--num);letter-spacing:.03em}
@@ -451,7 +451,7 @@ body{background:var(--void)}
 .wave .deal-num{font-size:min(34vw,210px)}
 .wave .btn{margin:22px auto 0;max-width:420px}
 .wave-state{position:absolute;top:-14px;left:50%;transform:translateX(-50%);padding:3px 16px;border-radius:999px;background:var(--neon);color:#17090f;font-size:14px;font-weight:700;letter-spacing:.1em;white-space:nowrap}
-.wave.is-now{border-color:#ff6fa0;box-shadow:0 0 26px rgba(255,61,127,.7),inset 0 0 22px rgba(255,61,127,.3)}
+.wave.is-now{border:2px solid #ff6fa0;box-shadow:0 0 16px rgba(255,61,127,.4)}
 .wave.is-past{opacity:.45}
 .wave.is-past .wave-state{background:#5b4a51;color:#fff}
 @media (min-width:768px){.waves{gap:28px}.wave{padding:36px 28px 38px}}
@@ -609,8 +609,8 @@ body{background:var(--void)}
     <img class="set-dev is-back" src="images/device-pink.png" alt="" width="430" height="1200" loading="lazy">
     <img class="set-box" src="images/vc-set.png" alt="生VC美白美容液の箱とパウチ" width="1046" height="593" loading="lazy">
   </div>
-  <p class="set-lead">Deep Boostを購入すると</p>
-  <p class="set-gift"><span>生VC美白<sup>※1</sup>美容液<sup>＊</sup></span><b>1箱がセットで付いてくる</b></p>
+  <p class="set-lead">美顔器に</p>
+  <p class="set-gift"><span>生VC美白<sup>※1</sup>美容液<sup>＊</sup></span><b>1箱が特別セット</b></p>
   <p class="set-plus" aria-label="さらに">＋</p>
   <p class="set-lead">さらに使える</p>
   <div class="coupon-box">
