@@ -456,6 +456,8 @@ body{background:var(--void)}
 .wave-date em{font:500 clamp(14px,3.8vw,26px)/1 var(--num);font-style:normal;margin:0 .5em}.wave-head{margin:18px 0 0;font-size:clamp(20px,5.8vw,30px);font-weight:500;letter-spacing:.1em;line-height:1.45;color:#fff}
 .wave .deal-big{margin-top:6px}
 .wave-date+.deal-big{margin-top:20px}
+/* 「%還元」は % と 還元 の2段に */
+.deal-unit.is-stack{display:inline-flex;flex-direction:column;align-items:center;line-height:1;gap:.08em;align-self:flex-end;margin-bottom:.12em}
 .wave-head.is-big{font-size:clamp(28px,8.4vw,48px);font-weight:700;letter-spacing:.06em;line-height:1.3}
 /* 「ポイント」は数字の左に縦書きで */
 .v-lb{writing-mode:vertical-rl;text-orientation:upright;align-self:center;margin-right:.3em;font-size:clamp(17px,4.8vw,28px);font-weight:700;letter-spacing:.08em;line-height:1}
@@ -624,7 +626,7 @@ body{background:var(--void)}
       <p class="wave-no">第二弾</p>
       <p class="wave-date"><span><b>11/20</b>(金)<i>10:00</i><em>〜</em></span><span><b>11/21</b>(土)<i>9:59</i></span></p>
       <p class="wave-head is-big">楽天スーパーDEAL</p>
-      <p class="deal-big"><span class="v-lb">ポイント</span><span class="deal-num">30</span><span class="deal-unit">%還元</span></p>
+      <p class="deal-big"><span class="v-lb">ポイント</span><span class="deal-num">30</span><span class="deal-unit is-stack"><span>%</span><span>還元</span></span></p>
       <p class="deal-desc">購入金額の30%が<br>ポイントで戻ってきます</p>
     </li>
     <li class="wave" data-start="2026-11-21T10:00:00+09:00" data-end="2026-11-26T10:00:00+09:00">
@@ -694,7 +696,7 @@ body{background:var(--void)}
   <div class="deal-sub">
     <p class="deal-limit">生AZ美容液・生VA美容液<sup>＊</sup></p>
     <p class="deal-head">楽天スーパーDEAL<br>ポイント</p>
-    <p class="deal-big"><span class="deal-num">20</span><span class="deal-unit">%還元</span></p>
+    <p class="deal-big"><span class="deal-num">20</span><span class="deal-unit is-stack"><span>%</span><span>還元</span></span></p>
     <p class="deal-desc">購入金額の20%が<br>ポイントで戻ってきます</p>
     <div class="items" id="chars-deal"></div>
   </div>
@@ -711,7 +713,7 @@ body{background:var(--void)}
   <p class="deal-big"><span class="deal-num">15</span><span class="deal-unit">倍</span></p>
   <div class="deal-sub">
     <p class="deal-head">BIG DEAL対象商品<br>ポイント</p>
-    <p class="deal-big is-sub"><span class="deal-num">20</span><span class="deal-unit">%還元</span></p>
+    <p class="deal-big is-sub"><span class="deal-num">20</span><span class="deal-unit is-stack"><span>%</span><span>還元</span></span></p>
     <p class="deal-desc">購入金額の20%が<br>ポイントで戻ってきます</p>
   </div>
 </section>
