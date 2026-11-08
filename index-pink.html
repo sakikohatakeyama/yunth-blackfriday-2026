@@ -599,6 +599,9 @@ body{background:var(--void)}
 .t-grid img{display:block;width:100%;aspect-ratio:5/4;object-fit:cover}
 .t-grid span{display:block;padding:6px 6px 8px;font-family:"Noto Sans JP",sans-serif;font-size:clamp(11px,3vw,13px);font-weight:500;line-height:1.4;letter-spacing:.02em;text-align:left}
 @media (min-width:768px){.t-grid{grid-template-columns:repeat(4,1fr);gap:12px}}
+/* FV: 商品を合成済みの画像1枚に差し替え（ネオンの看板はそのまま） */
+.fv{aspect-ratio:1200/1680}
+.fv-copy{top:123cqw}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0;margin:0 -.02em}
 .deal-num .cm,.price b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
@@ -675,10 +678,7 @@ body{background:var(--void)}
 
 <!-- ▼ FV: ピンクのステージに美顔器と美容液 -->
 <header class="fv">
-  <img class="fv-bg" src="images/fv-pink.webp" alt="" width="839" height="1875">
-  <img class="fv-dev" src="images/device.png" alt="美顔器 Deep Boost" width="362" height="1656">
-  <img class="fv-box" src="images/vc-box-front.webp" alt="生VC美白美容液の箱" width="1089" height="516">
-  <img class="fv-pouch" src="images/vc-pouch.webp" alt="1包ずつ使い切りのパウチ" width="1500" height="544">
+  <img class="fv-bg" src="images/fv-main.jpg" alt="美顔器 Deep Boost、生VC美白美容液、生PDRN美容液、ピュアマスク" width="1200" height="1841">
   <div class="fv-copy">
     <a class="period" href="#vc"><span><b>11/19</b>(木) 10:00</span><svg class="arrows" viewBox="0 0 34 12" role="img" aria-label="から"><path d="M0 0l8 6-8 6zM13 0l8 6-8 6zM26 0l8 6-8 6z"/></svg><span><b>11/26</b>(木) 9:59</span></a>
   </div>
