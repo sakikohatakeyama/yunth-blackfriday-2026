@@ -732,6 +732,8 @@ body{padding-bottom:calc(66px + env(safe-area-inset-bottom,0px))}
 @media (min-width:1240px){.site-head{display:none}}
 /* 生PDRNの20%OFFの下の「クーポン」を大きく */
 .deal-head.is-cp{margin-top:10px;font-size:clamp(32px,9.4vw,58px);font-weight:700;letter-spacing:.12em;line-height:1.2}
+/* ハンバーガーをなくしたので、ヘッダーのロゴは真ん中に */
+.site-head{justify-content:center}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0;margin:0 -.02em}
 .deal-num .cm,.price b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
@@ -758,18 +760,7 @@ body{padding-bottom:calc(66px + env(safe-area-inset-bottom,0px))}
 <!-- ▼ ヘッダー: ロゴで店舗トップへ／スマホはハンバーガーメニュー -->
 <div class="site-head">
   <a class="sh-logo" href="https://www.rakuten.co.jp/yunth/"><img src="images/logo.png" alt="Yunth 楽天市場店トップへ" width="903" height="299"></a>
-  <button class="sh-burger" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="spMenu"><span></span><span></span><span></span></button>
 </div>
-<nav class="sp-menu" id="spMenu" aria-label="メニュー" hidden>
-  <ul>
-    <li><a href="#vc">生VC美白<sup>※1</sup>美容液<sup>＊</sup> 日替わりキャンペーン</a></li>
-    <li><a href="#combo">美顔器 Deep Boost</a></li>
-    <li><a href="#trio">美容液3種 クーポン・楽天スーパーDEAL</a></li>
-    <li><a href="#all">ブラックフライデー期間ずっと</a></li>
-    <li><a href="#new">はじめてのお客さま</a></li>
-    <li><a href="https://www.rakuten.co.jp/yunth/">Yunth 楽天市場店トップへ</a></li>
-  </ul>
-</nav>
 
 <!-- ▼ FV -->
 <!-- ▼ 黒地のネオン看板 -->
@@ -1304,7 +1295,6 @@ applyLinks();
 setupConsole();
 setupRails();
 setupReveal();
-setupMenu();
 </script>
 </body>
 </html>
