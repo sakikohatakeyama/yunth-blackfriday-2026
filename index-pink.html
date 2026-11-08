@@ -710,6 +710,11 @@ body{background:var(--void)}
 .sp-dock.is-ended{filter:grayscale(1)}
 body{padding-bottom:calc(66px + env(safe-area-inset-bottom,0px))}
 @media (min-width:1240px){.sp-dock{display:none}body{padding-bottom:0}}
+/* 「ポイント15倍の対象商品」などの見出しを大きく */
+.targets .targets-lb{margin-bottom:12px;font-size:clamp(18px,5vw,26px);letter-spacing:.06em}
+/* 対象商品カード: PC4列では文字を少し小さく、価格の(税込)を折り返さない */
+.t-grid .t-price{flex-wrap:nowrap;white-space:nowrap}
+@media (min-width:768px){.t-grid .t-name{font-size:14px}.t-grid .t-price b{font-size:18px}}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0;margin:0 -.02em}
 .deal-num .cm,.price b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
@@ -1158,7 +1163,7 @@ function setupRails() {
       if (dock) {
         dock.classList.toggle("is-ended", after);
         dock.innerHTML =
-          `<span class="dk-st">${i >= 0 ? '<b class="rail-live">ただいま開催中</b>' : after ? '<b class="rail-live is-end">終了しました</b>' : '<small>11/19(木) 10:00 スタート</small>'}</span>` +
+          `<span class="dk-st">${i >= 0 ? '<b class="rail-live">ただいま開催中</b>' : after ? '<b class="rail-live is-end">終了しました</b>' : '<small>11/19(木)<br>10:00〜</small>'}</span>` +
           `<span class="dk-main"><small>生VC美白美容液 第${"一二三"[idx]}弾</small><span><i>${s.pre}</i><b>${s.num}</b><em>${s.unit}</em></span></span>` +
           `<span class="dk-timer"><em></em><b></b></span>`;
       }
