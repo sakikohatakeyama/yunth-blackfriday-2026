@@ -418,6 +418,25 @@ body{background:var(--void)}
 
 [hidden]{display:none!important}
 .main .item-card.is-big{margin-top:0}
+/* ── 第一弾〜第三弾: FVのネオン管に寄せた見出し ── */
+.wave-lead{margin:12px 0 0;font-size:clamp(14px,3.9vw,17px);font-weight:500;color:#6d5560}
+.waves{list-style:none;margin:34px 0 0;padding:0;display:grid;gap:22px;text-align:center}
+.wave{position:relative;padding:28px 14px 30px;border:2px solid rgba(255,61,127,.55);border-radius:16px;background:radial-gradient(120% 70% at 50% 0,rgba(255,61,127,.16),transparent 70%),#0b0709;box-shadow:0 0 18px rgba(255,61,127,.35),inset 0 0 18px rgba(255,61,127,.18)}
+.wave-no{margin:0;font-family:"Noto Sans JP",sans-serif;font-weight:700;font-size:min(19vw,112px);line-height:1.05;letter-spacing:.06em;color:#fff3f6;text-shadow:0 0 4px #fff,0 0 10px #ff6fa0,0 0 22px #ff3d7f,0 0 44px #ff3d7f,0 0 70px rgba(255,61,127,.7)}
+.wave:nth-child(2) .wave-no{color:#fff8ec;text-shadow:0 0 4px #fff,0 0 10px #ffd9a8,0 0 22px #ffb35c,0 0 44px #ff9a3d,0 0 70px rgba(255,154,61,.6)}
+.wave-date{display:flex;flex-wrap:wrap;justify-content:center;gap:0 10px;margin:18px 0 0;font-size:clamp(14px,3.9vw,18px);font-weight:500;color:#fff;white-space:nowrap}
+.wave-date span{display:inline-flex;align-items:baseline;gap:3px}
+.wave-date b{font:500 clamp(26px,7.2vw,40px)/1.15 var(--num);letter-spacing:.03em}
+.wave-date i{font:500 clamp(20px,5.4vw,28px)/1 var(--num);font-style:normal;letter-spacing:.03em;margin-left:6px}
+.wave-head{margin:18px 0 0;font-size:clamp(20px,5.8vw,30px);font-weight:500;letter-spacing:.1em;line-height:1.45;color:#fff}
+.wave .deal-big{margin-top:6px}
+.wave .deal-num{font-size:min(34vw,210px)}
+.wave .btn{margin:22px auto 0;max-width:420px}
+.wave-state{position:absolute;top:-14px;left:50%;transform:translateX(-50%);padding:3px 16px;border-radius:999px;background:var(--neon);color:#17090f;font-size:14px;font-weight:700;letter-spacing:.1em;white-space:nowrap}
+.wave.is-now{border-color:#ff6fa0;box-shadow:0 0 26px rgba(255,61,127,.7),inset 0 0 22px rgba(255,61,127,.3)}
+.wave.is-past{opacity:.45}
+.wave.is-past .wave-state{background:#5b4a51;color:#fff}
+@media (min-width:768px){.waves{gap:28px}.wave{padding:36px 28px 38px}}
 </style>
 </head>
 <body>
@@ -516,13 +535,33 @@ body{background:var(--void)}
     <div>
       <h3>生VC美白<sup>※1</sup>美容液<sup>＊</sup></h3>
       <p class="spec">1ml×28包</p>
-      <div class="s1">
-        <p class="s1-lb">第1弾</p>
-        <p class="s1-date"><span><b>11/19</b>(木)<i>10:00</i>〜</span><span><b>11/20</b>(金)<i>9:59</i></span></p>
-        <p class="s1-big"><span>ポイント</span><b>20</b><em>倍</em></p>
-      </div>
+      <p class="wave-lead">期間ごとに内容が切り替わります</p>
     </div>
   </a>
+
+  <!-- 第一弾〜第三弾。開催中/終了の表示は data-start / data-end から自動で切り替わる -->
+  <ol class="waves">
+    <li class="wave" data-start="2026-11-19T10:00:00+09:00" data-end="2026-11-20T10:00:00+09:00">
+      <p class="wave-no">第一弾</p>
+      <p class="wave-date"><span><b>11/19</b>(木)<i>10:00</i>〜</span><span><b>11/20</b>(金)<i>9:59</i></span></p>
+      <p class="wave-head">ポイント</p>
+      <p class="deal-big"><span class="deal-num">20</span><span class="deal-unit">倍</span></p>
+    </li>
+    <li class="wave" data-start="2026-11-20T10:00:00+09:00" data-end="2026-11-21T10:00:00+09:00">
+      <p class="wave-no">第二弾</p>
+      <p class="wave-date"><span><b>11/20</b>(金)<i>10:00</i>〜</span><span><b>11/21</b>(土)<i>9:59</i></span></p>
+      <p class="wave-head">楽天スーパーDEAL<br>ポイント</p>
+      <p class="deal-big"><span class="deal-num">30</span><span class="deal-unit">%還元</span></p>
+      <p class="deal-desc">購入金額の30%が<br>ポイントで戻ってきます</p>
+    </li>
+    <li class="wave" data-start="2026-11-21T10:00:00+09:00" data-end="2026-11-26T10:00:00+09:00">
+      <p class="wave-no">第三弾</p>
+      <p class="wave-date"><span><b>11/21</b>(土)<i>10:00</i>〜</span><span><b>11/26</b>(木)<i>9:59</i></span></p>
+      <p class="wave-head">クーポン</p>
+      <p class="deal-big"><span class="deal-num">20</span><span class="deal-unit">%OFF</span></p>
+      <a class="btn btn-coupon" data-link="vcCoupon" href="#">20%OFFクーポン獲得</a>
+    </li>
+  </ol>
 
   <div class="main-cta">
     <a class="btn btn-main" href="https://item.rakuten.co.jp/yunth/10000000/"><span>生VC美白<sup>※1</sup>美容液<sup>＊</sup>の商品ページへ</span></a>
@@ -784,7 +823,7 @@ function setupRails() {
   const s = STAGES[Math.max(i, 0)];
   document.getElementById("railTag").innerHTML =
     `<small>${i >= 0 ? "開催中" : "11/19(木) 10:00 スタート"}</small>` +
-    `<strong>生VC美白<sup>※1</sup>美容液<sup>＊</sup> 第${Math.max(i, 0) + 1}弾</strong>` +
+    `<strong>生VC美白<sup>※1</sup>美容液<sup>＊</sup> 第${"一二三"[Math.max(i, 0)]}弾</strong>` +
     `<span><i>${s.pre}</i><b class="tube">${s.num}</b><em>${s.unit}</em></span>`;
 
   const links = [...document.querySelectorAll("[data-nav]")];
@@ -801,7 +840,19 @@ function setupRails() {
   });
 }
 
+function markWaves() {
+  const now = Date.now();
+  document.querySelectorAll(".wave").forEach(w => {
+    const st = Date.parse(w.dataset.start), en = Date.parse(w.dataset.end);
+    const label = now >= en ? "終了しました" : now >= st ? "開催中" : "";
+    w.classList.toggle("is-now", now >= st && now < en);
+    w.classList.toggle("is-past", now >= en);
+    if (label) w.insertAdjacentHTML("afterbegin", `<span class="wave-state">${label}</span>`);
+  });
+}
+
 renderSerums();
+markWaves();
 applyLinks();
 setupConsole();
 setupRails();
