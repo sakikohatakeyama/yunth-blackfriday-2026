@@ -621,7 +621,8 @@ body{background:var(--void)}
 .t-grid a{display:flex;flex-direction:column}
 .t-grid .t-price{margin-top:auto}
 /* FV: 透明部分の後ろは看板と続く暗い色に */
-.fv{background:#3a1b29}
+.fv{background:linear-gradient(#411e2c,#411e2c)}
+.neon-top + .fv{margin-top:-1px}
 /* スクロールで下からふわっと出てくる動き */
 .js-rv .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
 .js-rv .rv.rv-in{opacity:1;transform:none}
