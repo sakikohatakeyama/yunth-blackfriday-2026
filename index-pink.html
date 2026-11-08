@@ -734,6 +734,9 @@ body{padding-bottom:calc(66px + env(safe-area-inset-bottom,0px))}
 .deal-head.is-cp{margin-top:10px;font-size:clamp(32px,9.4vw,58px);font-weight:700;letter-spacing:.12em;line-height:1.2}
 /* ハンバーガーをなくしたので、ヘッダーのロゴは真ん中に */
 .site-head{justify-content:center}
+/* スマホ下はページ内メニューに戻した */
+body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
+@media (min-width:1240px){body{padding-bottom:0}}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0;margin:0 -.02em}
 .deal-num .cm,.price b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
@@ -1023,7 +1026,13 @@ body{padding-bottom:calc(66px + env(safe-area-inset-bottom,0px))}
   </ul>
 </aside>
 
-<a class="sp-dock" id="spDock" href="#vc" aria-label="生VC美白美容液 日替わりキャンペーンへ"></a>
+<nav class="tabbar" aria-label="ページ内メニュー">
+  <a href="#vc" data-nav="vc">日替わり</a>
+  <a href="#combo" data-nav="combo">Deep<br>Boost</a>
+  <a href="#trio" data-nav="trio">美容液<br>3種</a>
+  <a href="#all" data-nav="all">期間<br>ずっと</a>
+  <a href="#new" data-nav="new">はじめて<br>の方</a>
+</nav>
 <div class="dock"><a class="btn btn-main" href="https://item.rakuten.co.jp/yunth/10000000/"><span>生VC美白<sup>※1</sup>美容液<sup>＊</sup>を見る</span></a></div>
 
 <script>
