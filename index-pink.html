@@ -476,6 +476,8 @@ body{background:var(--void)}
 .price-box .cp-lb{color:#21141a}
 .price-box .cp-lb span{color:var(--vc2)}
 .price-box .coupon-box .deal-big{color:var(--red)}
+.price-box .coupon-box .deal-big.is-wide .deal-num{font-size:min(15vw,100px)}
+.price-box .coupon-box .deal-big.is-wide .deal-unit{font-size:clamp(20px,5.4vw,36px)}
 .price-box h3{margin:22px 0 0;font-size:clamp(18px,5vw,22px);font-weight:500;line-height:1.4;letter-spacing:.05em}
 .price-box .price{justify-content:center;margin-top:8px}
 .price-box .price span{font-size:16px}
@@ -488,7 +490,7 @@ body{background:var(--void)}
 .price-box .btn{margin-top:20px}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0;margin:0 -.02em}
-.deal-num .cm,.price b .cm{font-size:.5em;margin:0 -.04em 0 .02em}
+.deal-num .cm,.price b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
 /* 画面に入ったらネオン管が点くようにピカピカ
    色は最初から最後の色のまま。光（にじみ）だけがついたり消えたりする */
 .js-flicker .wave:not(.is-lit) .wave-no{color:rgba(var(--glow),.55);text-shadow:none}
