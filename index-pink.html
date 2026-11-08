@@ -527,7 +527,7 @@ body{background:var(--void)}
 <section class="block deal" id="combo">
   
   <h2 class="deal-title"><small>美顔器</small><b>Deep Boost</b></h2>
-  <p class="deal-date"><span class="dd"><b>11/19</b><span>(木)</span><em>10:00</em><i>〜</i></span><span class="dd"><b>11/24</b><span>(火)</span><em>23:59</em></span></p>
+  <p class="deal-date"><span class="dd"><b>11/19</b><span>(木)</span><em>10:00</em><i>〜</i></span><span class="dd"><b>11/26</b><span>(木)</span><em>9:59</em></span></p>
   <div class="set-visual">
     <img class="set-dev" src="images/device.png" alt="美顔器 Deep Boost" width="362" height="1656" loading="lazy">
     <img class="set-box" src="images/vc-box-front.webp" alt="生VC美白美容液の箱" width="1089" height="516" loading="lazy">
@@ -557,11 +557,17 @@ body{background:var(--void)}
 <section class="block deal deal-2" id="trio">
   <i class="rays" aria-hidden="true"></i>
   <p class="deal-notice">美容液3種</p>
-  <p class="deal-date"><span class="dd"><b>11/19</b><span>(木)</span><em>10:00</em><i>〜</i></span><span class="dd"><b>11/25</b><span>(水)</span><em>23:59</em></span></p>
-  <p class="deal-limit">3種すべて対象</p>
+  <p class="deal-date"><span class="dd"><b>11/19</b><span>(木)</span><em>10:00</em><i>〜</i></span><span class="dd"><b>11/26</b><span>(木)</span><em>9:59</em></span></p>
+  <p class="deal-limit">生PDRN<sup>※2</sup>美容液</p>
   <p class="deal-big"><span class="deal-num">20</span><span class="deal-unit">%OFF</span></p>
   <p class="deal-head">クーポン</p>
   <div class="items" id="chars"></div>
+  <div class="deal-sub">
+    <p class="deal-limit">生AZ美容液・生VA美容液<sup>＊</sup></p>
+    <p class="deal-head">DEAL</p>
+    <p class="deal-big"><span class="deal-num">20</span><span class="deal-unit">%還元</span></p>
+    <div class="items" id="chars-deal"></div>
+  </div>
   <p class="note">※2 サーモン抽出物：DNA-Na(整肌)　＊医薬部外品 薬用VAセラム</p>
 </section>
 
@@ -583,6 +589,7 @@ body{background:var(--void)}
 <section class="block deal is-pink" id="new">
   
   <p class="deal-notice">はじめてのお客さま</p>
+  <p class="deal-date"><span class="dd"><b>11/19</b><span>(木)</span><em>20:00</em><i>〜</i></span><span class="dd"><b>11/25</b><span>(水)</span><em>1:59</em></span></p>
   <p class="deal-limit">新規購入者限定 エントリーが2つ</p>
   <div class="entry2">
     <div>
@@ -594,7 +601,7 @@ body{background:var(--void)}
       <a class="btn btn-line" data-link="entry19" href="#">＋19倍にエントリー</a>
     </div>
   </div>
-  <p class="note">期間と条件はエントリーページをご確認ください。</p>
+  <p class="note">条件はエントリーページをご確認ください。</p>
 </section>
 
 <section class="caution">
@@ -625,7 +632,7 @@ body{background:var(--void)}
   <ul class="rail-nav">
     <li><a href="#vc" data-nav="vc"><span>生VC美白<sup>※1</sup>美容液<sup>＊</sup><br>日替わりキャンペーン</span><em>1</em></a></li>
     <li><a href="#combo" data-nav="combo"><span>Deep Boost</span><em>2</em></a></li>
-    <li><a href="#trio" data-nav="trio"><span>美容液3種 20%OFF</span><em>3</em></a></li>
+    <li><a href="#trio" data-nav="trio"><span>美容液3種<br>クーポン・DEAL</span><em>3</em></a></li>
     <li><a href="#all" data-nav="all"><span>店舗全体キャンペーン</span><em>4</em></a></li>
     <li><a href="#new" data-nav="new"><span>はじめてのお客さま</span><em>5</em></a></li>
   </ul>
@@ -648,8 +655,6 @@ const LINKS = {
   vcCoupon: "#",
   deepboostCoupon: "#",
   pdrnCoupon: "#",
-  azCoupon: "#",
-  vaCoupon: "#",
   entry19: "#"
 };
 /* ▲ 編集箇所 ─────────────────────────── */
@@ -660,9 +665,9 @@ const STAGES = [
   {label:"クーポン20%OFF", pre:"クーポン", num:"20", unit:"%OFF", period:"11/21(土) 10:00 〜 11/26(木) 9:59", start:"2026-11-21T10:00:00+09:00", end:"2026-11-26T10:00:00+09:00", color:"var(--vc)"}
 ];
 const SERUMS = [
-  {code:"yb-126-001", img:"serum-pdrn.jpg", name:"生PDRN<sup>※2</sup>美容液", vol:"1ml×28包", price:3960, link:"pdrnCoupon"},
-  {code:"yb-125-001", img:"serum-az.jpg", name:"生AZ美容液", vol:"1g×28包", price:3960, link:"azCoupon"},
-  {code:"yb-116-001", img:"serum-va.jpg", name:"生VA美容液<sup>＊</sup>", vol:"1ml×28包", price:4950, link:"vaCoupon"}
+  {code:"yb-126-001", img:"serum-pdrn.jpg", name:"生PDRN<sup>※2</sup>美容液", vol:"1ml×28包", price:3960, link:"pdrnCoupon", type:"coupon"},
+  {code:"yb-125-001", img:"serum-az.jpg", name:"生AZ美容液", vol:"1g×28包", price:3960, type:"deal"},
+  {code:"yb-116-001", img:"serum-va.jpg", name:"生VA美容液<sup>＊</sup>", vol:"1ml×28包", price:4950, type:"deal"}
 ];
 const yen = n => n.toLocaleString("ja-JP");
 
@@ -670,7 +675,7 @@ const WAIT_TEXT = "クーポン準備中";
 const AUTO_MS = 3400;
 
 function renderSerums() {
-  document.getElementById("chars").innerHTML = SERUMS.map(s => `
+  const card = s => `
     <div class="item-wrap">
       <a class="item-card" href="https://item.rakuten.co.jp/yunth/${s.code}/">
         <img src="images/${s.img}" alt="" width="720" height="720" loading="lazy">
@@ -678,12 +683,18 @@ function renderSerums() {
           <h3>${s.name}</h3>
           <p class="spec">${s.vol}</p>
           <p class="price"><b>${yen(s.price)}</b><span>円〜</span><small>(税込)</small></p>
-          <p class="price-cp">クーポン利用で</p>
-          <p class="price is-red"><b>${yen(Math.round(s.price * 0.8))}</b><span>円〜</span><small>(税込)</small></p>
+          ${s.type === "coupon"
+            ? `<p class="price-cp">クーポン利用で</p>
+          <p class="price is-red"><b>${yen(Math.round(s.price * 0.8))}</b><span>円〜</span><small>(税込)</small></p>`
+            : `<p class="price-cp">DEAL ポイント20%還元</p>`}
         </div>
       </a>
-      <a class="btn btn-coupon" data-link="${s.link}" href="#">20%OFFクーポン獲得</a>
-    </div>`).join("");
+      ${s.type === "coupon"
+        ? `<a class="btn btn-coupon" data-link="${s.link}" href="#">20%OFFクーポン獲得</a>`
+        : `<a class="btn btn-main" href="https://item.rakuten.co.jp/yunth/${s.code}/">商品ページへ</a>`}
+    </div>`;
+  document.getElementById("chars").innerHTML = SERUMS.filter(s => s.type === "coupon").map(card).join("");
+  document.getElementById("chars-deal").innerHTML = SERUMS.filter(s => s.type === "deal").map(card).join("");
 }
 
 function applyLinks() {
