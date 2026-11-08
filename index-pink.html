@@ -525,7 +525,10 @@ body{background:var(--void)}
 #trio .deal-num{font-size:min(30vw,180px)}
 #trio .deal-unit{font-size:clamp(30px,8.6vw,56px)}
 #trio .howto b{margin-top:0;font-size:clamp(17px,4.8vw,22px);line-height:1.35}
-#trio .howto>div{display:flex;flex-direction:column;justify-content:space-between}
+#trio .howto>div{display:flex;flex-direction:column;justify-content:center;gap:6px;padding:12px 10px 14px}
+#trio .howto .howto-lb{margin:0;white-space:nowrap}
+#trio .howto b{white-space:nowrap}
+@media (max-width:600px){#trio .howto{grid-template-columns:1fr;gap:10px}}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0;margin:0 -.02em}
 .deal-num .cm,.price b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
@@ -720,12 +723,12 @@ body{background:var(--void)}
   <p class="deal-date"><span class="dd"><b>11/19</b><span>(木)</span><em>10:00</em><i>〜</i></span><span class="dd"><b>11/26</b><span>(木)</span><em>9:59</em></span></p>
   <div class="howto">
     <div class="howto-cp">
-      <p class="howto-lb">ブラックフライデー<br>クーポン</p>
-      <p><b>20%OFF<br>クーポン</b></p>
+      <p class="howto-lb">ブラックフライデークーポン</p>
+      <p><b>20%OFFクーポン</b></p>
     </div>
     <div class="howto-deal">
-      <p class="howto-lb">楽天スーパー<br>DEAL</p>
-      <p><b>20%<br>ポイント還元</b></p>
+      <p class="howto-lb">楽天スーパーDEAL</p>
+      <p><b>20%ポイント還元</b></p>
     </div>
   </div>
   <p class="deal-limit">生PDRN<sup>※2</sup>美容液</p>
