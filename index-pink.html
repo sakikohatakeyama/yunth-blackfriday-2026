@@ -725,8 +725,8 @@ body{padding-bottom:calc(66px + env(safe-area-inset-bottom,0px))}
 .deal-date em{margin-left:.15em}
 .wave-date i{margin-left:.25em}
 .deal-date,.wave-date{flex-wrap:wrap;row-gap:6px}
-.deal-date::before,.wave-date::before{content:"開催期間";flex-basis:100%;display:block;width:fit-content;margin:0 auto;padding:2px 12px 3px;border:1px solid currentColor;border-radius:999px;font-family:"Noto Sans JP",sans-serif;font-size:clamp(11px,3vw,14px);font-weight:700;letter-spacing:.12em;line-height:1.4;text-align:center;opacity:.9}
-.deal-date::before{max-width:none}
+.deal-date::before,.wave-date::before{content:"開催期間";flex:0 0 100%;display:block;font-family:"Noto Sans JP",sans-serif;font-size:clamp(11px,3vw,14px);font-weight:700;letter-spacing:.2em;line-height:1.6;text-align:center;color:var(--neon);background:linear-gradient(currentColor,currentColor) left center/calc(50% - 4em) 1px no-repeat,linear-gradient(currentColor,currentColor) right center/calc(50% - 4em) 1px no-repeat}
+.deal.is-pink .deal-date::before{color:#17090f}
 .deal-date .dd,.wave-date span{white-space:nowrap}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0;margin:0 -.02em}
