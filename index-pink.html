@@ -690,7 +690,7 @@ body{background:var(--void)}
 /* ネオン看板とFV画像をさらに近づける（重ねても色が続くように、どちらも同じ暗い色に） */
 .neon-top::after{display:none}
 .neon-top{padding-bottom:0}
-.fv{background:#0b0709;margin-top:-8cqw;z-index:1}
+.fv{background:transparent;margin-top:-8cqw;z-index:1}
 .neon-top + .fv{margin-top:-8cqw}
 /* スマホ下の固定バー: PCの左の案内札と同じ内容（今の回・開催中・残り時間） */
 .sp-dock{position:fixed;z-index:30;left:0;right:0;bottom:0;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;min-height:62px;padding:6px 12px calc(6px + env(safe-area-inset-bottom,0px));background:rgba(23,9,15,.96);border-top:2px solid var(--neon);color:#fff;text-decoration:none;box-shadow:0 -6px 20px rgba(0,0,0,.5)}
@@ -728,6 +728,8 @@ body{padding-bottom:calc(66px + env(safe-area-inset-bottom,0px))}
 .deal-date::before,.wave-date::before{content:"開催期間";flex:0 0 100%;display:block;font-family:"Noto Sans JP",sans-serif;font-size:clamp(11px,3vw,14px);font-weight:700;letter-spacing:.2em;line-height:1.6;text-align:center;color:var(--neon);background:linear-gradient(currentColor,currentColor) left center/calc(50% - 4em) 1px no-repeat,linear-gradient(currentColor,currentColor) right center/calc(50% - 4em) 1px no-repeat}
 .deal.is-pink .deal-date::before{color:#17090f}
 .deal-date .dd,.wave-date span{white-space:nowrap}
+/* PC（左にロゴがある幅）では上のヘッダーは出さない */
+@media (min-width:1240px){.site-head{display:none}}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0;margin:0 -.02em}
 .deal-num .cm,.price b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
