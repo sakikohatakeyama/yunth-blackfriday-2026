@@ -560,6 +560,25 @@ body{background:var(--void)}
 .items .item-card .price.is-red span{font-size:clamp(16px,4.6vw,26px)}
 .items .item-card .price.is-red small{font-size:clamp(12px,3.4vw,20px);color:#21141a}
 .items .item-card .price-cp .is-deal{font-size:1.05em}
+/* 流れ図の「第一弾〜第三弾」: 読める程度のやわらかいネオン（大きさはそのまま） */
+.vc-flow b{padding:1px 10px;background:rgba(0,0,0,.35);border:1.5px solid #ff6fa0;color:#ff8fb6;text-shadow:0 0 3px rgba(255,61,127,.5);box-shadow:0 0 6px rgba(255,61,127,.45)}
+.vc-flow li:nth-child(2) b{border-color:#ffa04a;color:#ffb978;text-shadow:0 0 3px rgba(255,140,40,.5);box-shadow:0 0 6px rgba(255,140,40,.45)}
+.vc-flow li:nth-child(3) b{border-color:#c48bff;color:#d6b0ff;text-shadow:0 0 3px rgba(170,90,255,.5);box-shadow:0 0 6px rgba(170,90,255,.45)}
+/* 終わった回はグレーダウン */
+.vc-flow li.is-past{background:rgba(120,120,120,.18)}
+.vc-flow li.is-past > *:not(.flow-end){filter:grayscale(1);opacity:.35}
+.vc-flow .flow-end{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:3px 8px;border-radius:4px;background:#5b5458;color:#fff;font-style:normal;font-size:clamp(11px,3vw,14px);font-weight:700;letter-spacing:.04em;white-space:nowrap}
+/* 開催中の回は目立たせて「開催中」 */
+.vc-flow li.is-now{background:rgba(255,61,127,.22);box-shadow:0 0 0 2px #ff6fa0 inset,0 0 18px rgba(255,61,127,.55);z-index:1}
+.vc-flow .flow-now{position:absolute;left:50%;top:-12px;transform:translateX(-50%);padding:2px 10px;border-radius:999px;background:#ff3d7f;color:#fff;font-style:normal;font-size:clamp(11px,3vw,13px);font-weight:700;letter-spacing:.06em;white-space:nowrap;box-shadow:0 0 10px rgba(255,61,127,.8)}
+.vc-flow{margin-top:30px}
+/* 第二弾・第三弾の「楽天スーパーDEAL」「クーポン」は、枠の左右いっぱいの帯に */
+.wave-head.is-big{display:block;margin:18px -14px 0;padding:6px 10px 8px;border:0;border-radius:0;background:var(--neon);color:#17090f}
+.wave:nth-child(2) .wave-head.is-big{background:#ffb35c}
+@media (min-width:768px){.wave-head.is-big{margin-inline:-28px}}
+/* 第三弾は第一弾と色を変えて紫のネオンに */
+.wave:nth-child(3) .wave-no{--core:#ead8ff;--glow:170,90,255;--off:#3a2650}
+.wave:nth-child(3) .wave-head.is-big{background:#c99bff}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0;margin:0 -.02em}
 .deal-num .cm,.price b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
