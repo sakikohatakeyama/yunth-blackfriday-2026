@@ -591,6 +591,14 @@ body{background:var(--void)}
 .wave:nth-child(3) .wave-no{--core:#ffd2dc;--glow:255,40,90;--off:#4a1a26}
 .wave:nth-child(3) .wave-head.is-big{background:#ff5a7e}
 .vc-flow li:nth-child(3) b{border-color:#ff4f78;color:#ff8aa5;text-shadow:0 0 3px rgba(255,40,90,.5);box-shadow:0 0 6px rgba(255,40,90,.45)}
+/* 期間ずっと: 対象商品を写真つきで並べる */
+.targets{max-width:640px;padding:16px 12px 18px}
+.t-grid{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0 0;padding:0}
+.t-grid a{display:block;height:100%;background:var(--paper);border-radius:8px;overflow:hidden;color:#21141a;text-decoration:none;transition:transform .15s}
+.t-grid a:hover{transform:translateY(-2px)}
+.t-grid img{display:block;width:100%;aspect-ratio:5/4;object-fit:cover}
+.t-grid span{display:block;padding:6px 6px 8px;font-family:"Noto Sans JP",sans-serif;font-size:clamp(11px,3vw,13px);font-weight:500;line-height:1.4;letter-spacing:.02em;text-align:left}
+@media (min-width:768px){.t-grid{grid-template-columns:repeat(4,1fr);gap:12px}}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0;margin:0 -.02em}
 .deal-num .cm,.price b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
@@ -817,7 +825,7 @@ body{background:var(--void)}
   <p class="deal-big"><span class="deal-num">15</span><span class="deal-unit">倍</span></p>
   <div class="targets">
     <p class="targets-lb">ポイント15倍の対象商品</p>
-    <p>選べる楽天市場限定セット 洗顔 クリアフォーム／生VC美白クリーム 30g／フュージョンクレンジング 120ml／美白ハンドセラム 35g／VAリンクルアイセラム 10ml／マルチスクエアシートマスク／ピュアマスク 大容量ボックスタイプ 28枚入り／ポケモンパッケージ 美容液／トイストーリーコラボ 美容液</p>
+    <ul class="t-grid"><li><a href="https://item.rakuten.co.jp/yunth/500-08/"><img src="images/targets/500-08.jpg" alt="" loading="lazy"><span>選べる楽天市場限定セット 洗顔 クリアフォーム</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/10000007/"><img src="images/targets/10000007.jpg" alt="" loading="lazy"><span>生VC美白クリーム</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-120-001/"><img src="images/targets/yb-120-001.jpg" alt="" loading="lazy"><span>フュージョンクレンジング</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-113-001/"><img src="images/targets/yb-113-001.jpg" alt="" loading="lazy"><span>美白ハンドセラム</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-118-001/"><img src="images/targets/yb-118-001.jpg" alt="" loading="lazy"><span>VAリンクルアイセラム</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-121-001/"><img src="images/targets/yb-121-001.jpg" alt="" loading="lazy"><span>マルチスクエアシートマスク</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-127-001/"><img src="images/targets/yb-127-001.jpg" alt="" loading="lazy"><span>ピュアマスク 大容量ボックス 28枚入り</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/pokemon/"><img src="images/targets/pokemon.jpg" alt="" loading="lazy"><span>ポケモンパッケージ 美容液</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/toystory/"><img src="images/targets/toystory.jpg" alt="" loading="lazy"><span>トイストーリーコラボ 美容液</span></a></li></ul>
   </div>
   <div class="deal-sub">
     <p class="deal-head">BIG DEAL対象商品<br>ポイント</p>
@@ -825,7 +833,7 @@ body{background:var(--void)}
     <p class="deal-desc">購入金額の20%が<br>ポイントで戻ってきます</p>
     <div class="targets">
       <p class="targets-lb">BIG DEAL 20%還元の対象商品</p>
-      <p>生AZ美容液／生VA美容液／美顔器 Deep Boostセット／生VC美白化粧水 120ml／生VCトーンアップUV／生VCホワイトクリアフォーム 120g／クッションファンデーション エアレス／生VCリップ美容液／生VCホワイト乳液 75ml／美白シートマスク 6枚／ピュアマスク 4袋・8袋セット</p>
+      <ul class="t-grid"><li><a href="https://item.rakuten.co.jp/yunth/yb-116-001/"><img src="images/targets/yb-116-001.jpg" alt="" loading="lazy"><span>生VA美容液</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-125-001/"><img src="images/targets/yb-125-001.jpg" alt="" loading="lazy"><span>生AZ美容液</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/ys-r184/"><img src="images/targets/ys-r184.jpg" alt="" loading="lazy"><span>美顔器 Deep Boostセット</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/111-01/"><img src="images/targets/111-01.jpg" alt="" loading="lazy"><span>生VC美白化粧水</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/112/"><img src="images/targets/112.jpg" alt="" loading="lazy"><span>生VCトーンアップUV</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-115-001/"><img src="images/targets/yb-115-001.jpg" alt="" loading="lazy"><span>生VCホワイトクリアフォーム</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-123-001/"><img src="images/targets/yb-123-001.jpg" alt="" loading="lazy"><span>クッションファンデーション エアレス</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-114-001/"><img src="images/targets/yb-114-001.jpg" alt="" loading="lazy"><span>生VCリップ美容液</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-117-001/"><img src="images/targets/yb-117-001.jpg" alt="" loading="lazy"><span>生VCホワイト乳液</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/10000001/"><img src="images/targets/10000001.jpg" alt="" loading="lazy"><span>美白シートマスク 6枚</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/ys-r129/"><img src="images/targets/ys-r129.jpg" alt="" loading="lazy"><span>ピュアマスク 4袋・8袋セット</span></a></li></ul>
     </div>
   </div>
 </section>
