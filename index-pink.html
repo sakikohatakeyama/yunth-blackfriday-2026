@@ -488,6 +488,19 @@ body{background:var(--void)}
 .price-box .price.is-red b{font-size:clamp(44px,12.8vw,64px)}
 .price-box .price.is-red span{font-size:20px;font-weight:700}
 .price-box .btn{margin-top:20px}
+/* Deep Boost 価格: 名前と通常価格を1行 → 赤い吹き出し → 大きいクーポン後価格 */
+.pb-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:2px 12px;margin:24px 0 0}
+.pb-name{font-size:clamp(16px,4.4vw,24px);font-weight:700;letter-spacing:.04em}
+.pb-row .price{margin:0}
+.pb-row .price b{font-size:clamp(24px,6.6vw,38px)}
+.pb-badge{position:relative;max-width:440px;margin:14px auto 0;padding:6px 16px 8px;border-radius:999px;background:var(--red);color:#fff;font-size:clamp(18px,5.2vw,28px);font-weight:700;letter-spacing:.06em;line-height:1.3}
+.pb-badge::after{content:"";position:absolute;left:50%;bottom:-9px;margin-left:-9px;border-left:9px solid transparent;border-right:9px solid transparent;border-top:10px solid var(--red)}
+.pb-after{display:flex;justify-content:center;align-items:flex-end;gap:6px;margin:16px 0 0;color:var(--red);line-height:1}
+.pb-after b{font:700 clamp(64px,19vw,120px)/.9 var(--num);letter-spacing:-.01em}
+.pb-unit{display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding-bottom:.1em}
+.pb-unit small{font-size:clamp(11px,3vw,15px);color:#21141a;font-weight:500}
+.pb-unit em{font-style:normal;font-size:clamp(26px,7.4vw,44px);font-weight:700}
+.pb-after b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0;margin:0 -.02em}
 .deal-num .cm,.price b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
@@ -664,10 +677,9 @@ body{background:var(--void)}
       <p class="cp-lb"><span>COUPON</span>クーポン</p>
       <p class="deal-big is-wide"><span class="deal-num">7,809</span><span class="deal-unit">円OFF</span></p>
     </div>
-    <h3>美顔器 Deep Boost</h3>
-    <p class="price"><b>33,000</b><span>円</span><small>(税込)</small></p>
-    <p class="pb-cp">7,809円OFFクーポン利用で</p>
-    <p class="price is-red"><b>25,191</b><span>円</span><small>(税込)</small></p>
+    <p class="pb-row"><span class="pb-name">美顔器 Deep Boost</span><span class="price"><b>33,000</b><span>円</span><small>(税込)</small></span></p>
+    <p class="pb-badge">クーポン利用で</p>
+    <p class="pb-after"><b>25,191</b><span class="pb-unit"><small>(税込)</small><em>円</em></span></p>
     <a class="btn btn-coupon" data-link="deepboostCoupon" href="#">7,809円OFFクーポン獲得</a>
   </div>
   <div class="btns">
