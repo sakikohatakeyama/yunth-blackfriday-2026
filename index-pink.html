@@ -443,8 +443,11 @@ body{background:var(--void)}
 .wave-item{display:inline-block;margin:0 0 10px;padding:3px 14px;border:1px solid rgba(255,169,173,.7);border-radius:999px;font-size:clamp(14px,3.9vw,17px);font-weight:500;letter-spacing:.06em;color:#fff}
 .waves{list-style:none;margin:34px 0 0;padding:0;display:grid;gap:22px;text-align:center}
 .wave{position:relative;padding:28px 14px 30px;border:1px solid rgba(255,169,173,.45);border-radius:16px;background:radial-gradient(120% 60% at 50% 0,rgba(255,61,127,.08),transparent 70%),#0b0709;box-shadow:0 0 10px rgba(255,61,127,.15)}
-.wave-no{margin:0;font-family:"Noto Sans JP",sans-serif;font-weight:700;font-size:min(19vw,112px);line-height:1.05;letter-spacing:.06em;color:#ff7aa6;text-shadow:0 0 3px rgba(255,122,166,.9),0 0 10px rgba(255,61,127,.6),0 0 22px rgba(255,61,127,.35)}
-.wave:nth-child(2) .wave-no{color:#ffb35c;text-shadow:0 0 3px rgba(255,179,92,.9),0 0 10px rgba(255,154,61,.6),0 0 22px rgba(255,154,61,.35)}
+.wave-no{--core:#ffd3e2;--glow:255,61,127;--off:#4a2232;position:relative;isolation:isolate;margin:0;font-family:"Noto Sans JP",sans-serif;font-weight:400;font-size:min(19vw,112px);line-height:1.1;letter-spacing:.08em;color:var(--core);
+  text-shadow:0 0 1px #fff,0 0 3px rgba(var(--glow),1),0 0 7px rgba(var(--glow),.95),0 0 14px rgba(var(--glow),.8),0 0 28px rgba(var(--glow),.55),0 0 48px rgba(var(--glow),.35)}
+/* 管のうしろの壁に光が回り込む感じ */
+.wave-no::before{content:"";position:absolute;left:12%;right:12%;top:18%;bottom:12%;z-index:-1;border-radius:50%;background:rgba(var(--glow),.22);filter:blur(28px);pointer-events:none}
+.wave:nth-child(2) .wave-no{--core:#ffe6c4;--glow:255,140,40;--off:#4a3020}
 .wave-date{display:flex;flex-wrap:wrap;justify-content:center;gap:0 10px;margin:18px 0 0;font-size:clamp(14px,3.9vw,18px);font-weight:500;color:#fff;white-space:nowrap}
 .wave-date span{display:inline-flex;align-items:baseline;gap:3px}
 .wave-date b{font:500 clamp(26px,7.2vw,40px)/1.15 var(--num);letter-spacing:.03em}
@@ -479,21 +482,24 @@ body{background:var(--void)}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0;margin:0 -.06em}
 .deal-num .cm,.price b .cm{font-size:.5em;margin:0 -.16em}
-/* 画面に入ったらネオン管が点くようにピカピカ */
-.js-flicker .wave:not(.is-lit) .wave-no{opacity:.15;text-shadow:none}
-.js-flicker .wave.is-lit .wave-no{animation:waveOn 1.1s steps(1,end) both}
-.js-flicker .wave.is-on .wave-no{animation:none;opacity:1}
+/* 画面に入ったらネオン管が点くようにピカピカ（消えている間は管の色だけ見える） */
+.js-flicker .wave:not(.is-lit) .wave-no{color:var(--off);text-shadow:none}
+.js-flicker .wave:not(.is-lit) .wave-no::before{opacity:0}
+.js-flicker .wave.is-lit .wave-no{animation:waveOn 1.2s steps(1,end) both}
+.js-flicker .wave.is-lit .wave-no::before{animation:wallOn 1.2s steps(1,end) both}
+.js-flicker .wave.is-on .wave-no,.js-flicker .wave.is-on .wave-no::before{animation:none}
 @keyframes waveOn{
-  0%{opacity:.15;text-shadow:none}
-  10%{opacity:1}
-  16%{opacity:.25;text-shadow:none}
-  28%{opacity:1}
-  34%{opacity:.4;text-shadow:none}
-  46%{opacity:1}
-  52%{opacity:.6}
-  60%,100%{opacity:1}
+  0%{color:var(--off);text-shadow:none}
+  8%{color:var(--core)}
+  13%{color:var(--off);text-shadow:none}
+  24%{color:var(--core)}
+  29%{color:var(--off);text-shadow:none}
+  33%{color:var(--core)}
+  37%{color:var(--off);text-shadow:none}
+  52%,100%{color:var(--core)}
 }
-@media (prefers-reduced-motion:reduce){.js-flicker .wave.is-lit .wave-no{animation:none}}
+@keyframes wallOn{0%,7%,13%,23%,29%,32%,37%,51%{opacity:0}8%,24%,33%,52%,100%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.js-flicker .wave.is-lit .wave-no,.js-flicker .wave.is-lit .wave-no::before{animation:none}}
 </style>
 </head>
 <body>
