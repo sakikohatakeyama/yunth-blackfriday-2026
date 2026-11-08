@@ -629,6 +629,41 @@ body{background:var(--void)}
 .js-rv .t-grid li.rv:nth-child(4n+3){transition-delay:.16s}
 .js-rv .t-grid li.rv:nth-child(4n){transition-delay:.24s}
 @media (prefers-reduced-motion:reduce){.js-rv .rv{opacity:1;transform:none;transition:none}}
+/* 「ブラックフライデー期間ずっと」は吹き出し */
+.deal-notice.is-bubble{position:relative;padding:12px 26px 14px;border:0;border-radius:18px;background:var(--neon);color:#17090f;font-weight:700}
+.deal-notice.is-bubble::after{content:"";position:absolute;left:50%;bottom:-14px;margin-left:-12px;border-left:12px solid transparent;border-right:12px solid transparent;border-top:15px solid var(--neon)}
+/* 日付はすべて1行 */
+.deal-date{flex-direction:row;flex-wrap:nowrap;justify-content:center;align-items:baseline;gap:0}
+.deal-date .dd{gap:2px}
+.deal-date b{font-size:clamp(22px,6vw,48px)}
+.deal-date span{font-size:clamp(11px,3vw,20px)}
+.deal-date em{font-size:clamp(16px,4.4vw,32px);margin-left:.35em}
+.deal-date i{font-size:clamp(14px,4vw,28px);margin:0 .4em}
+/* Deep Boost: 美顔器と＋の間を詰める */
+.set-plus.is-first{margin-top:-14px}
+/* 美容液カード（スマホ）: 右側の文字が枠からはみ出さないように */
+@media (max-width:767px){
+  .items .item-card{grid-template-columns:36% 1fr;gap:12px;padding:12px}
+  .items .item-card > div{padding-right:0;min-width:0}
+  .items .item-card h3{font-size:clamp(16px,4.5vw,20px)}
+  .items .item-card .spec{font-size:13px}
+  .items .item-card .price b{font-size:clamp(20px,5.6vw,26px)}
+  .items .item-card .price span{font-size:13px}
+  .items .item-card .price small{font-size:10px}
+  .items .item-card .price-cp{font-size:clamp(13px,3.6vw,16px)}
+  .items .item-card .price.is-red b{font-size:clamp(26px,7.4vw,34px)}
+  .items .item-card .price.is-red span{font-size:14px}
+  .items .item-card .price.is-red small{font-size:10px}
+}
+/* PC: 生VA・生AZは2つ並びのフレーム */
+@media (min-width:768px){
+  #chars-deal{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  #chars-deal .item-card{grid-template-columns:1fr;gap:14px;padding:16px}
+  #chars-deal .item-card img{aspect-ratio:4/3}
+  #chars-deal .item-card > div{padding-right:0}
+  #chars-deal .item-card h3{font-size:24px}
+  #chars-deal .item-card .price-cp{font-size:18px}
+}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0;margin:0 -.02em}
 .deal-num .cm,.price b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
@@ -845,7 +880,7 @@ body{background:var(--void)}
 <!-- ▼ ブラックフライデー通しの企画（期間中ずっと） -->
 <section class="block deal" id="all">
   
-  <p class="deal-notice"><span class="nb">ブラックフライデー</span><span class="nb">期間ずっと</span></p>
+  <p class="deal-notice is-bubble"><span class="nb">ブラックフライデー</span><span class="nb">期間ずっと</span></p>
   <p class="deal-date"><span class="dd"><b>11/19</b><span>(木)</span><em>10:00</em><i>〜</i></span><span class="dd"><b>11/26</b><span>(木)</span><em>9:59</em></span></p>
   <p class="deal-limit">対象商品</p>
   <p class="deal-head">ポイント</p>
@@ -946,8 +981,8 @@ const STAGES = [
 ];
 const SERUMS = [
   {code:"yb-126-001", img:"serum-pdrn.jpg", name:"生PDRN<sup>※2</sup>美容液", vol:"1ml×28包", price:3960, link:"pdrnCoupon", type:"coupon"},
-  {code:"yb-125-001", img:"serum-az.jpg", name:"生AZ美容液", vol:"1g×28包", price:3960, type:"deal"},
-  {code:"yb-116-001", img:"serum-va.jpg", name:"生VA美容液<sup>＊</sup>", vol:"1ml×28包", price:4950, type:"deal"}
+  {code:"yb-116-001", img:"serum-va.jpg", name:"生VA美容液<sup>＊</sup>", vol:"1ml×28包", price:4950, type:"deal"},
+  {code:"yb-125-001", img:"serum-az.jpg", name:"生AZ美容液", vol:"1g×28包", price:3960, type:"deal"}
 ];
 const yen = n => n.toLocaleString("ja-JP");
 
