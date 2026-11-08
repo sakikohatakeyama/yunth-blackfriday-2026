@@ -330,11 +330,10 @@ body{background:var(--void)}
 .deal-title em{font:700 min(10.6vw,66px)/1 var(--num);font-style:normal;color:var(--vc);letter-spacing:.04em}
 .deal-title span{font-size:min(9.6vw,56px);letter-spacing:.1em}
 .deal-title+.deal-date{margin-top:26px}
-.set-visual{position:relative;display:flex;justify-content:flex-start;align-items:flex-end;margin:34px auto 0;padding-left:10%;max-width:560px;height:min(92vw,560px)}
-.set-visual::before{content:"";position:absolute;left:10%;right:6%;bottom:-4%;height:26%;border-radius:50%;background:var(--vc);opacity:.32;filter:blur(30px)}
-.set-dev{position:relative;z-index:2;height:100%;width:auto;filter:drop-shadow(0 10px 18px rgba(0,0,0,.6))}
-.set-dev.is-back{z-index:1;margin-left:-6%}
-.set-box{position:absolute;z-index:3;right:0;bottom:0;width:62%;height:auto;filter:drop-shadow(0 10px 18px rgba(0,0,0,.6))}
+.set-visual{position:relative;display:flex;justify-content:center;align-items:flex-end;gap:6%;margin:34px auto 0;max-width:560px;height:min(92vw,560px)}
+.set-visual::before{content:"";position:absolute;left:18%;right:18%;bottom:-4%;height:26%;border-radius:50%;background:var(--vc);opacity:.32;filter:blur(30px)}
+.set-dev{position:relative;height:100%;width:auto;filter:drop-shadow(0 10px 18px rgba(0,0,0,.6))}
+.set-box{display:block;width:min(84%,440px);height:auto;margin:16px auto 0;filter:drop-shadow(0 10px 18px rgba(0,0,0,.6))}
 .set-lead{margin:26px 0 0;font-size:clamp(18px,5.2vw,26px);font-weight:500;letter-spacing:.08em;color:#fff}
 .set-gift{display:grid;gap:4px;margin:8px 0 0;font-weight:700;line-height:1.35;letter-spacing:.04em;color:var(--vc)}
 .set-gift span{font-size:clamp(26px,7.6vw,46px)}
@@ -620,10 +619,10 @@ body{background:var(--void)}
   <p class="deal-date"><span class="dd"><b>11/19</b><span>(木)</span><em>10:00</em><i>〜</i></span><span class="dd"><b>11/26</b><span>(木)</span><em>9:59</em></span></p>
   <div class="set-visual">
     <img class="set-dev" src="images/device-white.png" alt="美顔器 Deep Boost" width="430" height="1200" loading="lazy">
-    <img class="set-dev is-back" src="images/device-pink.png" alt="" width="430" height="1200" loading="lazy">
-    <img class="set-box" src="images/vc-set.png" alt="生VC美白美容液の箱とパウチ" width="1046" height="593" loading="lazy">
+    <img class="set-dev" src="images/device-pink.png" alt="" width="430" height="1200" loading="lazy">
   </div>
   <p class="set-lead">美顔器に</p>
+  <img class="set-box" src="images/vc-set.png" alt="生VC美白美容液の箱とパウチ" width="1046" height="593" loading="lazy">
   <p class="set-gift"><span>生VC美白<sup>※1</sup>美容液<sup>＊</sup></span><b>1箱が特別セット</b></p>
   <p class="set-plus" aria-label="さらに">＋</p>
   <p class="set-lead">さらに使える</p>
@@ -898,17 +897,24 @@ function markWaves() {
   });
 
   // 画面に入ったときに一度だけネオンが点く
-  if (matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
-  const box = document.querySelector(".waves");
-  box.classList.add("js-flicker");
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      e.target.classList.add("is-lit");
-      io.unobserve(e.target);
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  let rest = [...document.querySelectorAll(".wave")];
+  document.querySelector(".waves").classList.add("js-flicker");
+  let ticking = false;
+  const check = () => {
+    ticking = false;
+    const line = innerHeight * .75;
+    rest = rest.filter(w => {
+      const r = w.getBoundingClientRect();
+      if (r.top < line && r.bottom > 0) { w.classList.add("is-lit"); return false; }
+      return true;
     });
-  }, {threshold: .45});
-  document.querySelectorAll(".wave").forEach(w => io.observe(w));
+    if (!rest.length) removeEventListener("scroll", onScroll);
+  };
+  const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(check); } };
+  addEventListener("scroll", onScroll, {passive: true});
+  addEventListener("resize", onScroll);
+  check();
 }
 
 renderSerums();
