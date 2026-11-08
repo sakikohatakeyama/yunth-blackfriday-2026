@@ -564,7 +564,10 @@ body{background:var(--void)}
 .vc-flow li.is-past{background:rgba(120,120,120,.18)}
 .vc-flow li.is-past > *:not(.flow-end){filter:grayscale(1);opacity:.35}
 .vc-flow .flow-end{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:3px 8px;border-radius:4px;background:#5b5458;color:#fff;font-style:normal;font-size:clamp(11px,3vw,14px);font-weight:700;letter-spacing:.04em;white-space:nowrap}
-.vc-flow li.is-now{background:rgba(255,61,127,.16)}
+/* 開催中の回は目立たせて「開催中」 */
+.vc-flow li.is-now{background:rgba(255,61,127,.22);box-shadow:0 0 0 2px #ff6fa0 inset,0 0 18px rgba(255,61,127,.55);z-index:1}
+.vc-flow .flow-now{position:absolute;left:50%;top:-12px;transform:translateX(-50%);padding:2px 10px;border-radius:999px;background:#ff3d7f;color:#fff;font-style:normal;font-size:clamp(11px,3vw,13px);font-weight:700;letter-spacing:.06em;white-space:nowrap;box-shadow:0 0 10px rgba(255,61,127,.8)}
+.vc-flow{margin-top:30px}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0;margin:0 -.02em}
 .deal-num .cm,.price b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
@@ -1009,6 +1012,7 @@ function markWaves() {
     li.classList.toggle("is-now", now >= st && now < en);
     li.classList.toggle("is-past", now >= en);
     if (now >= en) li.insertAdjacentHTML("beforeend", '<em class="flow-end">終了しました</em>');
+    if (now >= st && now < en) li.insertAdjacentHTML("afterbegin", '<em class="flow-now">開催中</em>');
   });
   document.querySelectorAll(".wave").forEach(w => {
     const st = Date.parse(w.dataset.start), en = Date.parse(w.dataset.end);
