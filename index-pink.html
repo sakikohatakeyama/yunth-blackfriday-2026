@@ -457,6 +457,7 @@ body{background:var(--void)}
 /* 画面に入ったらネオン管が点くようにピカピカ */
 .js-flicker .wave:not(.is-lit) .wave-no{opacity:.15;text-shadow:none}
 .js-flicker .wave.is-lit .wave-no{animation:waveOn 1.1s steps(1,end) both}
+.js-flicker .wave.is-on .wave-no{animation:none;opacity:1}
 @keyframes waveOn{
   0%{opacity:.15;text-shadow:none}
   10%{opacity:1}
@@ -905,7 +906,12 @@ function markWaves() {
     const line = innerHeight * .75;
     rest = rest.filter(w => {
       const r = w.getBoundingClientRect();
-      if (r.top < line && r.bottom > 0) { w.classList.add("is-lit"); return false; }
+      if (r.top < line && r.bottom > 0) {
+        w.classList.add("is-lit");
+        // 点滅のあとは必ず点いた状態にしておく
+        setTimeout(() => w.classList.add("is-on"), 1300);
+        return false;
+      }
       return true;
     });
     if (!rest.length) { clearInterval(timer); removeEventListener("scroll", check); }
