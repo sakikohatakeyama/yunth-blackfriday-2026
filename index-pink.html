@@ -455,6 +455,20 @@ body{background:var(--void)}
 .wave.is-past{opacity:.45}
 .wave.is-past .wave-state{background:#5b4a51;color:#fff}
 @media (min-width:768px){.waves{gap:28px}.wave{padding:36px 28px 38px}}
+/* 画面に入ったらネオン管が点くようにピカピカ */
+.js-flicker .wave:not(.is-lit) .wave-no{opacity:.15;text-shadow:none}
+.js-flicker .wave.is-lit .wave-no{animation:waveOn 1.1s steps(1,end) both}
+@keyframes waveOn{
+  0%{opacity:.15;text-shadow:none}
+  10%{opacity:1}
+  16%{opacity:.25;text-shadow:none}
+  28%{opacity:1}
+  34%{opacity:.4;text-shadow:none}
+  46%{opacity:1}
+  52%{opacity:.6}
+  60%,100%{opacity:1}
+}
+@media (prefers-reduced-motion:reduce){.js-flicker .wave.is-lit .wave-no{animation:none}}
 </style>
 </head>
 <body>
@@ -882,6 +896,19 @@ function markWaves() {
     w.classList.toggle("is-past", now >= en);
     if (label) w.insertAdjacentHTML("afterbegin", `<span class="wave-state">${label}</span>`);
   });
+
+  // 画面に入ったときに一度だけネオンが点く
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
+  const box = document.querySelector(".waves");
+  box.classList.add("js-flicker");
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add("is-lit");
+      io.unobserve(e.target);
+    });
+  }, {threshold: .45});
+  document.querySelectorAll(".wave").forEach(w => io.observe(w));
 }
 
 renderSerums();
