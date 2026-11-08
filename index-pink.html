@@ -715,6 +715,9 @@ body{padding-bottom:calc(66px + env(safe-area-inset-bottom,0px))}
 /* 対象商品カード: PC4列では文字を少し小さく、価格の(税込)を折り返さない */
 .t-grid .t-price{flex-wrap:nowrap;white-space:nowrap}
 @media (min-width:768px){.t-grid .t-name{font-size:14px}.t-grid .t-price b{font-size:18px}}
+/* PC左のロゴは店舗トップへのリンク */
+.rail-logo-link{display:flex;justify-content:center;width:100%;transition:opacity .2s}
+.rail-logo-link:hover{opacity:.75}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0;margin:0 -.02em}
 .deal-num .cm,.price b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
@@ -1000,7 +1003,7 @@ body{padding-bottom:calc(66px + env(safe-area-inset-bottom,0px))}
 </main>
 
 <aside class="rail rail-l" aria-label="キャンペーン概要">
-  <img class="rail-logo" src="images/logo.png" alt="Yunth" width="903" height="299">
+  <a class="rail-logo-link" href="https://www.rakuten.co.jp/yunth/"><img class="rail-logo" src="images/logo.png" alt="Yunth 楽天市場店トップへ" width="903" height="299"></a>
   <p class="rail-sign"><span>BLACK</span><span>FRIDAY</span></p>
   <p class="rail-period"><b>11/19</b>(木) 10:00 〜<br><b>11/26</b>(木) 9:59</p>
   <a class="rail-tag" href="#vc" id="railTag"></a>
