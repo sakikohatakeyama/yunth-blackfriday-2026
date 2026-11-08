@@ -294,13 +294,13 @@ body{background:var(--void)}
 .deal-set{margin:30px 0 0;font-size:clamp(20px,5.8vw,30px);font-weight:500;line-height:1.45;letter-spacing:.06em}
 .deal-plus{margin:4px 0 0;font:700 clamp(30px,8vw,44px)/1 var(--num);color:var(--neon)}
 .deal-big{display:flex;justify-content:center;align-items:baseline;margin:22px 0 0;color:var(--neon);line-height:.9;white-space:nowrap}
-.deal-num{font:700 min(40vw,250px)/.9 var(--num);letter-spacing:-.01em}
-.deal-unit{font:700 clamp(36px,11vw,72px)/1 var(--num);margin-left:4px}
+.deal-num{font:700 min(30vw,180px)/.9 var(--num);letter-spacing:-.01em}
+.deal-unit{font:700 clamp(30px,8.6vw,56px)/1 var(--num);margin-left:4px}
 .deal-unit:not(:empty){font-family:var(--num),"Noto Sans JP"}
 .deal-big.is-wide .deal-num{font-size:min(25vw,160px)}
 .deal-big.is-wide .deal-unit{font-size:clamp(26px,7.6vw,52px)}
-.deal-big.is-sub .deal-num{font-size:min(26vw,160px)}
-.deal-big.is-sub .deal-unit{font-size:clamp(28px,8vw,50px)}
+.deal-big.is-sub .deal-num{font-size:min(30vw,180px)}
+.deal-big.is-sub .deal-unit{font-size:clamp(30px,8.6vw,56px)}
 .deal-head{margin:10px 0 0;font-size:clamp(22px,6.4vw,34px);font-weight:500;letter-spacing:.1em;color:#fff}
 .deal .deal-head+.deal-big{margin-top:6px}
 .deal-sub{margin-top:30px;padding-top:26px;border-top:1px solid var(--line)}
@@ -464,7 +464,7 @@ body{background:var(--void)}
 .wave-head.is-big{display:inline-block;padding:4px .7em 6px;border:2px solid var(--neon);border-radius:14px;color:#fff;font-size:clamp(24px,7vw,40px)}
 /* 「ポイント」は数字の左に縦書きで */
 .v-lb{writing-mode:vertical-rl;text-orientation:upright;align-self:flex-end;margin:0 .25em .06em 0;font-size:clamp(19px,5.4vw,32px);font-weight:700;letter-spacing:.08em;line-height:1}
-.wave .deal-num{font-size:min(34vw,210px)}
+.wave .deal-num{font-size:min(30vw,180px)}
 .wave .btn{margin:22px auto 0;max-width:420px}
 .wave-state{position:absolute;top:-14px;left:50%;transform:translateX(-50%);padding:3px 16px;border-radius:999px;background:var(--neon);color:#17090f;font-size:14px;font-weight:700;letter-spacing:.1em;white-space:nowrap}
 .wave.is-now{border:2px solid #ff6fa0;box-shadow:0 0 16px rgba(255,61,127,.4)}
@@ -527,8 +527,6 @@ body{background:var(--void)}
 #combo{padding-bottom:40px}
 @media (min-width:768px){#trio{padding-top:64px}#combo{padding-bottom:48px}}
 /* 美容液3種: 大きい数字を少し控えめに、比較欄はシンプルに */
-#trio .deal-num{font-size:min(30vw,180px)}
-#trio .deal-unit{font-size:clamp(30px,8.6vw,56px)}
 #trio .howto b{margin-top:0;font-size:clamp(17px,4.8vw,22px);line-height:1.35}
 #trio .howto>div{display:flex;flex-direction:column;justify-content:center;gap:6px;padding:12px 10px 14px}
 #trio .howto .howto-lb{margin:0;white-space:nowrap}
