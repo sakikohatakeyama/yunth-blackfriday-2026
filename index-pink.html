@@ -278,7 +278,14 @@ body{background:var(--void)}
 .deal>*:not(.rays){position:relative}
 .rays{position:absolute;left:50%;top:330px;width:1600px;height:1600px;margin:-800px 0 0 -800px;background:repeating-conic-gradient(rgba(255,169,173,.09) 0 12deg,transparent 12deg 24deg);animation:spin 40s linear infinite;pointer-events:none}
 @keyframes spin{to{transform:rotate(360deg)}}
-.deal-notice{display:inline-block;margin:0 0 22px;padding:4px 18px 6px;border:2px solid var(--neon);color:var(--neon);font-size:clamp(18px,5.2vw,26px);font-weight:500;letter-spacing:.08em}
+.deal-notice{display:inline-block;margin:0 0 26px;padding:8px 22px 10px;border:3px solid var(--neon);color:var(--neon);font-size:clamp(28px,8.4vw,48px);font-weight:700;letter-spacing:.06em;line-height:1.3}
+.deal-desc{margin:14px 0 0;font-size:clamp(17px,4.8vw,22px);font-weight:500;line-height:1.6;letter-spacing:.06em;color:#fff}
+.howto{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:26px auto 4px;max-width:560px}
+.howto>div{padding:14px 8px 16px;border:2px solid var(--neon);border-radius:12px;background:rgba(255,169,173,.07)}
+.howto p{margin:0;font-size:clamp(13px,3.6vw,16px);line-height:1.6;letter-spacing:.04em;color:#fff}
+.howto b{display:inline-block;margin-top:4px;font-size:clamp(15px,4.2vw,19px);font-weight:700;color:var(--neon)}
+.howto .howto-lb{margin:0 0 8px;padding:3px 4px;background:var(--neon);border-radius:6px;color:#17090f;font-size:clamp(13px,3.7vw,17px);font-weight:700;letter-spacing:.02em}
+.price-cp .is-deal{display:inline-block;margin-top:2px;font-size:1.25em;font-weight:700;color:var(--red)}
 .deal-date{display:flex;justify-content:center;align-items:baseline;gap:2px;margin:0;line-height:1;white-space:nowrap;color:#fff}
 .deal-date b{font:700 clamp(34px,10vw,70px)/1 var(--num);letter-spacing:0}
 .deal-date span{font-size:clamp(15px,4.2vw,26px);font-weight:500}
@@ -558,14 +565,25 @@ body{background:var(--void)}
   <i class="rays" aria-hidden="true"></i>
   <p class="deal-notice">美容液3種</p>
   <p class="deal-date"><span class="dd"><b>11/19</b><span>(木)</span><em>10:00</em><i>〜</i></span><span class="dd"><b>11/26</b><span>(木)</span><em>9:59</em></span></p>
+  <div class="howto">
+    <div class="howto-cp">
+      <p class="howto-lb">クーポン</p>
+      <p>取得して使う<br><b>その場で値引き</b></p>
+    </div>
+    <div class="howto-deal">
+      <p class="howto-lb">楽天スーパーDEAL</p>
+      <p>取得はいりません<br><b>あとからポイント還元</b></p>
+    </div>
+  </div>
   <p class="deal-limit">生PDRN<sup>※2</sup>美容液</p>
   <p class="deal-big"><span class="deal-num">20</span><span class="deal-unit">%OFF</span></p>
   <p class="deal-head">クーポン</p>
   <div class="items" id="chars"></div>
   <div class="deal-sub">
     <p class="deal-limit">生AZ美容液・生VA美容液<sup>＊</sup></p>
-    <p class="deal-head">DEAL</p>
+    <p class="deal-head">楽天スーパーDEAL<br>ポイント</p>
     <p class="deal-big"><span class="deal-num">20</span><span class="deal-unit">%還元</span></p>
+    <p class="deal-desc">購入金額の20%が<br>ポイントで戻ってきます</p>
     <div class="items" id="chars-deal"></div>
   </div>
   <p class="note">※2 サーモン抽出物：DNA-Na(整肌)　＊医薬部外品 薬用VAセラム</p>
@@ -582,6 +600,7 @@ body{background:var(--void)}
   <div class="deal-sub">
     <p class="deal-head">BIG DEAL対象商品<br>ポイント</p>
     <p class="deal-big is-sub"><span class="deal-num">20</span><span class="deal-unit">%還元</span></p>
+    <p class="deal-desc">購入金額の20%が<br>ポイントで戻ってきます</p>
   </div>
 </section>
 
@@ -632,7 +651,7 @@ body{background:var(--void)}
   <ul class="rail-nav">
     <li><a href="#vc" data-nav="vc"><span>生VC美白<sup>※1</sup>美容液<sup>＊</sup><br>日替わりキャンペーン</span><em>1</em></a></li>
     <li><a href="#combo" data-nav="combo"><span>Deep Boost</span><em>2</em></a></li>
-    <li><a href="#trio" data-nav="trio"><span>美容液3種<br>クーポン・DEAL</span><em>3</em></a></li>
+    <li><a href="#trio" data-nav="trio"><span>美容液3種<br>クーポン・楽天スーパーDEAL</span><em>3</em></a></li>
     <li><a href="#all" data-nav="all"><span>店舗全体キャンペーン</span><em>4</em></a></li>
     <li><a href="#new" data-nav="new"><span>はじめてのお客さま</span><em>5</em></a></li>
   </ul>
@@ -661,7 +680,7 @@ const LINKS = {
 
 const STAGES = [
   {label:"ポイント20倍", pre:"ポイント", num:"20", unit:"倍", period:"11/19(木) 10:00 〜 11/20(金) 9:59", start:"2026-11-19T10:00:00+09:00", end:"2026-11-20T10:00:00+09:00", color:"var(--vc)"},
-  {label:"DEAL 30%還元", pre:"DEAL", num:"30", unit:"%還元", period:"11/20(金) 10:00 〜 11/21(土) 9:59", start:"2026-11-20T10:00:00+09:00", end:"2026-11-21T10:00:00+09:00", color:"var(--vc)"},
+  {label:"楽天スーパーDEAL 30%還元", pre:"楽天スーパーDEAL", num:"30", unit:"%還元", period:"11/20(金) 10:00 〜 11/21(土) 9:59", start:"2026-11-20T10:00:00+09:00", end:"2026-11-21T10:00:00+09:00", color:"var(--vc)"},
   {label:"クーポン20%OFF", pre:"クーポン", num:"20", unit:"%OFF", period:"11/21(土) 10:00 〜 11/26(木) 9:59", start:"2026-11-21T10:00:00+09:00", end:"2026-11-26T10:00:00+09:00", color:"var(--vc)"}
 ];
 const SERUMS = [
@@ -686,7 +705,7 @@ function renderSerums() {
           ${s.type === "coupon"
             ? `<p class="price-cp">クーポン利用で</p>
           <p class="price is-red"><b>${yen(Math.round(s.price * 0.8))}</b><span>円〜</span><small>(税込)</small></p>`
-            : `<p class="price-cp">DEAL ポイント20%還元</p>`}
+            : `<p class="price-cp">楽天スーパーDEAL<br><b class="is-deal">ポイント20%還元</b></p>`}
         </div>
       </a>
       ${s.type === "coupon"
