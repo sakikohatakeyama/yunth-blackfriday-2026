@@ -603,7 +603,9 @@ body{background:var(--void)}
 @media (min-width:768px){.t-grid{grid-template-columns:repeat(4,1fr);gap:14px}}
 /* FV: 商品を合成済みの画像1枚に差し替え（ネオンの看板はそのまま） */
 .fv{aspect-ratio:1200/1680}
-.fv-copy{top:123cqw}
+.fv-copy{top:118cqw}
+/* ネオンの看板とFV画像を近づける */
+.neon-top{padding-bottom:4px}
 /* 区切りの線をすべて同じ細いネオンの線に */
 .deal-sub{border-top:0}
 .deal-sub::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;border-radius:2px;background:#ffd3e2;box-shadow:0 0 4px #ff3d7f,0 0 10px #ff3d7f,0 0 20px rgba(255,61,127,.6)}
@@ -724,7 +726,6 @@ body{background:var(--void)}
       <use href="#p-low" stroke="#ffd9e6" stroke-width="2.2"/>
     </g>
 
-    <image href="images/logo.png" x="325" y="56" width="150" height="50"/>
 
     <!-- BLACK は白い管 -->
     <g class="lit-1" fill="none" stroke-linejoin="round">
@@ -745,7 +746,7 @@ body{background:var(--void)}
 
 <!-- ▼ FV: ピンクのステージに美顔器と美容液 -->
 <header class="fv">
-  <img class="fv-bg" src="images/fv-main.webp" alt="美顔器 Deep Boost、生VC美白美容液、生PDRN美容液、ピュアマスク" width="1200" height="1841">
+  <img class="fv-bg" src="images/fv-main.webp?v=2" alt="Yunth 美顔器 Deep Boost、生VC美白美容液、生PDRN美容液、ピュアマスク" width="1200" height="1620">
   <div class="fv-copy">
     <a class="period" href="#vc"><span><b>11/19</b>(木) 10:00</span><svg class="arrows" viewBox="0 0 34 12" role="img" aria-label="から"><path d="M0 0l8 6-8 6zM13 0l8 6-8 6zM26 0l8 6-8 6z"/></svg><span><b>11/26</b>(木) 9:59</span></a>
   </div>
