@@ -460,6 +460,7 @@ body{background:var(--void)}
 @media (min-width:768px){.waves{gap:28px}.wave{padding:36px 28px 38px}}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0}
+.price b .cm{font-size:.5em}
 .deal-num .cm,.price b .cm{font-size:.5em;margin:0 .02em}
 /* 画面に入ったらネオン管が点くようにピカピカ */
 .js-flicker .wave:not(.is-lit) .wave-no{opacity:.15;text-shadow:none}
@@ -932,9 +933,10 @@ function shrinkCommas() {
   const hits = [];
   while (walker.nextNode()) if (/\d,\d{3}/.test(walker.currentNode.nodeValue)) hits.push(walker.currentNode);
   hits.forEach(node => {
-    const span = document.createElement("span");
-    span.innerHTML = node.nodeValue.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/(\d),(?=\d{3})/g, '$1<span class="cm">,</span>');
-    node.replaceWith(span);
+    // span だと「円」用の文字サイズ指定に巻き込まれるので bdi で包む
+    const wrap = document.createElement("bdi");
+    wrap.innerHTML = node.nodeValue.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/(\d),(?=\d{3})/g, '$1<bdi class="cm">,</bdi>');
+    node.replaceWith(wrap);
   });
 }
 
