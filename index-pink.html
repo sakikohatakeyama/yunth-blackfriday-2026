@@ -934,7 +934,7 @@ function shrinkCommas() {
   hits.forEach(node => {
     const span = document.createElement("span");
     span.innerHTML = node.nodeValue.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/(\d),(?=\d{3})/g, '$1<span class="cm">,</span>');
-    node.replaceWith(...span.childNodes);
+    node.replaceWith(span);
   });
 }
 
