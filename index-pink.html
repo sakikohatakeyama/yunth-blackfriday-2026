@@ -457,7 +457,9 @@ body{background:var(--void)}
 .wave .deal-big{margin-top:6px}
 .wave-date+.deal-big{margin-top:20px}
 /* 「%還元」は % と 還元 の2段に */
-.deal-unit.is-stack{display:inline-flex;flex-direction:column;align-items:flex-start;line-height:1;gap:.08em;align-self:flex-end;margin-bottom:.12em}
+.deal-unit.is-stack{display:inline-flex;flex-direction:column;align-items:flex-start;line-height:1;gap:.08em;align-self:flex-end;margin-bottom:.29em}
+/* 「OFF」は「還元」より下の出っ張りが小さいので、その分だけ下げて20の下端にそろえる */
+.deal-unit.is-stack.is-left{margin-bottom:.225em}
 .deal-unit.is-stack.is-left{align-items:flex-start}
 /* 「%」は文字の左に空きがあるので、少し左へ寄せて下の文字と左端をそろえる */
 .deal-unit.is-stack > span:first-child{margin-left:-.07em}
