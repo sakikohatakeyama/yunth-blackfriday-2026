@@ -458,6 +458,7 @@ body{background:var(--void)}
 .wave-date+.deal-big{margin-top:20px}
 /* 「%還元」は % と 還元 の2段に */
 .deal-unit.is-stack{display:inline-flex;flex-direction:column;align-items:center;line-height:1;gap:.08em;align-self:flex-end;margin-bottom:.12em}
+.deal-unit.is-stack.is-left{align-items:flex-start}
 .wave-head.is-big{font-size:clamp(28px,8.4vw,48px);font-weight:700;letter-spacing:.06em;line-height:1.3}
 /* 「ポイント」は数字の左に縦書きで */
 .v-lb{writing-mode:vertical-rl;text-orientation:upright;align-self:center;margin-right:.3em;font-size:clamp(17px,4.8vw,28px);font-weight:700;letter-spacing:.08em;line-height:1}
@@ -661,7 +662,7 @@ body{background:var(--void)}
       <p class="wave-no">第三弾</p>
       <p class="wave-date"><span><b>11/21</b>(土)<i>10:00</i><em>〜</em></span><span><b>11/26</b>(木)<i>9:59</i></span></p>
       <p class="wave-head is-big">クーポン</p>
-      <p class="deal-big"><span class="deal-num">20</span><span class="deal-unit">%OFF</span></p>
+      <p class="deal-big"><span class="deal-num">20</span><span class="deal-unit is-stack is-left"><span>%</span><span>OFF</span></span></p>
       <a class="btn btn-coupon" data-link="vcCoupon" href="#">20%OFFクーポン獲得</a>
     </li>
   </ol>
@@ -716,7 +717,7 @@ body{background:var(--void)}
     </div>
   </div>
   <p class="deal-limit">生PDRN<sup>※2</sup>美容液</p>
-  <p class="deal-big"><span class="deal-num">20</span><span class="deal-unit">%OFF</span></p>
+  <p class="deal-big"><span class="deal-num">20</span><span class="deal-unit is-stack is-left"><span>%</span><span>OFF</span></span></p>
   <p class="deal-head">クーポン</p>
   <div class="items" id="chars"></div>
   <div class="deal-sub">
