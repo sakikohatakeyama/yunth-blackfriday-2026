@@ -667,6 +667,8 @@ body{background:var(--void)}
 }
 /* 「%還元」「%OFF」の文字を少しだけ大きく */
 .deal-unit.is-stack{font-size:clamp(33px,9.4vw,62px)}
+/* 「楽天スーパーDEAL」「クーポン」の角丸と下の数字の間を少しあける */
+.wave .wave-head.is-big{margin-bottom:16px}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0;margin:0 -.02em}
 .deal-num .cm,.price b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
@@ -805,7 +807,6 @@ body{background:var(--void)}
       <p class="wave-date"><span><b>11/20</b>(金)<i>10:00</i><em>〜</em></span><span><b>11/21</b>(土)<i>9:59</i></span></p>
       <p class="wave-head is-big">楽天スーパーDEAL</p>
       <p class="deal-big"><span class="v-lb">ポイント</span><span class="deal-num">30</span><span class="deal-unit is-stack"><span>%</span><span>還元</span></span></p>
-      <p class="deal-desc">購入金額の30%が<br>ポイントで戻ってきます</p>
     </li>
     <li class="wave" data-start="2026-11-21T10:00:00+09:00" data-end="2026-11-26T10:00:00+09:00">
       <p class="wave-item">生VC美白<sup>※1</sup>美容液<sup>＊</sup></p>
@@ -874,7 +875,6 @@ body{background:var(--void)}
     <p class="pills"><span class="pill is-va">生VA美容液<sup>＊</sup></span><span class="pill is-az">生AZ美容液</span></p>
     <p class="deal-head">楽天スーパーDEAL<br>ポイント</p>
     <p class="deal-big"><span class="deal-num">20</span><span class="deal-unit is-stack"><span>%</span><span>還元</span></span></p>
-    <p class="deal-desc">購入金額の20%が<br>ポイントで戻ってきます</p>
     <div class="items" id="chars-deal"></div>
   </div>
   <p class="note">※2 サーモン抽出物：DNA-Na(整肌)　＊医薬部外品 薬用VAセラム</p>
@@ -895,7 +895,6 @@ body{background:var(--void)}
   <div class="deal-sub">
     <p class="deal-head">BIG DEAL対象商品<br>ポイント</p>
     <p class="deal-big is-sub"><span class="deal-num">20</span><span class="deal-unit is-stack"><span>%</span><span>還元</span></span></p>
-    <p class="deal-desc">購入金額の20%が<br>ポイントで戻ってきます</p>
     <div class="targets">
       <p class="targets-lb">BIG DEAL 20%還元の対象商品</p>
       <ul class="t-grid"><li><a href="https://item.rakuten.co.jp/yunth/yb-116-001/"><img src="images/targets/yb-116-001.jpg" alt="" loading="lazy"><span class="t-name">生VA美容液</span><span class="t-price"><b>4,950</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-125-001/"><img src="images/targets/yb-125-001.jpg" alt="" loading="lazy"><span class="t-name">生AZ美容液</span><span class="t-price"><b>3,960</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/ys-r184/"><img src="images/targets/ys-r184.jpg" alt="" loading="lazy"><span class="t-name">美顔器 Deep Boostセット</span><span class="t-price"><b>40,370</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/111-01/"><img src="images/targets/111-01.jpg" alt="" loading="lazy"><span class="t-name">生VC美白化粧水</span><span class="t-price"><b>3,960</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/112/"><img src="images/targets/112.jpg" alt="" loading="lazy"><span class="t-name">生VCトーンアップUV</span><span class="t-price"><b>2,970</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-115-001/"><img src="images/targets/yb-115-001.jpg" alt="" loading="lazy"><span class="t-name">生VCホワイトクリアフォーム</span><span class="t-price"><b>3,960</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-123-001/"><img src="images/targets/yb-123-001.jpg" alt="" loading="lazy"><span class="t-name">クッションファンデーション エアレス</span><span class="t-price"><b>3,960</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-114-001/"><img src="images/targets/yb-114-001.jpg" alt="" loading="lazy"><span class="t-name">生VCリップ美容液</span><span class="t-price"><b>1,650</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-117-001/"><img src="images/targets/yb-117-001.jpg" alt="" loading="lazy"><span class="t-name">生VCホワイト乳液</span><span class="t-price"><b>3,960</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/10000001/"><img src="images/targets/10000001.jpg" alt="" loading="lazy"><span class="t-name">美白シートマスク 6枚</span><span class="t-price"><b>1,980</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/ys-r129/"><img src="images/targets/ys-r129.jpg" alt="" loading="lazy"><span class="t-name">ピュアマスク 4袋・8袋セット</span><span class="t-price"><b>3,410</b>円〜<small>(税込)</small></span></a></li></ul>
