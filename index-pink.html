@@ -557,6 +557,14 @@ body{background:var(--void)}
 .items .item-card .price-cp .is-deal{font-size:1.15em}
 /* クーポン枠の見出しは英語の COUPON だけ */
 .price-box .cp-lb span{font-size:clamp(20px,5.6vw,30px);letter-spacing:.24em}
+/* 流れ図の「第一弾〜第三弾」もネオン管風に（大きさはそのまま） */
+.vc-flow b{padding:1px 10px;background:none;border:1.5px solid rgba(255,61,127,.9);color:#ffd3e2;text-shadow:0 0 2px #fff,0 0 6px #ff3d7f,0 0 12px rgba(255,61,127,.7);box-shadow:0 0 6px rgba(255,61,127,.6),inset 0 0 6px rgba(255,61,127,.35)}
+.vc-flow li:nth-child(2) b{border-color:rgba(255,140,40,.9);color:#ffe6c4;text-shadow:0 0 2px #fff,0 0 6px #ff8c28,0 0 12px rgba(255,140,40,.7);box-shadow:0 0 6px rgba(255,140,40,.6),inset 0 0 6px rgba(255,140,40,.35)}
+/* 終わった回はグレーダウン */
+.vc-flow li.is-past{background:rgba(120,120,120,.18)}
+.vc-flow li.is-past > *:not(.flow-end){filter:grayscale(1);opacity:.35}
+.vc-flow .flow-end{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:3px 8px;border-radius:4px;background:#5b5458;color:#fff;font-style:normal;font-size:clamp(11px,3vw,14px);font-weight:700;letter-spacing:.04em;white-space:nowrap}
+.vc-flow li.is-now{background:rgba(255,61,127,.16)}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0;margin:0 -.02em}
 .deal-num .cm,.price b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
@@ -652,9 +660,9 @@ body{background:var(--void)}
     <p class="deal-notice">生VC美白<sup>※1</sup>美容液<sup>＊</sup></p>
     <p class="vc-sub">期間ごとに<br><em>お得が3回</em>切り替わります</p>
     <ol class="vc-flow">
-      <li><b>第一弾</b><span>11/19(木)〜</span><strong>ポイント<br>20倍</strong></li>
-      <li><b>第二弾</b><span>11/20(金)〜</span><strong>スーパーDEAL<br>30%還元</strong></li>
-      <li><b>第三弾</b><span>11/21(土)〜</span><strong>クーポン<br>20%OFF</strong></li>
+      <li data-start="2026-11-19T10:00:00+09:00" data-end="2026-11-20T10:00:00+09:00"><b>第一弾</b><span>11/19(木)〜</span><strong>ポイント<br>20倍</strong></li>
+      <li data-start="2026-11-20T10:00:00+09:00" data-end="2026-11-21T10:00:00+09:00"><b>第二弾</b><span>11/20(金)〜</span><strong>スーパーDEAL<br>30%還元</strong></li>
+      <li data-start="2026-11-21T10:00:00+09:00" data-end="2026-11-26T10:00:00+09:00"><b>第三弾</b><span>11/21(土)〜</span><strong>クーポン<br>20%OFF</strong></li>
     </ol>
   </div>
 
@@ -995,6 +1003,13 @@ function setupRails() {
 
 function markWaves() {
   const now = Date.now();
+  // 上の3マスの流れ図も、終わった回はグレーにして「終了しました」
+  document.querySelectorAll(".vc-flow li").forEach(li => {
+    const st = Date.parse(li.dataset.start), en = Date.parse(li.dataset.end);
+    li.classList.toggle("is-now", now >= st && now < en);
+    li.classList.toggle("is-past", now >= en);
+    if (now >= en) li.insertAdjacentHTML("beforeend", '<em class="flow-end">終了しました</em>');
+  });
   document.querySelectorAll(".wave").forEach(w => {
     const st = Date.parse(w.dataset.start), en = Date.parse(w.dataset.end);
     const label = now >= en ? "終了しました" : now >= st ? "開催中" : "";
