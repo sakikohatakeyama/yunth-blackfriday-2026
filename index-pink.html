@@ -336,7 +336,10 @@ body{background:var(--void)}
 .set-box{display:block;width:min(84%,440px);height:auto;margin:16px auto 0;filter:drop-shadow(0 10px 18px rgba(0,0,0,.6))}
 .set-lead{margin:26px 0 0;font-size:clamp(18px,5.2vw,26px);font-weight:500;letter-spacing:.08em;color:#fff}
 .set-gift{display:grid;gap:4px;margin:8px 0 0;font-weight:700;line-height:1.35;letter-spacing:.04em;color:var(--vc)}
-.set-gift span{font-size:clamp(26px,7.6vw,46px)}
+.set-gift span{font-size:clamp(20px,6.2vw,40px);white-space:nowrap}
+.set-gift i{font-style:normal;color:#fff}
+.set-plus.is-first{margin-top:22px}
+.set-plus.is-first+.set-box{margin-top:10px}
 .set-gift b{font-size:clamp(22px,6.4vw,38px);font-weight:700;color:#fff}
 .set-plus+.set-lead{margin-top:10px}
 .set-cap{margin:18px 0 0;font-size:clamp(15px,4.2vw,19px);letter-spacing:.06em}
@@ -622,9 +625,9 @@ body{background:var(--void)}
     <img class="set-dev" src="images/device-white.png" alt="美顔器 Deep Boost" width="430" height="1200" loading="lazy">
     <img class="set-dev" src="images/device-pink.png" alt="" width="430" height="1200" loading="lazy">
   </div>
-  <p class="set-lead">美顔器に</p>
+  <p class="set-plus is-first" aria-label="と">＋</p>
   <img class="set-box" src="images/vc-set.png" alt="生VC美白美容液の箱とパウチ" width="1046" height="593" loading="lazy">
-  <p class="set-gift"><span>生VC美白<sup>※1</sup>美容液<sup>＊</sup></span><b>1箱が特別セット</b></p>
+  <p class="set-gift"><span><i>美顔器に</i>生VC美白<sup>※1</sup>美容液<sup>＊</sup></span><b>1箱が特別セット</b></p>
   <p class="set-plus" aria-label="さらに">＋</p>
   <p class="set-lead">さらに使える</p>
   <div class="coupon-box">
