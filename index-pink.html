@@ -598,9 +598,9 @@ body{background:var(--void)}
 .t-grid{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:10px 0 0;padding:0}
 .t-grid a{display:block;height:100%;background:var(--paper);border-radius:8px;overflow:hidden;color:#21141a;text-decoration:none;transition:transform .15s}
 .t-grid a:hover{transform:translateY(-2px)}
-.t-grid img{display:block;width:100%;aspect-ratio:5/4;object-fit:cover}
-.t-grid span{display:block;padding:8px 10px 10px;font-family:"Noto Sans JP",sans-serif;font-size:clamp(13px,3.6vw,16px);font-weight:500;line-height:1.4;letter-spacing:.02em;text-align:left}
-@media (min-width:768px){.t-grid{gap:16px}}
+.t-grid img{display:block;width:100%;aspect-ratio:1;object-fit:cover}
+.t-grid .t-name{display:block;padding:8px 10px 2px;font-family:"Noto Sans JP",sans-serif;font-size:clamp(13px,3.6vw,16px);font-weight:500;line-height:1.4;letter-spacing:.02em;text-align:left}
+@media (min-width:768px){.t-grid{grid-template-columns:repeat(4,1fr);gap:14px}}
 /* FV: 商品を合成済みの画像1枚に差し替え（ネオンの看板はそのまま） */
 .fv{aspect-ratio:1200/1680}
 .fv-copy{top:123cqw}
@@ -615,6 +615,20 @@ body{background:var(--void)}
 /* カードのクーポン後価格: (税込) が下に落ちないように */
 .items .item-card .price.is-red{flex-wrap:nowrap}
 .items .item-card .price.is-red b{font-size:clamp(32px,9vw,52px)}
+.t-grid .t-price{display:flex;align-items:baseline;gap:1px;padding:0 10px 10px;font-size:12px;font-weight:500;color:#21141a}
+.t-grid .t-price b{font:700 clamp(17px,4.6vw,20px)/1.2 var(--num);letter-spacing:0;margin-right:1px}
+.t-grid .t-price small{font-size:10px;color:#6d5560;margin-left:2px}
+.t-grid a{display:flex;flex-direction:column}
+.t-grid .t-price{margin-top:auto}
+/* FV: 透明部分の後ろは看板と続く暗い色に */
+.fv{background:#3a1b29}
+/* スクロールで下からふわっと出てくる動き */
+.js-rv .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.js-rv .rv.rv-in{opacity:1;transform:none}
+.js-rv .t-grid li.rv:nth-child(4n+2){transition-delay:.08s}
+.js-rv .t-grid li.rv:nth-child(4n+3){transition-delay:.16s}
+.js-rv .t-grid li.rv:nth-child(4n){transition-delay:.24s}
+@media (prefers-reduced-motion:reduce){.js-rv .rv{opacity:1;transform:none;transition:none}}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0;margin:0 -.02em}
 .deal-num .cm,.price b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
@@ -691,7 +705,7 @@ body{background:var(--void)}
 
 <!-- ▼ FV: ピンクのステージに美顔器と美容液 -->
 <header class="fv">
-  <img class="fv-bg" src="images/fv-main.jpg" alt="美顔器 Deep Boost、生VC美白美容液、生PDRN美容液、ピュアマスク" width="1200" height="1841">
+  <img class="fv-bg" src="images/fv-main.webp" alt="美顔器 Deep Boost、生VC美白美容液、生PDRN美容液、ピュアマスク" width="1200" height="1841">
   <div class="fv-copy">
     <a class="period" href="#vc"><span><b>11/19</b>(木) 10:00</span><svg class="arrows" viewBox="0 0 34 12" role="img" aria-label="から"><path d="M0 0l8 6-8 6zM13 0l8 6-8 6zM26 0l8 6-8 6z"/></svg><span><b>11/26</b>(木) 9:59</span></a>
   </div>
@@ -838,7 +852,7 @@ body{background:var(--void)}
   <p class="deal-big"><span class="deal-num">15</span><span class="deal-unit">倍</span></p>
   <div class="targets">
     <p class="targets-lb">ポイント15倍の対象商品</p>
-    <ul class="t-grid"><li><a href="https://item.rakuten.co.jp/yunth/500-08/"><img src="images/targets/500-08.jpg" alt="" loading="lazy"><span>選べる楽天市場限定セット 洗顔 クリアフォーム</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/10000007/"><img src="images/targets/10000007.jpg" alt="" loading="lazy"><span>生VC美白クリーム</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-120-001/"><img src="images/targets/yb-120-001.jpg" alt="" loading="lazy"><span>フュージョンクレンジング</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-113-001/"><img src="images/targets/yb-113-001.jpg" alt="" loading="lazy"><span>美白ハンドセラム</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-118-001/"><img src="images/targets/yb-118-001.jpg" alt="" loading="lazy"><span>VAリンクルアイセラム</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-121-001/"><img src="images/targets/yb-121-001.jpg" alt="" loading="lazy"><span>マルチスクエアシートマスク</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-127-001/"><img src="images/targets/yb-127-001.jpg" alt="" loading="lazy"><span>ピュアマスク 大容量ボックス 28枚入り</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/pokemon/"><img src="images/targets/pokemon.jpg" alt="" loading="lazy"><span>ポケモンパッケージ 美容液</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/toystory/"><img src="images/targets/toystory.jpg" alt="" loading="lazy"><span>トイストーリーコラボ 美容液</span></a></li></ul>
+    <ul class="t-grid"><li><a href="https://item.rakuten.co.jp/yunth/500-08/"><img src="images/targets/500-08.jpg" alt="" loading="lazy"><span class="t-name">選べる楽天市場限定セット 洗顔 クリアフォーム</span><span class="t-price"><b>2,200</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/10000007/"><img src="images/targets/10000007.jpg" alt="" loading="lazy"><span class="t-name">生VC美白クリーム</span><span class="t-price"><b>3,960</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-120-001/"><img src="images/targets/yb-120-001.jpg" alt="" loading="lazy"><span class="t-name">フュージョンクレンジング</span><span class="t-price"><b>3,289</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-113-001/"><img src="images/targets/yb-113-001.jpg" alt="" loading="lazy"><span class="t-name">美白ハンドセラム</span><span class="t-price"><b>1,980</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-118-001/"><img src="images/targets/yb-118-001.jpg" alt="" loading="lazy"><span class="t-name">VAリンクルアイセラム</span><span class="t-price"><b>4,950</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-121-001/"><img src="images/targets/yb-121-001.jpg" alt="" loading="lazy"><span class="t-name">マルチスクエアシートマスク</span><span class="t-price"><b>2,640</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-127-001/"><img src="images/targets/yb-127-001.jpg" alt="" loading="lazy"><span class="t-name">ピュアマスク 大容量ボックス 28枚入り</span><span class="t-price"><b>2,640</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/pokemon/"><img src="images/targets/pokemon.jpg" alt="" loading="lazy"><span class="t-name">ポケモンパッケージ 美容液</span><span class="t-price"><b>3,960</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/toystory/"><img src="images/targets/toystory.jpg" alt="" loading="lazy"><span class="t-name">トイストーリーコラボ 美容液</span><span class="t-price"><b>3,960</b>円〜<small>(税込)</small></span></a></li></ul>
   </div>
   <div class="deal-sub">
     <p class="deal-head">BIG DEAL対象商品<br>ポイント</p>
@@ -846,7 +860,7 @@ body{background:var(--void)}
     <p class="deal-desc">購入金額の20%が<br>ポイントで戻ってきます</p>
     <div class="targets">
       <p class="targets-lb">BIG DEAL 20%還元の対象商品</p>
-      <ul class="t-grid"><li><a href="https://item.rakuten.co.jp/yunth/yb-116-001/"><img src="images/targets/yb-116-001.jpg" alt="" loading="lazy"><span>生VA美容液</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-125-001/"><img src="images/targets/yb-125-001.jpg" alt="" loading="lazy"><span>生AZ美容液</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/ys-r184/"><img src="images/targets/ys-r184.jpg" alt="" loading="lazy"><span>美顔器 Deep Boostセット</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/111-01/"><img src="images/targets/111-01.jpg" alt="" loading="lazy"><span>生VC美白化粧水</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/112/"><img src="images/targets/112.jpg" alt="" loading="lazy"><span>生VCトーンアップUV</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-115-001/"><img src="images/targets/yb-115-001.jpg" alt="" loading="lazy"><span>生VCホワイトクリアフォーム</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-123-001/"><img src="images/targets/yb-123-001.jpg" alt="" loading="lazy"><span>クッションファンデーション エアレス</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-114-001/"><img src="images/targets/yb-114-001.jpg" alt="" loading="lazy"><span>生VCリップ美容液</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-117-001/"><img src="images/targets/yb-117-001.jpg" alt="" loading="lazy"><span>生VCホワイト乳液</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/10000001/"><img src="images/targets/10000001.jpg" alt="" loading="lazy"><span>美白シートマスク 6枚</span></a></li><li><a href="https://item.rakuten.co.jp/yunth/ys-r129/"><img src="images/targets/ys-r129.jpg" alt="" loading="lazy"><span>ピュアマスク 4袋・8袋セット</span></a></li></ul>
+      <ul class="t-grid"><li><a href="https://item.rakuten.co.jp/yunth/yb-116-001/"><img src="images/targets/yb-116-001.jpg" alt="" loading="lazy"><span class="t-name">生VA美容液</span><span class="t-price"><b>4,950</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-125-001/"><img src="images/targets/yb-125-001.jpg" alt="" loading="lazy"><span class="t-name">生AZ美容液</span><span class="t-price"><b>3,960</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/ys-r184/"><img src="images/targets/ys-r184.jpg" alt="" loading="lazy"><span class="t-name">美顔器 Deep Boostセット</span><span class="t-price"><b>40,370</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/111-01/"><img src="images/targets/111-01.jpg" alt="" loading="lazy"><span class="t-name">生VC美白化粧水</span><span class="t-price"><b>3,960</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/112/"><img src="images/targets/112.jpg" alt="" loading="lazy"><span class="t-name">生VCトーンアップUV</span><span class="t-price"><b>2,970</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-115-001/"><img src="images/targets/yb-115-001.jpg" alt="" loading="lazy"><span class="t-name">生VCホワイトクリアフォーム</span><span class="t-price"><b>3,960</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-123-001/"><img src="images/targets/yb-123-001.jpg" alt="" loading="lazy"><span class="t-name">クッションファンデーション エアレス</span><span class="t-price"><b>3,960</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-114-001/"><img src="images/targets/yb-114-001.jpg" alt="" loading="lazy"><span class="t-name">生VCリップ美容液</span><span class="t-price"><b>1,650</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-117-001/"><img src="images/targets/yb-117-001.jpg" alt="" loading="lazy"><span class="t-name">生VCホワイト乳液</span><span class="t-price"><b>3,960</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/10000001/"><img src="images/targets/10000001.jpg" alt="" loading="lazy"><span class="t-name">美白シートマスク 6枚</span><span class="t-price"><b>1,980</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/ys-r129/"><img src="images/targets/ys-r129.jpg" alt="" loading="lazy"><span class="t-name">ピュアマスク 4袋・8袋セット</span><span class="t-price"><b>3,410</b>円〜<small>(税込)</small></span></a></li></ul>
     </div>
   </div>
 </section>
@@ -1127,12 +1141,35 @@ function shrinkCommas() {
   });
 }
 
+
+// スクロールで要素が下からふわっと出てくる（動きを減らす設定の人には出さない）
+function setupReveal() {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const sel = ".deal-notice,.deal-title,.deal-date,.vc-head,.howto,.pills,.deal-big,.deal-head,.deal-desc,.item-card.is-big,.wave,.item-wrap,.set-visual,.set-box,.set-gift,.price-box,.t-grid li,.entry2 > div,.deal-limit";
+  let rest = [...document.querySelectorAll(sel)].filter(el => !el.closest(".rv"));
+  rest.forEach(el => el.classList.add("rv"));
+  document.documentElement.classList.add("js-rv");
+  const check = () => {
+    const line = innerHeight * .9;
+    rest = rest.filter(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < line && r.bottom > 0) { el.classList.add("rv-in"); return false; }
+      return true;
+    });
+    if (!rest.length) { clearInterval(t); removeEventListener("scroll", check); }
+  };
+  const t = setInterval(check, 150);
+  addEventListener("scroll", check, {passive: true});
+  check();
+}
+
 renderSerums();
 shrinkCommas();
 markWaves();
 applyLinks();
 setupConsole();
 setupRails();
+setupReveal();
 </script>
 </body>
 </html>
