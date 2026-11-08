@@ -444,7 +444,8 @@ body{background:var(--void)}
 .waves{list-style:none;margin:34px 0 0;padding:0;display:grid;gap:22px;text-align:center}
 .wave{position:relative;padding:28px 14px 30px;border:1px solid rgba(255,169,173,.45);border-radius:16px;background:radial-gradient(120% 60% at 50% 0,rgba(255,61,127,.08),transparent 70%),#0b0709;box-shadow:0 0 10px rgba(255,61,127,.15)}
 .wave-no{--core:#ffd3e2;--glow:255,61,127;--off:#4a2232;position:relative;isolation:isolate;margin:0;font-family:"Noto Sans JP",sans-serif;font-weight:400;font-size:min(19vw,112px);line-height:1.1;letter-spacing:.08em;color:var(--core);
-  text-shadow:0 0 1px #fff,0 0 3px rgba(var(--glow),1),0 0 7px rgba(var(--glow),.95),0 0 14px rgba(var(--glow),.8),0 0 28px rgba(var(--glow),.55),0 0 48px rgba(var(--glow),.35)}
+  --neon:0 0 1px #fff,0 0 3px rgba(var(--glow),1),0 0 7px rgba(var(--glow),.95),0 0 14px rgba(var(--glow),.8),0 0 28px rgba(var(--glow),.55),0 0 48px rgba(var(--glow),.35);
+  text-shadow:var(--neon)}
 /* 管のうしろの壁に光が回り込む感じ */
 .wave-no::before{content:"";position:absolute;left:12%;right:12%;top:18%;bottom:12%;z-index:-1;border-radius:50%;background:rgba(var(--glow),.22);filter:blur(28px);pointer-events:none}
 .wave:nth-child(2) .wave-no{--core:#ffe6c4;--glow:255,140,40;--off:#4a3020}
@@ -482,21 +483,16 @@ body{background:var(--void)}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0;margin:0 -.02em}
 .deal-num .cm,.price b .cm{font-size:.5em;margin:0 -.04em 0 .02em}
-/* 画面に入ったらネオン管が点くようにピカピカ（消えている間は管の色だけ見える） */
-.js-flicker .wave:not(.is-lit) .wave-no{color:var(--off);text-shadow:none}
+/* 画面に入ったらネオン管が点くようにピカピカ
+   色は最初から最後の色のまま。光（にじみ）だけがついたり消えたりする */
+.js-flicker .wave:not(.is-lit) .wave-no{color:rgba(var(--glow),.55);text-shadow:none}
 .js-flicker .wave:not(.is-lit) .wave-no::before{opacity:0}
 .js-flicker .wave.is-lit .wave-no{animation:waveOn 1.2s steps(1,end) both}
 .js-flicker .wave.is-lit .wave-no::before{animation:wallOn 1.2s steps(1,end) both}
 .js-flicker .wave.is-on .wave-no,.js-flicker .wave.is-on .wave-no::before{animation:none}
 @keyframes waveOn{
-  0%{color:var(--off);text-shadow:none}
-  8%{color:var(--core)}
-  13%{color:var(--off);text-shadow:none}
-  24%{color:var(--core)}
-  29%{color:var(--off);text-shadow:none}
-  33%{color:var(--core)}
-  37%{color:var(--off);text-shadow:none}
-  52%,100%{color:var(--core)}
+  0%,13%,29%,37%{color:rgba(var(--glow),.55);text-shadow:none}
+  8%,24%,33%,52%,100%{color:var(--core);text-shadow:var(--neon)}
 }
 @keyframes wallOn{0%,7%,13%,23%,29%,32%,37%,51%{opacity:0}8%,24%,33%,52%,100%{opacity:1}}
 @media (prefers-reduced-motion:reduce){.js-flicker .wave.is-lit .wave-no,.js-flicker .wave.is-lit .wave-no::before{animation:none}}
