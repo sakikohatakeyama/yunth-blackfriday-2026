@@ -449,11 +449,11 @@ body{background:var(--void)}
 /* 管のうしろの壁に光が回り込む感じ */
 .wave-no::before{content:"";position:absolute;left:12%;right:12%;top:18%;bottom:12%;z-index:-1;border-radius:50%;background:rgba(var(--glow),.22);filter:blur(28px);pointer-events:none}
 .wave:nth-child(2) .wave-no{--core:#ffe6c4;--glow:255,140,40;--off:#4a3020}
-.wave-date{display:flex;flex-wrap:wrap;justify-content:center;gap:0 10px;margin:18px 0 0;font-size:clamp(14px,3.9vw,18px);font-weight:500;color:#fff;white-space:nowrap}
-.wave-date span{display:inline-flex;align-items:baseline;gap:3px}
-.wave-date b{font:500 clamp(26px,7.2vw,40px)/1.15 var(--num);letter-spacing:.03em}
-.wave-date i{font:500 clamp(20px,5.4vw,28px)/1 var(--num);font-style:normal;letter-spacing:.03em;margin-left:6px}
-.wave-head{margin:18px 0 0;font-size:clamp(20px,5.8vw,30px);font-weight:500;letter-spacing:.1em;line-height:1.45;color:#fff}
+.wave-date{display:flex;flex-direction:column;align-items:center;gap:4px;margin:18px 0 0;font-size:clamp(14px,3.9vw,18px);font-weight:500;color:#fff;white-space:nowrap}
+.wave-date span{display:inline-flex;align-items:baseline;gap:0}
+.wave-date b{font:500 clamp(26px,7.2vw,40px)/1.15 var(--num);letter-spacing:.03em;margin-right:3px}
+.wave-date i{font:500 clamp(20px,5.4vw,28px)/1 var(--num);font-style:normal;letter-spacing:.03em;margin-left:10px}
+.wave-date em{font:500 clamp(18px,5vw,26px)/1 var(--num);font-style:normal;margin-left:8px}.wave-head{margin:18px 0 0;font-size:clamp(20px,5.8vw,30px);font-weight:500;letter-spacing:.1em;line-height:1.45;color:#fff}
 .wave .deal-big{margin-top:6px}
 .wave .deal-num{font-size:min(34vw,210px)}
 .wave .btn{margin:22px auto 0;max-width:420px}
@@ -612,14 +612,14 @@ body{background:var(--void)}
     <li class="wave" data-start="2026-11-19T10:00:00+09:00" data-end="2026-11-20T10:00:00+09:00">
       <p class="wave-item">生VC美白<sup>※1</sup>美容液<sup>＊</sup></p>
       <p class="wave-no">第一弾</p>
-      <p class="wave-date"><span><b>11/19</b>(木)<i>10:00</i>〜</span><span><b>11/20</b>(金)<i>9:59</i></span></p>
+      <p class="wave-date"><span><b>11/19</b>(木)<i>10:00</i><em>〜</em></span><span><b>11/20</b>(金)<i>9:59</i></span></p>
       <p class="wave-head">ポイント</p>
       <p class="deal-big"><span class="deal-num">20</span><span class="deal-unit">倍</span></p>
     </li>
     <li class="wave" data-start="2026-11-20T10:00:00+09:00" data-end="2026-11-21T10:00:00+09:00">
       <p class="wave-item">生VC美白<sup>※1</sup>美容液<sup>＊</sup></p>
       <p class="wave-no">第二弾</p>
-      <p class="wave-date"><span><b>11/20</b>(金)<i>10:00</i>〜</span><span><b>11/21</b>(土)<i>9:59</i></span></p>
+      <p class="wave-date"><span><b>11/20</b>(金)<i>10:00</i><em>〜</em></span><span><b>11/21</b>(土)<i>9:59</i></span></p>
       <p class="wave-head">楽天スーパーDEAL<br>ポイント</p>
       <p class="deal-big"><span class="deal-num">30</span><span class="deal-unit">%還元</span></p>
       <p class="deal-desc">購入金額の30%が<br>ポイントで戻ってきます</p>
@@ -627,7 +627,7 @@ body{background:var(--void)}
     <li class="wave" data-start="2026-11-21T10:00:00+09:00" data-end="2026-11-26T10:00:00+09:00">
       <p class="wave-item">生VC美白<sup>※1</sup>美容液<sup>＊</sup></p>
       <p class="wave-no">第三弾</p>
-      <p class="wave-date"><span><b>11/21</b>(土)<i>10:00</i>〜</span><span><b>11/26</b>(木)<i>9:59</i></span></p>
+      <p class="wave-date"><span><b>11/21</b>(土)<i>10:00</i><em>〜</em></span><span><b>11/26</b>(木)<i>9:59</i></span></p>
       <p class="wave-head">クーポン</p>
       <p class="deal-big"><span class="deal-num">20</span><span class="deal-unit">%OFF</span></p>
       <a class="btn btn-coupon" data-link="vcCoupon" href="#">20%OFFクーポン獲得</a>
