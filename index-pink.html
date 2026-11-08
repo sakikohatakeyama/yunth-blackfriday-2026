@@ -541,9 +541,9 @@ body{background:var(--void)}
 .pill.is-pdrn{background:var(--red)}
 .pill.is-az{background:#3d98a9}
 .pill.is-va{background:#b07a52}
-/* 生PDRN: 「%／OFF／クーポン」を20の高さに合わせて3段 */
+/* 生PDRN: 「%／OFF」を20の高さに合わせて2段、クーポンはその下 */
 .deal-big.is-cp3{align-items:stretch}
-.deal-big.is-cp3 .deal-unit.is-stack{align-self:stretch;justify-content:space-between;gap:0;margin:.06em 0 .02em 6px;font-size:clamp(26px,7.2vw,46px);line-height:.95}
+.deal-big.is-cp3 .deal-unit.is-stack{align-self:stretch;justify-content:space-between;gap:0;margin:.04em 0 0 6px;font-size:clamp(34px,10vw,64px);line-height:.9}
 .deal-big.is-cp3 .u-cp{font-family:"Noto Sans JP",sans-serif;font-size:.62em;font-weight:700;letter-spacing:.04em;line-height:1.1;margin-left:0!important}
 /* 美容液カード: 白枠の中の説明を大きく、読みやすく */
 .items .item-card{grid-template-columns:42% 1fr;gap:16px;padding:14px 16px 14px 14px}
@@ -758,7 +758,8 @@ body{background:var(--void)}
     </div>
   </div>
   <p class="pills"><span class="pill is-pdrn">生PDRN<sup>※2</sup>美容液</span></p>
-  <p class="deal-big is-cp3"><span class="deal-num">20</span><span class="deal-unit is-stack is-left"><span>%</span><span>OFF</span><span class="u-cp">クーポン</span></span></p>
+  <p class="deal-big is-cp3"><span class="deal-num">20</span><span class="deal-unit is-stack is-left"><span>%</span><span>OFF</span></span></p>
+  <p class="deal-head">クーポン</p>
   <div class="items" id="chars"></div>
   <div class="deal-sub">
     <p class="pills"><span class="pill is-va">生VA美容液<sup>＊</sup></span><span class="pill is-az">生AZ美容液</span></p>
