@@ -584,8 +584,10 @@ body{background:var(--void)}
 /* 左の案内札: 「ただいま開催中」と残り時間 */
 .rail-tag .rail-live{display:inline-block;padding:3px 12px;border-radius:999px;background:#ff3d7f;color:#fff;font-size:14px;font-weight:700;letter-spacing:.08em;box-shadow:0 0 10px rgba(255,61,127,.7);animation:liveBlink 1.6s ease-in-out infinite}
 .rail-tag .rail-live.is-end{background:#5b5458;box-shadow:none;animation:none}
-.rail-tag .rail-timer{font:500 13px/1.4 var(--num);letter-spacing:.04em;color:#fff5f8}
-.rail-tag .rail-timer:empty{display:none}
+.rail-tag .rail-timer{display:grid;justify-items:center;gap:2px;width:100%;margin-top:8px;padding:10px 8px 12px;border-radius:10px;background:rgba(255,61,127,.16);box-shadow:inset 0 0 0 1.5px rgba(255,111,160,.7)}
+.rail-tag .rail-timer[hidden]{display:none}
+.rail-tag .rail-timer em{font-style:normal;font-size:13px;font-weight:700;letter-spacing:.1em;color:#ffb3c8}
+.rail-tag .rail-timer b{font:700 clamp(22px,1.9vw,30px)/1.15 var(--num);letter-spacing:.04em;color:#fff;text-shadow:0 0 6px rgba(255,61,127,.8);font-variant-numeric:tabular-nums}
 .rail-tag.is-ended{filter:grayscale(1);opacity:.6}
 @keyframes liveBlink{50%{opacity:.55}}
 @media (prefers-reduced-motion:reduce){.rail-tag .rail-live{animation:none}}
@@ -1097,7 +1099,7 @@ function setupRails() {
     const s = STAGES[idx];
     const key = `${idx}-${i >= 0}-${after}`;
     const status = i >= 0 ? `<b class="rail-live">ただいま開催中</b>` : after ? `<b class="rail-live is-end">終了しました</b>` : `<small>11/19(木) 10:00 スタート</small>`;
-    const timer = i >= 0 ? `終了まで あと ${left(Date.parse(s.end) - now)}` : before ? `開始まで あと ${left(Date.parse(STAGES[0].start) - now)}` : "";
+    const timer = i >= 0 ? ["終了まで あと", left(Date.parse(s.end) - now)] : before ? ["開始まで あと", left(Date.parse(STAGES[0].start) - now)] : null;
     const tag = document.getElementById("railTag");
     if (key !== lastKey) {
       lastKey = key;
@@ -1105,9 +1107,11 @@ function setupRails() {
       tag.innerHTML = status +
         `<strong>生VC美白<sup>※1</sup>美容液<sup>＊</sup> 第${"一二三"[idx]}弾</strong>` +
         `<span><i>${s.pre}</i><b class="tube">${s.num}</b><em>${s.unit}</em></span>` +
-        `<small class="rail-timer"></small>`;
+        `<div class="rail-timer"><em></em><b></b></div>`;
     }
-    tag.querySelector(".rail-timer").textContent = timer;
+    const tm = tag.querySelector(".rail-timer");
+    tm.hidden = !timer;
+    if (timer) { tm.querySelector("em").textContent = timer[0]; tm.querySelector("b").textContent = timer[1]; }
   };
   drawRail();
   setInterval(drawRail, 1000);
