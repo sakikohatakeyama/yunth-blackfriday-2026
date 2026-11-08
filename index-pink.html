@@ -730,6 +730,8 @@ body{padding-bottom:calc(66px + env(safe-area-inset-bottom,0px))}
 .deal-date .dd,.wave-date span{white-space:nowrap}
 /* PC（左にロゴがある幅）では上のヘッダーは出さない */
 @media (min-width:1240px){.site-head{display:none}}
+/* 生PDRNの20%OFFの下の「クーポン」を大きく */
+.deal-head.is-cp{margin-top:10px;font-size:clamp(32px,9.4vw,58px);font-weight:700;letter-spacing:.12em;line-height:1.2}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0;margin:0 -.02em}
 .deal-num .cm,.price b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
@@ -945,7 +947,7 @@ body{padding-bottom:calc(66px + env(safe-area-inset-bottom,0px))}
   </div>
   <p class="pills"><span class="pill is-pdrn">生PDRN<sup>※2</sup>美容液</span></p>
   <p class="deal-big"><span class="deal-num">20</span><span class="deal-unit is-stack is-left"><span>%</span><span>OFF</span></span></p>
-  <p class="deal-head">クーポン</p>
+  <p class="deal-head is-cp">クーポン</p>
   <div class="items" id="chars"></div>
   <div class="deal-sub">
     <p class="pills"><span class="pill is-va">生VA美容液<sup>＊</sup></span><span class="pill is-az">生AZ美容液</span></p>
