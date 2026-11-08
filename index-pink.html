@@ -458,6 +458,24 @@ body{background:var(--void)}
 .wave.is-past{opacity:.45}
 .wave.is-past .wave-state{background:#5b4a51;color:#fff}
 @media (min-width:768px){.waves{gap:28px}.wave{padding:36px 28px 38px}}
+/* Deep Boost: クーポンと価格をひとつの白枠に */
+.price-box{margin:24px auto 0;max-width:560px;padding:22px 18px 24px;background:var(--paper);color:#21141a;border-radius:14px;text-align:center}
+.price-box .coupon-box{margin:0;background:#fff0f2;border-color:var(--vc2)}
+.price-box .coupon-box::before{border-color:rgba(242,143,151,.7)}
+.price-box .coupon-box::after{display:none}
+.price-box .cp-lb{color:#21141a}
+.price-box .cp-lb span{color:var(--vc2)}
+.price-box .coupon-box .deal-big{color:var(--red)}
+.price-box h3{margin:22px 0 0;font-size:clamp(18px,5vw,22px);font-weight:500;line-height:1.4;letter-spacing:.05em}
+.price-box .price{justify-content:center;margin-top:8px}
+.price-box .price span{font-size:16px}
+.price-box .price small{font-size:12px}
+.pb-cp{display:flex;align-items:center;justify-content:center;gap:8px;margin:16px 0 0;font-size:clamp(16px,4.5vw,20px);font-weight:500;letter-spacing:.04em;color:#21141a}
+.pb-cp::before,.pb-cp::after{content:"";width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-top:9px solid var(--red)}
+.price-box .price.is-red{margin-top:8px}
+.price-box .price.is-red b{font-size:clamp(44px,12.8vw,64px)}
+.price-box .price.is-red span{font-size:20px;font-weight:700}
+.price-box .btn{margin-top:20px}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0}
 .price b .cm{font-size:.5em}
@@ -633,21 +651,19 @@ body{background:var(--void)}
   <p class="set-plus is-first" aria-label="と">＋</p>
   <img class="set-box" src="images/vc-set.png" alt="生VC美白美容液の箱とパウチ" width="1046" height="593" loading="lazy">
   <p class="set-gift"><span><i>美顔器に</i>生VC美白<sup>※1</sup>美容液<sup>＊</sup></span><b>1箱が特別セット</b></p>
-  <p class="set-plus" aria-label="さらに">＋</p>  <div class="coupon-box">
-    <p class="cp-lb"><span>COUPON</span>クーポン</p>
-    <p class="deal-big is-wide"><span class="deal-num">7,809</span><span class="deal-unit">円OFF</span></p>
-  </div>
-  <div class="item-card is-price">
-    <div>
-      <h3>美顔器 Deep Boost</h3>
-      <p class="price"><b>33,000</b><span>円</span><small>(税込)</small></p>
-      <p class="price-cp">7,809円OFFクーポン利用で</p>
-      <p class="price is-red"><b>25,191</b><span>円</span><small>(税込)</small></p>
+  <p class="set-plus" aria-label="さらに">＋</p>  <div class="price-box">
+    <div class="coupon-box">
+      <p class="cp-lb"><span>COUPON</span>クーポン</p>
+      <p class="deal-big is-wide"><span class="deal-num">7,809</span><span class="deal-unit">円OFF</span></p>
     </div>
+    <h3>美顔器 Deep Boost</h3>
+    <p class="price"><b>33,000</b><span>円</span><small>(税込)</small></p>
+    <p class="pb-cp">7,809円OFFクーポン利用で</p>
+    <p class="price is-red"><b>25,191</b><span>円</span><small>(税込)</small></p>
+    <a class="btn btn-coupon" data-link="deepboostCoupon" href="#">7,809円OFFクーポン獲得</a>
   </div>
   <div class="btns">
     <a class="btn btn-main" href="https://item.rakuten.co.jp/yunth/yth-260/">Deep Boostの商品ページへ</a>
-    <a class="btn btn-coupon" data-link="deepboostCoupon" href="#">7,809円OFFクーポン獲得</a>
   </div>
   <p class="note">※1 メラニンの生成を抑え、しみ・そばかすを防ぐ　＊医薬部外品 薬用ホワイトエッセンスPVC α</p>
 </section>
