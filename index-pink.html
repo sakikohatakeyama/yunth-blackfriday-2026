@@ -503,6 +503,9 @@ body{background:var(--void)}
 .pb-unit small{font-size:clamp(11px,3vw,15px);color:#21141a;font-weight:500}
 .pb-unit em{font-style:normal;font-size:clamp(26px,7.4vw,44px);font-weight:700}
 .pb-after b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
+/* クーポン獲得ボタン: 角ばった金のボタン＋右に▶（見本どおり） */
+.btn.btn-coupon,.btn.btn-coupon.is-wait{min-height:52px;padding:10px 16px;border-radius:3px;background:#d9b65c;background-image:linear-gradient(90deg,#c9a14a 0%,#e6c873 30%,#f7e7a8 50%,#e6c873 70%,#c9a14a 100%);color:#3b3035;font-size:clamp(15px,4.2vw,18px);font-weight:700;letter-spacing:.06em;box-shadow:none}
+.btn.btn-coupon::after{content:"";flex:none;width:0;height:0;margin-left:4px;border-top:.42em solid transparent;border-bottom:.42em solid transparent;border-left:.62em solid currentColor}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0;margin:0 -.02em}
 .deal-num .cm,.price b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
