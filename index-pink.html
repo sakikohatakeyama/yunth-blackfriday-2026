@@ -692,6 +692,24 @@ body{background:var(--void)}
 .neon-top{padding-bottom:0}
 .fv{background:#0b0709;margin-top:-8cqw;z-index:1}
 .neon-top + .fv{margin-top:-8cqw}
+/* スマホ下の固定バー: PCの左の案内札と同じ内容（今の回・開催中・残り時間） */
+.sp-dock{position:fixed;z-index:30;left:0;right:0;bottom:0;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;min-height:62px;padding:6px 12px calc(6px + env(safe-area-inset-bottom,0px));background:rgba(23,9,15,.96);border-top:2px solid var(--neon);color:#fff;text-decoration:none;box-shadow:0 -6px 20px rgba(0,0,0,.5)}
+.sp-dock .dk-st small{display:block;font-size:11px;line-height:1.3;color:#ffa9ad;max-width:5.5em}
+.sp-dock .rail-live{display:inline-block;padding:3px 8px;border-radius:999px;background:#ff3d7f;color:#fff;font-size:11px;font-weight:700;letter-spacing:.04em;line-height:1.3;max-width:6em;text-align:center;animation:liveBlink 1.6s ease-in-out infinite}
+.sp-dock .rail-live.is-end{background:#5b5458;animation:none}
+.sp-dock .dk-main{display:grid;justify-items:center;line-height:1.1;min-width:0}
+.sp-dock .dk-main small{font-size:11px;letter-spacing:.02em;white-space:nowrap}
+.sp-dock .dk-main span{display:flex;align-items:baseline;gap:2px;white-space:nowrap}
+.sp-dock .dk-main i{font-style:normal;font-size:12px;margin-right:2px}
+.sp-dock .dk-main b{font:700 26px/1 var(--num);color:var(--neon)}
+.sp-dock .dk-main em{font-style:normal;font-size:13px;color:var(--neon)}
+.sp-dock .dk-timer{display:grid;justify-items:center;padding:4px 8px;border-radius:8px;background:rgba(255,61,127,.16);box-shadow:inset 0 0 0 1px rgba(255,111,160,.7)}
+.sp-dock .dk-timer[hidden]{display:none}
+.sp-dock .dk-timer em{font-style:normal;font-size:10px;font-weight:700;color:#ffb3c8;white-space:nowrap}
+.sp-dock .dk-timer b{font:700 15px/1.2 var(--num);font-variant-numeric:tabular-nums;white-space:nowrap;text-shadow:0 0 5px rgba(255,61,127,.8)}
+.sp-dock.is-ended{filter:grayscale(1)}
+body{padding-bottom:calc(66px + env(safe-area-inset-bottom,0px))}
+@media (min-width:1240px){.sp-dock{display:none}body{padding-bottom:0}}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0;margin:0 -.02em}
 .deal-num .cm,.price b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
@@ -993,13 +1011,7 @@ body{background:var(--void)}
   </ul>
 </aside>
 
-<nav class="tabbar" aria-label="ページ内メニュー">
-  <a href="#vc" data-nav="vc">日替わり</a>
-  <a href="#combo" data-nav="combo">Deep<br>Boost</a>
-  <a href="#trio" data-nav="trio">美容液<br>3種</a>
-  <a href="#all" data-nav="all">期間<br>ずっと</a>
-  <a href="#new" data-nav="new">はじめて<br>の方</a>
-</nav>
+<a class="sp-dock" id="spDock" href="#vc" aria-label="生VC美白美容液 日替わりキャンペーンへ"></a>
 <div class="dock"><a class="btn btn-main" href="https://item.rakuten.co.jp/yunth/10000000/"><span>生VC美白<sup>※1</sup>美容液<sup>＊</sup>を見る</span></a></div>
 
 <script>
@@ -1141,6 +1153,21 @@ function setupRails() {
         `<strong>生VC美白<sup>※1</sup>美容液<sup>＊</sup> 第${"一二三"[idx]}弾</strong>` +
         `<span><i>${s.pre}</i><b class="tube">${s.num}</b><em>${s.unit}</em></span>` +
         `<div class="rail-timer"><em></em><b></b></div>`;
+      // スマホ下の固定バーにも同じ内容を（小さくまとめて）
+      const dock = document.getElementById("spDock");
+      if (dock) {
+        dock.classList.toggle("is-ended", after);
+        dock.innerHTML =
+          `<span class="dk-st">${i >= 0 ? '<b class="rail-live">ただいま開催中</b>' : after ? '<b class="rail-live is-end">終了しました</b>' : '<small>11/19(木) 10:00 スタート</small>'}</span>` +
+          `<span class="dk-main"><small>生VC美白美容液 第${"一二三"[idx]}弾</small><span><i>${s.pre}</i><b>${s.num}</b><em>${s.unit}</em></span></span>` +
+          `<span class="dk-timer"><em></em><b></b></span>`;
+      }
+    }
+    const dk = document.getElementById("spDock");
+    if (dk) {
+      const dt = dk.querySelector(".dk-timer");
+      dt.hidden = !timer;
+      if (timer) { dt.querySelector("em").textContent = timer[0]; dt.querySelector("b").textContent = timer[1]; }
     }
     const tm = tag.querySelector(".rail-timer");
     tm.hidden = !timer;
