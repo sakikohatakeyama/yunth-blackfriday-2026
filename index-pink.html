@@ -604,6 +604,17 @@ body{background:var(--void)}
 /* FV: 商品を合成済みの画像1枚に差し替え（ネオンの看板はそのまま） */
 .fv{aspect-ratio:1200/1680}
 .fv-copy{top:123cqw}
+/* 区切りの線をすべて同じ細いネオンの線に */
+.deal-sub{border-top:0}
+.deal-sub::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;border-radius:2px;background:#ffd3e2;box-shadow:0 0 4px #ff3d7f,0 0 10px #ff3d7f,0 0 20px rgba(255,61,127,.6)}
+/* 美容液3種と期間ずっとの間: 余白を詰めてネオンの線 */
+#trio{padding-bottom:40px}
+#all{padding-top:52px}
+#all::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;border-radius:2px;background:#ffd3e2;box-shadow:0 0 4px #ff3d7f,0 0 10px #ff3d7f,0 0 20px rgba(255,61,127,.6)}
+@media (min-width:768px){#trio{padding-bottom:48px}#all{padding-top:64px}}
+/* カードのクーポン後価格: (税込) が下に落ちないように */
+.items .item-card .price.is-red{flex-wrap:nowrap}
+.items .item-card .price.is-red b{font-size:clamp(32px,9vw,52px)}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0;margin:0 -.02em}
 .deal-num .cm,.price b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
