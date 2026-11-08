@@ -565,7 +565,6 @@ body{background:var(--void)}
 /* 流れ図の「第一弾〜第三弾」: 読める程度のやわらかいネオン（大きさはそのまま） */
 .vc-flow b{padding:1px 10px;background:rgba(0,0,0,.35);border:1.5px solid #ff6fa0;color:#ff8fb6;text-shadow:0 0 3px rgba(255,61,127,.5);box-shadow:0 0 6px rgba(255,61,127,.45)}
 .vc-flow li:nth-child(2) b{border-color:#ffa04a;color:#ffb978;text-shadow:0 0 3px rgba(255,140,40,.5);box-shadow:0 0 6px rgba(255,140,40,.45)}
-.vc-flow li:nth-child(3) b{border-color:#c48bff;color:#d6b0ff;text-shadow:0 0 3px rgba(170,90,255,.5);box-shadow:0 0 6px rgba(170,90,255,.45)}
 /* 終わった回はグレーダウン */
 .vc-flow li.is-past{background:rgba(120,120,120,.18)}
 .vc-flow li.is-past > *:not(.flow-end){filter:grayscale(1);opacity:.35}
@@ -578,11 +577,20 @@ body{background:var(--void)}
 .wave-head.is-big{display:block;margin:18px -14px 0;padding:6px 10px 8px;border:0;border-radius:0;background:var(--neon);color:#17090f}
 .wave:nth-child(2) .wave-head.is-big{background:#ffb35c}
 @media (min-width:768px){.wave-head.is-big{margin-inline:-28px}}
-/* 第三弾は第一弾と色を変えて紫のネオンに */
-.wave:nth-child(3) .wave-no{--core:#ead8ff;--glow:170,90,255;--off:#3a2650}
-.wave:nth-child(3) .wave-head.is-big{background:#c99bff}
 /* 商品名はアルファベットも含めて Noto Sans JP に */
 .item-card h3,.pill,.pb-name,.wave-item,.set-gift span{font-family:"Noto Sans JP",sans-serif}
+/* 左の案内札: 「ただいま開催中」と残り時間 */
+.rail-tag .rail-live{display:inline-block;padding:3px 12px;border-radius:999px;background:#ff3d7f;color:#fff;font-size:14px;font-weight:700;letter-spacing:.08em;box-shadow:0 0 10px rgba(255,61,127,.7);animation:liveBlink 1.6s ease-in-out infinite}
+.rail-tag .rail-live.is-end{background:#5b5458;box-shadow:none;animation:none}
+.rail-tag .rail-timer{font:500 13px/1.4 var(--num);letter-spacing:.04em;color:#fff5f8}
+.rail-tag .rail-timer:empty{display:none}
+.rail-tag.is-ended{filter:grayscale(1);opacity:.6}
+@keyframes liveBlink{50%{opacity:.55}}
+@media (prefers-reduced-motion:reduce){.rail-tag .rail-live{animation:none}}
+/* 第三弾は紫ではなく、ピンク寄りの赤 */
+.wave:nth-child(3) .wave-no{--core:#ffd2dc;--glow:255,40,90;--off:#4a1a26}
+.wave:nth-child(3) .wave-head.is-big{background:#ff5a7e}
+.vc-flow li:nth-child(3) b{border-color:#ff4f78;color:#ff8aa5;text-shadow:0 0 3px rgba(255,40,90,.5);box-shadow:0 0 6px rgba(255,40,90,.45)}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0;margin:0 -.02em}
 .deal-num .cm,.price b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
@@ -997,13 +1005,37 @@ function setupConsole() {
 }
 
 function setupRails() {
-  const now = Date.now();
-  const i = STAGES.findIndex(s => now >= Date.parse(s.start) && now < Date.parse(s.end));
-  const s = STAGES[Math.max(i, 0)];
-  document.getElementById("railTag").innerHTML =
-    `<small>${i >= 0 ? "開催中" : "11/19(木) 10:00 スタート"}</small>` +
-    `<strong>生VC美白<sup>※1</sup>美容液<sup>＊</sup> 第${"一二三"[Math.max(i, 0)]}弾</strong>` +
-    `<span><i>${s.pre}</i><b class="tube">${s.num}</b><em>${s.unit}</em></span>`;
+  // 左の案内札: 日時で第一弾→第二弾→第三弾に自動で切り替え、開催中かどうかと残り時間を表示
+  const pad = n => String(n).padStart(2, "0");
+  const left = ms => {
+    const t = Math.max(0, Math.floor(ms / 1000));
+    const d = Math.floor(t / 86400), h = Math.floor(t % 86400 / 3600), m = Math.floor(t % 3600 / 60), sec = t % 60;
+    return (d ? `${d}日 ` : "") + `${pad(h)}:${pad(m)}:${pad(sec)}`;
+  };
+  let lastKey = "";
+  const drawRail = () => {
+    const now = Date.now();
+    const i = STAGES.findIndex(s => now >= Date.parse(s.start) && now < Date.parse(s.end));
+    const before = now < Date.parse(STAGES[0].start);
+    const after = now >= Date.parse(STAGES[STAGES.length - 1].end);
+    const idx = i >= 0 ? i : (after ? STAGES.length - 1 : 0);
+    const s = STAGES[idx];
+    const key = `${idx}-${i >= 0}-${after}`;
+    const status = i >= 0 ? `<b class="rail-live">ただいま開催中</b>` : after ? `<b class="rail-live is-end">終了しました</b>` : `<small>11/19(木) 10:00 スタート</small>`;
+    const timer = i >= 0 ? `終了まで あと ${left(Date.parse(s.end) - now)}` : before ? `開始まで あと ${left(Date.parse(STAGES[0].start) - now)}` : "";
+    const tag = document.getElementById("railTag");
+    if (key !== lastKey) {
+      lastKey = key;
+      tag.classList.toggle("is-ended", after);
+      tag.innerHTML = status +
+        `<strong>生VC美白<sup>※1</sup>美容液<sup>＊</sup> 第${"一二三"[idx]}弾</strong>` +
+        `<span><i>${s.pre}</i><b class="tube">${s.num}</b><em>${s.unit}</em></span>` +
+        `<small class="rail-timer"></small>`;
+    }
+    tag.querySelector(".rail-timer").textContent = timer;
+  };
+  drawRail();
+  setInterval(drawRail, 1000);
 
   const links = [...document.querySelectorAll("[data-nav]")];
   if (!("IntersectionObserver" in window)) return;
