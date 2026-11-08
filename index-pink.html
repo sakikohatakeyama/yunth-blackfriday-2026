@@ -519,8 +519,13 @@ body{background:var(--void)}
 /* 生VC美白美容液とDeep Boostの間: 余白を詰めて細いネオンの線 */
 .block.main{padding-bottom:36px}
 #combo{padding-top:52px}
-#combo::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;border-radius:2px;background:#ffd3e2;box-shadow:0 0 4px #ff3d7f,0 0 10px #ff3d7f,0 0 20px rgba(255,61,127,.6)}
+#combo::before,#trio::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;border-radius:2px;background:#ffd3e2;box-shadow:0 0 4px #ff3d7f,0 0 10px #ff3d7f,0 0 20px rgba(255,61,127,.6)}
 @media (min-width:768px){.block.main{padding-bottom:44px}#combo{padding-top:64px}}
+/* 美容液3種: 背景の柄をなくし、Deep Boostとの間を詰める */
+#trio{background:var(--void);padding-top:52px}
+#trio .rays{display:none}
+#combo{padding-bottom:40px}
+@media (min-width:768px){#trio{padding-top:64px}#combo{padding-bottom:48px}}
 /* 美容液3種: 大きい数字を少し控えめに、比較欄はシンプルに */
 #trio .deal-num{font-size:min(30vw,180px)}
 #trio .deal-unit{font-size:clamp(30px,8.6vw,56px)}
