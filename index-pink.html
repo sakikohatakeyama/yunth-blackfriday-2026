@@ -625,8 +625,6 @@ body{background:var(--void)}
 .t-grid a{display:flex;flex-direction:column}
 .t-grid .t-price{margin-top:auto}
 /* FV: 透明部分の後ろは看板と続く暗い色に */
-.fv{background:linear-gradient(#411e2c,#411e2c)}
-.neon-top + .fv{margin-top:-1px}
 /* スクロールで下からふわっと出てくる動き */
 .js-rv .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
 .js-rv .rv.rv-in{opacity:1;transform:none}
@@ -675,6 +673,25 @@ body{background:var(--void)}
 .wave .wave-head.is-big{margin-bottom:16px}
 /* FVの日付の枠: 縦幅を狭める */
 .fv .period{padding-top:1.3cqw;padding-bottom:1.3cqw}
+/* ヘッダー */
+.site-head{position:relative;z-index:20;display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 var(--gut-r) 0 var(--gut-l);background:#0b0709;border-bottom:1px solid rgba(255,169,173,.18)}
+.sh-logo img{display:block;width:auto;height:24px}
+.sh-burger{display:grid;align-content:center;gap:5px;width:40px;height:40px;padding:0 8px;border:0;background:none;cursor:pointer}
+.sh-burger span{display:block;height:2px;border-radius:2px;background:#ffd3e2;transition:transform .25s,opacity .25s}
+.sh-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.sh-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.sh-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.sp-menu{position:absolute;left:0;right:0;z-index:19;background:rgba(11,7,9,.97);border-bottom:2px solid var(--neon);box-shadow:0 10px 30px rgba(0,0,0,.6)}
+.sp-menu ul{list-style:none;margin:0;padding:6px var(--gut-r) 12px var(--gut-l)}
+.sp-menu li+li{border-top:1px solid rgba(255,169,173,.2)}
+.sp-menu a{display:block;padding:14px 4px;color:#fff5f8;text-decoration:none;font-size:15px;font-weight:500;letter-spacing:.04em}
+.sp-menu li:last-child a{color:var(--neon)}
+@media (min-width:768px){.sh-burger,.sp-menu{display:none!important}.site-head{justify-content:center;height:60px}.sh-logo img{height:28px}}
+/* ネオン看板とFV画像をさらに近づける（重ねても色が続くように、どちらも同じ暗い色に） */
+.neon-top::after{display:none}
+.neon-top{padding-bottom:0}
+.fv{background:#0b0709;margin-top:-8cqw;z-index:1}
+.neon-top + .fv{margin-top:-8cqw}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0;margin:0 -.02em}
 .deal-num .cm,.price b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
@@ -697,6 +714,22 @@ body{background:var(--void)}
 <div class="demo-band">制作確認用のデモページです。実際の販売ページではありません</div>
 
 <main class="page">
+
+<!-- ▼ ヘッダー: ロゴで店舗トップへ／スマホはハンバーガーメニュー -->
+<div class="site-head">
+  <a class="sh-logo" href="https://www.rakuten.co.jp/yunth/"><img src="images/logo.png" alt="Yunth 楽天市場店トップへ" width="903" height="299"></a>
+  <button class="sh-burger" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="spMenu"><span></span><span></span><span></span></button>
+</div>
+<nav class="sp-menu" id="spMenu" aria-label="メニュー" hidden>
+  <ul>
+    <li><a href="#vc">生VC美白<sup>※1</sup>美容液<sup>＊</sup> 日替わりキャンペーン</a></li>
+    <li><a href="#combo">美顔器 Deep Boost</a></li>
+    <li><a href="#trio">美容液3種 クーポン・楽天スーパーDEAL</a></li>
+    <li><a href="#all">ブラックフライデー期間ずっと</a></li>
+    <li><a href="#new">はじめてのお客さま</a></li>
+    <li><a href="https://www.rakuten.co.jp/yunth/">Yunth 楽天市場店トップへ</a></li>
+  </ul>
+</nav>
 
 <!-- ▼ FV -->
 <!-- ▼ 黒地のネオン看板 -->
@@ -1207,6 +1240,15 @@ function setupReveal() {
   check();
 }
 
+// スマホのハンバーガーメニュー
+function setupMenu() {
+  const btn = document.querySelector(".sh-burger"), menu = document.getElementById("spMenu");
+  if (!btn || !menu) return;
+  const set = open => { btn.setAttribute("aria-expanded", open); btn.setAttribute("aria-label", open ? "メニューを閉じる" : "メニューを開く"); menu.hidden = !open; };
+  btn.addEventListener("click", () => set(btn.getAttribute("aria-expanded") !== "true"));
+  menu.addEventListener("click", e => { if (e.target.closest("a")) set(false); });
+}
+
 renderSerums();
 shrinkCommas();
 markWaves();
@@ -1214,6 +1256,7 @@ applyLinks();
 setupConsole();
 setupRails();
 setupReveal();
+setupMenu();
 </script>
 </body>
 </html>
