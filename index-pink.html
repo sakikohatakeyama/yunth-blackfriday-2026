@@ -9,7 +9,7 @@
 <meta name="robots" content="noindex,nofollow,noimageindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Russo+One&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700;900&family=Russo+One&display=swap">
 <style>
 /* 構成: 800pxカラムの夜のゲームセンター。FV=ネオン管の看板、主役ブロック=VC美容液の箱色をした携帯ゲーム機 */
 :root{
@@ -754,6 +754,40 @@ body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
 }
 @keyframes wallOn{0%,7%,13%,23%,29%,32%,37%,51%{opacity:0}8%,24%,33%,52%,100%{opacity:1}}
 @media (prefers-reduced-motion:reduce){.js-flicker .wave.is-lit .wave-no,.js-flicker .wave.is-lit .wave-no::before{animation:none}}
+
+/* ===== FV 作り替え（見本: 黒地ネオン＋写真＋目玉2枚） ===== */
+.fv-wrap{position:relative;background:#0b0709;overflow:hidden}
+.fv-confetti{position:absolute;left:0;top:0;width:100%;height:auto;max-width:none;z-index:3;pointer-events:none}
+.neon-top{padding-top:clamp(10px,3vw,18px)}
+.fv-note{position:relative;z-index:2;margin:0 0 clamp(8px,3vw,18px);text-align:center;font-size:clamp(9px,2.6vw,13px);letter-spacing:.06em;line-height:1.5;color:rgba(255,255,255,.88)}
+.sign-logo{filter:drop-shadow(0 0 6px rgba(255,255,255,.55))}
+.fv-date{position:relative;z-index:2;margin:clamp(2px,1vw,6px) 0 0;text-align:center;white-space:nowrap;font:700 clamp(18px,5.4vw,33px)/1.2 var(--num);letter-spacing:.03em;color:#fff;text-shadow:0 0 6px rgba(255,61,127,.9),0 0 16px rgba(255,61,127,.55)}
+.fv-date small{font:700 .78em/1 "Noto Sans JP",sans-serif;margin:0 .06em}
+.fv-date span{margin:0 .1em}
+.neon-top + .fv{margin-top:2%}
+.fv{aspect-ratio:1536/1210;background:transparent;margin:2% 3% 0}
+.fv-cards{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,3vw,20px);padding:clamp(16px,5vw,30px) clamp(12px,4vw,24px) clamp(30px,8vw,52px);background:#0b0709}
+.fv-card{container-type:inline-size;display:flex;flex-direction:column;border-radius:clamp(14px,4vw,24px);overflow:hidden;background:#fff;color:#17090f;text-decoration:none}
+.fc-date{margin:0;padding:7cqw 2cqw 4cqw;text-align:center;white-space:nowrap;font:700 11.4cqw/1.08 var(--num);letter-spacing:0;color:#17090f}
+.fc-date small{font:700 .66em/1 "Noto Sans JP",sans-serif}
+.fc-date span{font-family:"Noto Sans JP",sans-serif;font-size:.9em}
+.fc-body{flex:1;display:flex;flex-direction:column;align-items:center;padding:0 0 6cqw;background:linear-gradient(#fff 0 9.5cqw,transparent 9.5cqw),linear-gradient(115deg,#c99a35 0%,#f6e4a2 32%,#d6aa45 55%,#fff1bd 78%,#cfa13d 100%)}
+.fc-pill{display:block;width:90%;box-sizing:border-box;padding:1.6cqw 0;border:1.4cqw solid #d9ad48;border-radius:999px;background:#fff;text-align:center;font:900 12cqw/1.2 "Noto Sans JP",sans-serif;letter-spacing:.04em;color:#b07a22}
+.fc-pill.is-en{font:700 12cqw/1.2 var(--num);letter-spacing:.01em}
+.fc-img{display:block;width:80%;height:auto;margin:7cqw auto 0;filter:drop-shadow(0 2cqw 2cqw rgba(110,70,0,.35))}
+.fc-big{display:flex;align-items:flex-end;justify-content:center;margin:auto 0 0;padding-top:3cqw;line-height:.8;color:#17090f;white-space:nowrap}
+.fc-vl{writing-mode:vertical-rl;font:900 9.6cqw/1 "Noto Sans JP",sans-serif;letter-spacing:.02em;margin:0 1cqw 1.2cqw 0}
+.fc-big b{font:700 46cqw/.8 var(--num);letter-spacing:-.04em}
+.fc-big em{font:900 21cqw/1 "Noto Sans JP",sans-serif;font-style:normal;margin:0 0 .5cqw 1cqw}
+.fc-set{position:relative;width:100%;height:76cqw}
+.fc-dev{position:absolute;left:-6cqw;top:-12cqw;height:100cqw;width:auto;max-width:none;filter:drop-shadow(0 2cqw 2cqw rgba(90,50,0,.35))}
+.fc-catch{position:absolute;right:5cqw;top:5cqw;margin:0;text-align:center;font:900 12.2cqw/1.18 "Noto Sans JP",sans-serif;letter-spacing:.02em;color:#fff;text-shadow:0 .5cqw 1.4cqw rgba(110,70,0,.55),0 0 .4cqw rgba(110,70,0,.4)}
+.fc-plus{position:absolute;left:32cqw;top:46cqw;font:500 16cqw/1 var(--num);color:#fff;text-shadow:0 .5cqw 1cqw rgba(110,70,0,.5)}
+.fc-box{position:absolute;right:3cqw;top:38cqw;width:56%;height:auto;filter:drop-shadow(0 1.6cqw 1.6cqw rgba(110,70,0,.35))}
+.fc-ticket{display:flex;align-items:center;justify-content:center;gap:1.4cqw;align-self:stretch;margin:auto 4cqw 0;padding:2.6cqw 3cqw;border-radius:2.4cqw;background:#141012;white-space:nowrap;-webkit-mask:radial-gradient(circle at 0 50%,transparent 2.4cqw,#000 2.6cqw) left/51% 100% no-repeat,radial-gradient(circle at 100% 50%,transparent 2.4cqw,#000 2.6cqw) right/51% 100% no-repeat;mask:radial-gradient(circle at 0 50%,transparent 2.4cqw,#000 2.6cqw) left/51% 100% no-repeat,radial-gradient(circle at 100% 50%,transparent 2.4cqw,#000 2.6cqw) right/51% 100% no-repeat}
+.fc-ticket b,.fc-ticket span{background:linear-gradient(#fff7d0,#e9c260 55%,#b9872c);-webkit-background-clip:text;background-clip:text;color:transparent}
+.fc-ticket b{font:700 25cqw/1 var(--num);letter-spacing:-.03em}
+.fc-ticket span{font:900 8.6cqw/1.08 "Noto Sans JP",sans-serif;letter-spacing:.02em}
 </style>
 </head>
 <body>
@@ -767,8 +801,11 @@ body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
 </div>
 
 <!-- ▼ FV -->
+<div class="fv-wrap">
+<img class="fv-confetti" src="images/fv-confetti.webp" alt="" width="1200" height="1300" aria-hidden="true">
 <!-- ▼ 黒地のネオン看板 -->
 <div class="neon-top">
+  <p class="fv-note">※予告なくサービス内容を変更させていただく場合がございます。</p>
   <svg class="neon-sign" viewBox="0 0 800 500" role="img" aria-label="Yunth BLACK FRIDAY">
     <defs>
       <text id="t-black" font-family="'Russo One',sans-serif" font-size="150" x="400" y="256" text-anchor="middle" textLength="600" lengthAdjust="spacingAndGlyphs" transform="skewX(-7) translate(30 0)">BLACK</text>
@@ -799,6 +836,9 @@ body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
     </g>
 
 
+    <!-- アーチの中のロゴ -->
+    <image class="lit-1 sign-logo" href="images/logo.png" x="297" y="58" width="206" height="68"/>
+
     <!-- BLACK は白い管 -->
     <g class="lit-1" fill="none" stroke-linejoin="round">
       <use href="#t-black" x="6" y="6" stroke="#6b5560" stroke-width="1.4"/>
@@ -814,15 +854,39 @@ body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
       <use href="#t-friday" stroke="#ffe3ec" stroke-width="2.4"/>
     </g>
   </svg>
+  <p class="fv-date">11/19<small>(木)</small>10:00<span>〜</span>11/26<small>(木)</small>9:59</p>
 </div>
 
 <!-- ▼ FV: ピンクのステージに美顔器と美容液 -->
 <header class="fv">
-  <img class="fv-bg" src="images/fv-main.webp?v=2" alt="Yunth 美顔器 Deep Boost、生VC美白美容液、生PDRN美容液、ピュアマスク" width="1200" height="1620">
-  <div class="fv-copy">
-    <a class="period" href="#vc"><span><b>11/19</b>(木) 10:00</span><svg class="arrows" viewBox="0 0 34 12" role="img" aria-label="から"><path d="M0 0l8 6-8 6zM13 0l8 6-8 6zM26 0l8 6-8 6z"/></svg><span><b>11/26</b>(木) 9:59</span></a>
-  </div>
+  <img class="fv-bg" src="images/fv-photo.webp" alt="Yunth 美顔器 Deep Boost、生VC美白美容液、生PDRN美容液、ピュアマスク" width="1536" height="1210">
 </header>
+</div>
+
+<!-- ▼ FV下: 2つの目玉 -->
+<nav class="fv-cards" aria-label="目玉企画">
+  <a class="fv-card" href="#vc">
+    <p class="fc-date">11/19<small>(木)</small>10:00<br><span>〜</span>11/20<small>(金)</small>9:59</p>
+    <div class="fc-body">
+      <span class="fc-pill">VC美容液</span>
+      <img class="fc-img" src="images/vc-box-front.webp" alt="生VC美白美容液" width="1089" height="516">
+      <p class="fc-big"><span class="fc-vl">ポイント</span><b>20</b><em>倍</em></p>
+    </div>
+  </a>
+  <a class="fv-card" href="#combo">
+    <p class="fc-date">11/19<small>(木)</small>10:00<br><span>〜</span>11/26<small>(木)</small>9:59</p>
+    <div class="fc-body">
+      <span class="fc-pill is-en">Deep Boost</span>
+      <div class="fc-set">
+        <img class="fc-dev" src="images/device-pink.png" alt="美顔器 Deep Boost" width="430" height="1200">
+        <p class="fc-catch">VC美容液<br>特別セット</p>
+        <span class="fc-plus" aria-hidden="true">+</span>
+        <img class="fc-box" src="images/vc-box-front.webp" alt="生VC美白美容液" width="1089" height="516">
+      </div>
+      <p class="fc-ticket"><b>7,809</b><span>円OFF<br>クーポン</span></p>
+    </div>
+  </a>
+</nav>
 
 <!-- ▼ 主役: 生VC美白美容液 -->
 <section class="block main" id="vc">
