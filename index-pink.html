@@ -794,6 +794,21 @@ body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
 .fv-wrap .neon-sign{width:min(86%,500px)}
 .rail-nav a{font-size:13px;letter-spacing:.04em;padding:10px 14px}
 .rail-nav em{font-size:16px}
+/* PC: メイン幅580pxに合わせて美容液カードの文字を収める・対象商品は3個並び */
+@media (min-width:768px){
+.t-grid{grid-template-columns:repeat(3,1fr)}
+.items .item-card{grid-template-columns:40% 1fr;gap:20px;padding:16px}
+.items .item-card > div{padding-right:0;min-width:0}
+.items .item-card h3{font-size:25px}
+.items .item-card .spec{font-size:17px}
+.items .item-card .price b{font-size:30px}
+.items .item-card .price span{font-size:16px}
+.items .item-card .price small{font-size:12px}
+.items .item-card .price-cp{font-size:20px}
+.items .item-card .price.is-red b{font-size:46px}
+.items .item-card .price.is-red span{font-size:20px}
+.items .item-card .price.is-red small{font-size:14px}
+}
 </style>
 </head>
 <body>
