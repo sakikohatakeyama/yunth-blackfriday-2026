@@ -220,7 +220,7 @@ footer .btn{width:min(100%,360px)}
 .tabbar a+a{border-left:1px solid rgba(255,255,255,.14)}
 .tabbar a.is-here{background:#ffa9ad;color:#17090f}
 body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
-@media (min-width:1260px){
+@media (min-width:1100px){
   body{padding-bottom:0}
   .tabbar{display:none}
   .page{box-shadow:0 0 0 1px #f4b8cf}
@@ -309,7 +309,7 @@ body{background:var(--void)}
 .entry2 .btn{margin-top:14px}
 /* 両脇: 黒 */
 @media (min-width:768px){body{background:#050304}.deal-limit{margin-inline:-56px}}
-@media (min-width:1260px){
+@media (min-width:1100px){
   .page{box-shadow:0 0 0 1px rgba(255,169,173,.35)}
   .rail{color:#fff5f8}
   .rail-sign{display:grid;margin:14px 0 0;font:700 clamp(40px,3.8vw,70px)/.95 var(--num);text-align:center;letter-spacing:.01em}
@@ -710,7 +710,7 @@ body{background:var(--void)}
 .sp-dock .dk-timer b{font:700 15px/1.2 var(--num);font-variant-numeric:tabular-nums;white-space:nowrap;text-shadow:0 0 5px rgba(255,61,127,.8)}
 .sp-dock.is-ended{filter:grayscale(1)}
 body{padding-bottom:calc(66px + env(safe-area-inset-bottom,0px))}
-@media (min-width:1260px){.sp-dock{display:none}body{padding-bottom:0}}
+@media (min-width:1100px){.sp-dock{display:none}body{padding-bottom:0}}
 /* 「ポイント15倍の対象商品」などの見出しを大きく */
 .targets .targets-lb{margin-bottom:12px;font-size:clamp(18px,5vw,26px);letter-spacing:.06em}
 /* 対象商品カード: PC4列では文字を少し小さく、価格の(税込)を折り返さない */
@@ -730,14 +730,14 @@ body{padding-bottom:calc(66px + env(safe-area-inset-bottom,0px))}
 .deal.is-pink .deal-date::before{color:#17090f}
 .deal-date .dd,.wave-date span{white-space:nowrap}
 /* PC（左にロゴがある幅）では上のヘッダーは出さない */
-@media (min-width:1260px){.site-head{display:none}}
+@media (min-width:1100px){.site-head{display:none}}
 /* 生PDRNの20%OFFの下の「クーポン」を大きく */
 .deal-head.is-cp{margin-top:10px;font-size:clamp(32px,9.4vw,58px);font-weight:700;letter-spacing:.12em;line-height:1.2}
 /* ハンバーガーをなくしたので、ヘッダーのロゴは真ん中に */
 .site-head{justify-content:center}
 /* スマホ下はページ内メニューに戻した */
 body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
-@media (min-width:1260px){body{padding-bottom:0}}
+@media (min-width:1100px){body{padding-bottom:0}}
 /* 金額のカンマは小さく */
 .cm{font-size:.7em;letter-spacing:0;margin:0 -.02em}
 .deal-num .cm,.price b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
@@ -813,14 +813,14 @@ body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
 .item-card[hidden]{display:none}
 .wave-img{display:block;width:78%;height:auto;margin:18px auto 0;filter:drop-shadow(0 8px 14px rgba(0,0,0,.45))}
 .wave-img + .deal-big{margin-top:10px}
-/* ページ案内: 1行に収める */
-@media (min-width:1310px){
-  .rail{width:330px;padding:24px 22px}
-  .rail-l{left:calc(50% - 325px - 330px)}
-  .rail-r{right:calc(50% - 325px - 330px)}
-  .rail-nav a{font-size:12px;letter-spacing:0;white-space:nowrap;padding:10px 12px}
+/* PC: 左右レールは画面幅に合わせて最大330px、メインは650px固定。1100px以上で両サイド表示 */
+@media (min-width:1100px){
+  .rail{width:min(330px,calc((100vw - 650px) / 2));padding:24px clamp(12px,1.4vw,22px)}
+  .rail-l{left:auto;right:calc(50% + 325px)}
+  .rail-r{right:auto;left:calc(50% + 325px)}
+  .rail-nav a{font-size:12px;letter-spacing:0;padding:10px 12px}
 }
-@media (min-width:1260px) and (max-width:1309px){.rail{display:none!important}.tabbar{display:grid!important}body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))!important}}
+@media (min-width:1310px){.rail-nav a{white-space:nowrap}}
 </style>
 </head>
 <body>
