@@ -1,0 +1,1309 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Yunth BLACK FRIDAY ピンク版</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<!-- 確認用デモのため noindex。納品時に削除 -->
+<meta name="robots" content="noindex,nofollow,noimageindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Russo+One&display=swap">
+<style>
+/* 構成: 800pxカラムの夜のゲームセンター。FV=ネオン管の看板、主役ブロック=VC美容液の箱色をした携帯ゲーム機 */
+:root{
+  color-scheme:dark;
+  --void:#0b0709;      /* Yunth本文色を暗く落とした地色 */
+  --void2:#170d13;
+  --line:rgba(255,169,173,.32);
+  --white:#fff5f8;
+  --mute:#cdb8c2;
+  --neon:#ffa9ad;      /* Yunth赤をネオン管の発色に寄せたもの */
+  --volt:#ffa9ad;
+  --vc:#ffa9ad;        /* 生VC美白美容液の箱色 */
+  --vc2:#f28f97;
+  --pdrn:#fff5f8;
+  --az:#ffa9ad;
+  --va:#fff5f8;
+  --ink:#3a2b32;
+  --font-display:"Russo One","Noto Sans JP",sans-serif;   /* 看板と光る数字だけ */
+  --font-ja:"Jost","Noto Sans JP",system-ui,sans-serif;
+  --font-pixel:var(--font-body);
+  --font-body:"Jost","Noto Sans JP",system-ui,sans-serif;
+  --gut-l:max(16px,env(safe-area-inset-left,0px));
+  --gut-r:max(16px,env(safe-area-inset-right,0px));
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--void);color:var(--white);font-family:var(--font-body);font-weight:400;font-size:16px;line-height:1.85;letter-spacing:.09em;overflow-x:hidden;padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+sup{font-size:clamp(8px,.42em,13px);line-height:0;vertical-align:super;letter-spacing:0;font-family:var(--font-body);font-weight:400}
+.sp{display:inline}.pc{display:none}
+
+/* デモ帯: 納品時に削除 */
+.demo-band{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--volt);color:#1a0e12;text-align:center;font-size:clamp(10px,2.8vw,12px);font-weight:400;letter-spacing:0;padding:5px var(--gut-r) 5px var(--gut-l);line-height:1.5}
+
+.page{position:relative;max-width:600px;margin:0 auto;background:var(--void);overflow:hidden}
+
+/* ── FV: ピンクのステージに黒いネオン管。幅に比例して全要素が拡大縮小する ─────── */
+.fv{position:relative;overflow:hidden;container-type:inline-size;aspect-ratio:839/1075;background:#fbc9dc}
+.fv-bg{position:absolute;left:0;top:0;width:100%;height:auto;max-width:none}
+.fv-logo{position:absolute;left:50%;top:5cqw;width:21cqw;transform:translateX(-50%)}
+.sign{position:absolute;left:7cqw;top:15.5cqw;width:86cqw;height:auto;overflow:visible}
+.sign .halo-w{filter:blur(9px)}
+.sign .halo-p{filter:blur(10px)}
+.lit-1{animation:lit 1.5s steps(1,end) both}
+.lit-2{animation:lit 1.5s steps(1,end) .32s both}
+@keyframes lit{0%{opacity:.18}12%{opacity:1}18%{opacity:.25}34%{opacity:1}40%{opacity:.35}52%{opacity:.9}58%{opacity:.3}70%,100%{opacity:1}}
+.fv-box{position:absolute;left:21cqw;top:60cqw;width:50cqw;filter:drop-shadow(0 1.6cqw 1.6cqw rgba(170,60,110,.42))}
+.fv-pouch{position:absolute;left:55cqw;top:75cqw;width:32cqw;transform:rotate(-9deg);filter:drop-shadow(0 1.2cqw 1.4cqw rgba(170,60,110,.45))}
+.fv-copy{position:absolute;left:0;right:0;top:106cqw;text-align:center;color:#2a1320}
+.fv-copy h1{margin:0;font-family:var(--font-ja);font-weight:500;font-size:6.7cqw;line-height:1.4;letter-spacing:.08em}
+.fv-copy p{margin:1.4cqw 0 0;font-size:4.1cqw;font-weight:500;letter-spacing:.1em}
+.period{display:flex;align-items:center;justify-content:center;gap:2.4cqw;width:fit-content;margin:0 auto;padding:2.6cqw 6cqw;border-radius:999px;background:#17090f;color:#fff;text-decoration:none;white-space:nowrap;font-size:3.7cqw;letter-spacing:.06em}
+.period b{font-weight:500;font-size:1.45em;color:#ffa9ad}
+.arrows{width:6cqw;height:auto;fill:#ffa9ad;flex:none}
+
+/* ── MENU ─────────────── */
+.menu{padding:30px var(--gut-r) 34px var(--gut-l);background:var(--void2);border-block:2px solid var(--line)}
+.menu ul{list-style:none;margin:0 auto;padding:0;max-width:620px}
+.menu a{display:grid;grid-template-columns:22px 1fr;gap:8px;align-items:baseline;padding:10px 4px;text-decoration:none;font-weight:400;font-size:clamp(16px,4.3vw,19px);line-height:1.5}
+.menu li+li{border-top:1px dashed var(--line)}
+.menu i{font-style:normal;font-family:var(--font-pixel);color:var(--neon)}
+.menu a:hover i,.menu a:focus-visible i{color:var(--volt)}
+.menu b{font-weight:400}
+.menu em{font-style:normal;display:block;color:var(--volt);font-size:.92em}
+
+/* ── 共通 ─────────────── */
+section{position:relative}
+.block{padding:64px var(--gut-r) 60px var(--gut-l)}
+h2{margin:6px 0 0;font-family:var(--font-ja);font-weight:500;line-height:1.5;letter-spacing:.08em;font-size:clamp(26px,7.2vw,40px);text-wrap:balance}
+.lead{margin:14px 0 0;font-size:clamp(16px,4.3vw,19px)}
+.note{margin:22px 0 0;font-size:12px;line-height:1.85;letter-spacing:.07em;color:var(--mute)}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:62px;padding:12px 18px;border-radius:999px;text-decoration:none;text-align:center;font-weight:400;font-size:clamp(16px,4.5vw,19px);line-height:1.4;transition:transform .12s}
+.btn:active{transform:translateY(3px)}
+.btn{font-weight:500}
+.btn-main{background:var(--neon);color:#fff;box-shadow:0 5px 0 #a3134a,0 0 26px rgba(255,61,127,.65)}
+.btn-line{border:2px solid var(--c,var(--volt));color:var(--c,var(--volt))}
+.btn.is-wait{border-style:dashed;border-color:var(--line);color:var(--mute);background:none;box-shadow:none;pointer-events:none}
+a:focus-visible,button:focus-visible{outline:3px solid var(--volt);outline-offset:3px}
+
+/* 管のように光る数字 */
+.tube{color:transparent;-webkit-text-stroke:2.5px var(--c,var(--volt));font-family:var(--font-display);line-height:1;filter:drop-shadow(0 0 5px var(--c,var(--volt))) drop-shadow(0 0 20px var(--c,var(--volt)))}
+
+/* ── 主役: ゲーム機 ─────────────── */
+.main{padding-bottom:64px}
+.main h2 span{color:var(--vc)}
+.console{position:relative;margin:44px 0 0;padding:14px 14px 20px;border-radius:22px;background:linear-gradient(155deg,#f1cfc2,#dcaa99 48%,#c48d7f);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 -1px 0 rgba(90,40,40,.35),0 16px 34px rgba(0,0,0,.6)}
+.bezel{padding:9px;background:#0a0608;border-radius:12px}
+.screen{--c:var(--vc);position:relative;overflow:hidden;border-radius:6px;background:#100a0d;padding:16px 16px 8px}
+.screen::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(118deg,rgba(255,255,255,.06) 0 24%,transparent 24.2%)}
+.hud{display:flex;justify-content:space-between;font-family:var(--font-pixel);font-size:15px;color:var(--white)}
+.offer{min-height:208px;display:grid;align-content:center;justify-items:center;text-align:center;padding:8px 0 12px}
+.offer .st{font-family:var(--font-pixel);font-size:21px;color:var(--c)}
+.offer .pre{font-family:var(--font-ja);font-weight:400;font-size:clamp(21px,6vw,28px);line-height:1.3;margin-top:2px}
+.offer .val{display:flex;align-items:baseline;justify-content:center;gap:7px;margin-top:6px}
+.offer .num{font-size:clamp(100px,30vw,150px);-webkit-text-stroke-width:3px}
+.offer .unit{font-family:var(--font-ja);font-weight:400;font-size:clamp(26px,7.2vw,36px);line-height:1.1;letter-spacing:.06em;color:var(--c)}
+.offer .per{margin-top:8px;font-size:clamp(13px,3.6vw,14px);color:var(--white)}
+.pop{animation:pop .24s steps(3,end)}
+@keyframes pop{from{transform:scale(.86);opacity:.2}}
+.stages{list-style:none;margin:0;padding:0;border-top:1px solid rgba(255,255,255,.18)}
+.stages button{width:100%;display:grid;grid-template-columns:18px 52px 1fr;gap:1px 6px;align-items:center;padding:9px 2px;border:0;background:none;color:var(--white);font:400 clamp(15px,4.2vw,18px)/1.35 var(--font-body);letter-spacing:.03em;text-align:left;cursor:pointer}
+.stages li+li{border-top:1px solid rgba(255,255,255,.1)}
+.stages .cur{color:var(--vc);visibility:hidden}
+.stages .lv{font-family:var(--font-pixel);font-weight:400;font-size:.92em}
+.stages .dt{grid-column:2/-1;font-size:12px;font-weight:400;letter-spacing:.06em;color:var(--mute)}
+.stages .is-on{color:var(--vc)}
+.stages .is-on .cur{visibility:visible}
+.stages .now{font-family:var(--font-pixel);font-size:12px;color:#100a0d;background:var(--vc);padding:0 4px;margin-left:6px;font-weight:400}
+
+.pad{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:8px;margin-top:22px;padding-inline:8px}
+.dpad{position:relative;width:84px;height:84px}
+.dpad::before,.dpad::after{content:"";position:absolute;background:#b67d70;border-radius:4px}
+.dpad::before{left:28px;top:0;width:28px;height:84px}
+.dpad::after{left:0;top:28px;width:84px;height:28px}
+.dpad button{position:absolute;z-index:1;top:28px;width:28px;height:28px;border:0;background:none;color:#fff3ee;font:400 15px var(--font-body);cursor:pointer;padding:0}
+.dpad .l{left:0}.dpad .r{right:0}
+.pad-logo{justify-self:center;display:grid;justify-items:center;gap:2px}
+.pad-logo img{width:clamp(74px,22vw,126px)}
+.pad-logo small{font-size:10px;font-weight:400;color:var(--ink);letter-spacing:.06em;text-align:center;line-height:1.35}
+.abxy{position:relative;width:84px;height:84px}
+.abxy span{position:absolute;width:26px;height:26px;border-radius:50%;background:#b67d70}
+.abxy .x{left:29px;top:0}.abxy .y{left:0;top:29px}.abxy .a{right:0;top:29px}.abxy .b{left:29px;bottom:0}
+
+.main-cta{display:grid;gap:16px;margin-top:34px}
+
+/* ── COMBO ─────────────── */
+.combo{--c:#ff5b4d;background:linear-gradient(180deg,#1e0d12,var(--void));border-top:2px solid var(--line)}
+.combo .combo-grid{display:grid;grid-template-columns:30% 1fr;gap:14px;margin-top:30px;align-items:center}
+.combo-dev{justify-self:center;width:min(100%,130px);filter:drop-shadow(0 0 20px rgba(255,91,77,.75))}
+.eq{display:grid;gap:10px}
+.eq .plus{font-family:var(--font-display);font-size:30px;line-height:1;color:var(--volt)}
+.eq .it{font-weight:400;font-size:clamp(17px,4.8vw,23px);line-height:1.45}
+.eq img{width:min(100%,250px);filter:drop-shadow(0 0 14px rgba(255,120,160,.6))}
+.off{display:grid;grid-template-columns:auto 1fr;align-items:baseline;gap:6px;--c:var(--volt)}
+.off .lb,.trio-head .lb{grid-column:1/-1;font-size:clamp(16px,4.4vw,20px);font-weight:400;line-height:1.3}
+.off .tube{font-size:clamp(48px,13vw,84px);-webkit-text-stroke-width:2px}
+.off .u{font-family:var(--font-ja);font-weight:400;font-size:clamp(20px,5.4vw,32px);line-height:1;letter-spacing:.06em;color:var(--volt)}
+.combo .btn{margin-top:30px}
+
+/* ── 美容液3種 ─────────────── */
+.trio{border-top:2px solid var(--line)}
+.trio-head{display:grid;grid-template-columns:auto 1fr;align-items:baseline;gap:6px 8px;margin-top:20px;--c:var(--az)}
+.trio-head .tube{font-size:clamp(96px,27vw,150px);-webkit-text-stroke-width:3px}
+.trio-head .u{font-family:var(--font-ja);font-weight:400;font-size:clamp(32px,9vw,52px);line-height:1;letter-spacing:.06em;color:var(--az)}
+.per{margin:12px 0 0;font-size:clamp(16px,4.4vw,20px);font-weight:400;color:var(--volt)}
+.chars{display:grid;gap:26px;margin-top:34px}
+.char{display:grid;grid-template-columns:42% 1fr;gap:16px;align-items:center}
+.char .ph{display:block;border:3px solid var(--c);box-shadow:0 0 18px var(--c)}
+.char img{width:100%;aspect-ratio:1}
+.char h3{margin:0;font-weight:500;font-size:clamp(18px,5vw,22px);line-height:1.4;color:var(--c)}
+.char p{margin:2px 0 12px;font-size:14px}
+.char .btn{min-height:50px;font-size:15px;padding:8px 10px}
+
+/* ── 全品 ─────────────── */
+.all{background:var(--void2);border-top:2px solid var(--line)}
+.all h2{--c:var(--volt)}
+.rows{display:grid;gap:0;margin-top:26px}
+.row{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:16px 0;border-top:1px dashed var(--line)}
+.row:last-child{border-bottom:1px dashed var(--line)}
+.row b{font-size:clamp(17px,4.8vw,21px);font-weight:400;line-height:1.4}
+.row span{display:flex;align-items:baseline;gap:5px;--c:var(--volt);flex:none}
+.row .tube{font-size:clamp(54px,15vw,76px);-webkit-text-stroke-width:2px}
+.row em{font-style:normal;font-family:var(--font-ja);font-weight:400;font-size:clamp(20px,5.4vw,26px);line-height:1;letter-spacing:.06em;color:var(--volt)}
+
+/* ── 新規 ─────────────── */
+.new{border-top:2px solid var(--line)}
+.new .entries{display:grid;gap:30px;margin-top:30px}
+.entry{--c:var(--az);display:grid;gap:12px}
+.entry .val{display:flex;align-items:baseline;gap:6px}
+.entry .tube{font-size:clamp(84px,24vw,120px);-webkit-text-stroke-width:2.5px}
+.entry em{font-style:normal;font-family:var(--font-ja);font-weight:400;font-size:clamp(26px,7.2vw,36px);line-height:1;letter-spacing:.06em;color:var(--az)}
+
+/* ── 注意・フッター ─────────────── */
+.caution{padding:40px var(--gut-r) 40px var(--gut-l);border-top:2px solid var(--line)}
+.caution h2{font-family:var(--font-body);font-weight:400;font-size:17px}
+.caution ul{margin:10px 0 0;padding-left:1.2em;font-size:13px;line-height:1.8;color:var(--mute)}
+footer{display:grid;justify-items:center;gap:16px;padding:44px var(--gut-r) 44px var(--gut-l);background:var(--void2);text-align:center}
+footer img{width:130px}
+footer .law{font-size:13px;color:var(--mute)}
+footer .btn{width:min(100%,360px)}
+
+/* ── SP追従 ─────────────── */
+.dock{position:fixed;z-index:30;left:0;right:0;bottom:0;padding:8px var(--gut-r) calc(8px + env(safe-area-inset-bottom,0px)) var(--gut-l);background:rgba(18,8,14,.94);border-top:2px solid var(--neon)}
+.dock .btn{min-height:52px;font-size:15px}
+
+
+@media (min-width:768px){
+  body{background:#0b0609}
+  .sp{display:none}.pc{display:inline}
+  .fv{padding-top:26px}
+  .block{padding:88px 56px 80px}
+  .menu{padding:36px 56px}
+  .caution{padding:44px 56px}
+  .chars{gap:30px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+
+
+/* ── 両脇のレール(PC 1240px以上) と スマホの下部メニュー ─────── */
+.dock{display:none}
+.rail{display:none}
+.tabbar{position:fixed;z-index:30;left:0;right:0;bottom:0;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;background:#17090f;padding-bottom:env(safe-area-inset-bottom,0px);padding-inline:env(safe-area-inset-left,0px) env(safe-area-inset-right,0px)}
+.tabbar a{display:grid;place-items:center;min-height:56px;padding:4px 2px;font-size:clamp(11.5px,3.2vw,14px);line-height:1.3;letter-spacing:.04em;text-align:center;text-decoration:none;color:#fff;transition:background .2s,color .2s}
+.tabbar a+a{border-left:1px solid rgba(255,255,255,.14)}
+.tabbar a.is-here{background:#ffa9ad;color:#17090f}
+body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
+@media (min-width:1240px){
+  body{padding-bottom:0}
+  .tabbar{display:none}
+  .page{box-shadow:0 0 0 1px #f4b8cf}
+  .rail{position:fixed;z-index:3;top:0;bottom:0;width:calc((100vw - 600px) / 2);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:24px clamp(16px,2vw,44px);color:#2a1320}
+  .rail-l{left:0}
+  .rail-r{right:0}
+  .rail-logo{width:min(46%,130px)}
+  .rail-sign{display:block;width:100%;max-width:330px;height:auto;margin-top:10px;overflow:visible}
+  .rail-period{margin-top:14px;font-size:15px;letter-spacing:.06em;text-align:center;line-height:1.6}
+  .rail-period b{font-weight:500;font-size:19px}
+  .rail-tag{display:grid;justify-items:center;gap:4px;width:100%;max-width:330px;margin-top:26px;padding:16px 14px;background:#17090f;color:#fff;text-decoration:none;text-align:center;border-radius:14px;transition:transform .2s}
+  .rail-tag:hover{transform:translateY(-3px)}
+  .rail-tag small{font-size:13px;letter-spacing:.06em;color:#ffa9ad}
+  .rail-tag strong{font-weight:500;font-size:15px;letter-spacing:.06em}
+  .rail-tag span{display:flex;align-items:baseline;gap:4px}
+  .rail-tag .tube{font-size:clamp(46px,3.6vw,64px);color:transparent;-webkit-text-stroke:2px #ffa9ad;filter:drop-shadow(0 0 6px #ffa9ad)}
+  .rail-tag em{font-style:normal;font-size:20px;color:#ffa9ad}
+  .rail-title{margin:0 0 14px;font-size:19px;font-weight:500;letter-spacing:.1em}
+  .rail-nav{list-style:none;margin:0;padding:0;width:100%;max-width:330px;display:grid;gap:8px}
+  .rail-nav a{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px;border:1px solid #ffa9ad;border-radius:10px;background:#fff7fa;color:#2a1320;text-decoration:none;font-size:15px;line-height:1.4;transition:background .2s,color .2s,transform .2s}
+  .rail-nav em{font-style:normal;font-family:var(--font-display);font-size:18px;color:#ffa9ad}
+  .rail-nav a:hover,.rail-nav a.is-here{background:#17090f;border-color:#17090f;color:#fff;transform:translateX(-4px)}
+  .rail-nav a:hover em,.rail-nav a.is-here em{color:#ffa9ad}
+}
+
+/* ── BLACK FRIDAY 黒テーマ: 数字と英字は澤井珈琲BFと同じJost 700 ─────── */
+:root{--red:#e3203b;--paper:#fffafb;--num:"Jost","Noto Sans JP",sans-serif}
+body{background:var(--void)}
+.demo-band{background:var(--neon);color:#17090f}
+.tube{color:var(--c,var(--neon));-webkit-text-stroke:0;filter:none;font-family:var(--num);font-weight:700;letter-spacing:0;line-height:.95}
+.screen .tube{color:var(--vc)}
+.main h2 span{color:var(--neon)}
+.btn-main{background:var(--neon);color:#17090f;box-shadow:none}
+.btn-line{border:1px solid var(--neon);color:var(--neon)}
+.btn.is-wait{border:1px dashed rgba(255,255,255,.3);color:var(--mute)}
+.period b,.stages .lv,.hud,.offer .st{font-family:var(--num)}
+/* 価格カード */
+.item-card{display:grid;grid-template-columns:40% 1fr;gap:14px;align-items:center;margin-top:28px;padding:12px;background:var(--paper);color:#21141a;text-decoration:none;border-radius:10px}
+.item-card img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:6px}
+.item-card h3{margin:0;font-size:clamp(16px,4.4vw,20px);font-weight:500;line-height:1.45;letter-spacing:.05em}
+.item-card .spec{margin:2px 0 6px;font-size:13px;color:#6d5560}
+.price{display:flex;align-items:baseline;flex-wrap:wrap;margin:0;line-height:1;white-space:nowrap}
+.price b{font:700 clamp(24px,6.6vw,32px)/1 var(--num);letter-spacing:0}
+.price span{font-size:14px;margin-left:1px}
+.price small{font-size:11px;margin-left:3px;color:#6d5560}
+.price-cp{margin:10px 0 2px;font-size:12.5px;color:#21141a}
+.price.is-red{color:var(--red)}
+.price.is-red b{font-size:clamp(34px,9.6vw,48px)}
+.items{display:grid;gap:22px;margin-top:8px}
+.btns{display:grid;gap:12px;margin-top:24px}
+.item-wrap .btn{margin-top:10px;min-height:50px}
+/* DEAL型の見出し */
+.deal{position:relative;overflow:hidden;text-align:center;background:var(--void)}
+.deal-2{background:var(--void2)}
+.deal>*:not(.rays){position:relative}
+.rays{position:absolute;left:50%;top:330px;width:1600px;height:1600px;margin:-800px 0 0 -800px;background:repeating-conic-gradient(rgba(255,169,173,.09) 0 12deg,transparent 12deg 24deg);animation:spin 40s linear infinite;pointer-events:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+.deal-notice{display:inline-block;margin:0 0 26px;padding:10px 26px 12px;border:2px solid var(--neon);color:var(--neon);font-size:clamp(22px,6.4vw,40px);font-weight:500;letter-spacing:.06em;line-height:1.3}
+.deal-desc{margin:14px 0 0;font-size:clamp(17px,4.8vw,22px);font-weight:500;line-height:1.6;letter-spacing:.06em;color:#fff}
+.howto{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:26px auto 4px;max-width:560px}
+.howto>div{padding:14px 8px 16px;border:2px solid var(--neon);border-radius:12px;background:rgba(255,169,173,.07)}
+.howto p{margin:0;font-size:clamp(13px,3.6vw,16px);line-height:1.6;letter-spacing:.04em;color:#fff}
+.howto b{display:inline-block;margin-top:4px;font-size:clamp(15px,4.2vw,19px);font-weight:700;color:var(--neon)}
+.howto .howto-lb{margin:0 0 8px;padding:3px 4px;background:var(--neon);border-radius:6px;color:#17090f;font-size:clamp(13px,3.7vw,17px);font-weight:700;letter-spacing:.02em}
+.price-cp .is-deal{display:inline-block;margin-top:2px;font-size:1.25em;font-weight:700;color:var(--red)}
+.deal-date{display:flex;justify-content:center;align-items:baseline;gap:2px;margin:0;line-height:1;white-space:nowrap;color:#fff}
+.deal-date b{font:700 clamp(34px,10vw,70px)/1 var(--num);letter-spacing:0}
+.deal-date span{font-size:clamp(15px,4.2vw,26px);font-weight:500}
+.deal-date i{font-style:normal;font-size:clamp(22px,6vw,34px);margin:0 4px}
+.deal-limit{margin:16px calc(-1 * var(--gut-r)) 0 calc(-1 * var(--gut-l));padding:6px 10px 8px;background:var(--red);color:#fff;font-size:clamp(20px,5.8vw,32px);font-weight:500;letter-spacing:.08em;line-height:1.4}
+.deal-set{margin:30px 0 0;font-size:clamp(20px,5.8vw,30px);font-weight:500;line-height:1.45;letter-spacing:.06em}
+.deal-plus{margin:4px 0 0;font:700 clamp(30px,8vw,44px)/1 var(--num);color:var(--neon)}
+.deal-big{display:flex;justify-content:center;align-items:baseline;margin:22px 0 0;color:var(--neon);line-height:.9;white-space:nowrap}
+.deal-num{font:700 min(30vw,180px)/.9 var(--num);letter-spacing:-.01em}
+.deal-unit{font:700 clamp(30px,8.6vw,56px)/1 var(--num);margin-left:4px}
+.deal-unit:not(:empty){font-family:var(--num),"Noto Sans JP"}
+.deal-big.is-wide .deal-num{font-size:min(25vw,160px)}
+.deal-big.is-wide .deal-unit{font-size:clamp(26px,7.6vw,52px)}
+.deal-big.is-sub .deal-num{font-size:min(30vw,180px)}
+.deal-big.is-sub .deal-unit{font-size:clamp(30px,8.6vw,56px)}
+.deal-head{margin:10px 0 0;font-size:clamp(22px,6.4vw,34px);font-weight:500;letter-spacing:.1em;color:#fff}
+.deal .deal-head+.deal-big{margin-top:6px}
+.deal-sub{margin-top:30px;padding-top:26px;border-top:1px solid var(--line)}
+.deal .item-card,.deal .items,.deal .btns,.deal .note{text-align:left}
+.entry2{display:grid;gap:30px;margin-top:26px}
+.entry2 .btn{margin-top:14px}
+/* 両脇: 黒 */
+@media (min-width:768px){body{background:#050304}.deal-limit{margin-inline:-56px}}
+@media (min-width:1240px){
+  .page{box-shadow:0 0 0 1px rgba(255,169,173,.35)}
+  .rail{color:#fff5f8}
+  .rail-sign{display:grid;margin:14px 0 0;font:700 clamp(40px,3.8vw,70px)/.95 var(--num);text-align:center;letter-spacing:.01em}
+  .rail-sign span:last-child{color:var(--neon)}
+  .rail-tag{background:transparent;border:2px solid var(--neon)}
+  .rail-tag .tube{color:var(--neon);-webkit-text-stroke:0;filter:none;font:700 clamp(50px,4vw,72px)/1 var(--num)}
+  .rail-nav a{background:#170d13;border-color:rgba(255,169,173,.5);color:#fff5f8}
+  .rail-nav em{font-family:var(--num);font-weight:700;color:var(--neon)}
+  .rail-nav a:hover,.rail-nav a.is-here{background:var(--neon);border-color:var(--neon);color:#17090f}
+  .rail-nav a:hover em,.rail-nav a.is-here em{color:#17090f}
+}
+.tabbar a.is-here{background:var(--neon);color:#17090f}
+
+/* ── スペシャルセット・写真を大きく ─────── */
+.deal-title{display:grid;gap:4px;margin:0;font-weight:500;line-height:1.15;color:#fff}
+.deal-title small{font-size:clamp(18px,5vw,26px);letter-spacing:.14em}
+.deal-title b{font:700 min(15vw,92px)/1 var(--num);letter-spacing:.01em}
+.deal-title em{font:700 min(10.6vw,66px)/1 var(--num);font-style:normal;color:var(--vc);letter-spacing:.04em}
+.deal-title span{font-size:min(9.6vw,56px);letter-spacing:.1em}
+.deal-title+.deal-date{margin-top:26px}
+.set-visual{position:relative;display:flex;justify-content:center;align-items:flex-end;gap:0;margin:34px auto 0;max-width:560px;height:min(92vw,560px)}
+.set-visual::before{content:"";position:absolute;left:18%;right:18%;bottom:-4%;height:26%;border-radius:50%;background:var(--vc);opacity:.32;filter:blur(30px)}
+.set-dev{position:relative;height:100%;width:auto;filter:drop-shadow(0 10px 18px rgba(0,0,0,.6))}
+.set-dev+.set-dev{margin-left:-12%}
+.set-box{display:block;width:min(84%,440px);height:auto;margin:16px auto 0;filter:drop-shadow(0 10px 18px rgba(0,0,0,.6))}
+.set-lead{margin:26px 0 0;font-size:clamp(18px,5.2vw,26px);font-weight:500;letter-spacing:.08em;color:#fff}
+.set-gift{display:grid;gap:4px;margin:8px 0 0;font-weight:700;line-height:1.35;letter-spacing:.04em;color:var(--vc)}
+.set-gift span{font-size:clamp(20px,6.2vw,40px);white-space:nowrap}
+.set-gift i{font-style:normal;color:#fff}
+.set-plus.is-first{margin-top:22px}
+.set-plus.is-first+.set-box{margin-top:10px}
+.set-gift b{font-size:clamp(22px,6.4vw,38px);font-weight:700;color:#fff}
+.set-plus+.set-lead{margin-top:10px}
+.set-cap{margin:18px 0 0;font-size:clamp(15px,4.2vw,19px);letter-spacing:.06em}
+.set-plus{margin:14px 0 0;font:700 min(26vw,150px)/.8 var(--num);color:var(--vc)}
+.set-plus+.deal-head{margin-top:14px}
+.item-card.is-big{grid-template-columns:1fr;padding:14px 14px 18px}
+.item-card.is-big h3{font-size:clamp(18px,5vw,22px)}
+.item-card.is-price{grid-template-columns:1fr;justify-items:center;text-align:center;padding:20px 16px}
+.item-card.is-price .price{justify-content:center}
+
+/* ── クーポン券・金の帯・第1弾 ─────── */
+:root{--g-gold:linear-gradient(115deg,#b9840f 0%,#e8b22e 22%,#ffe58f 46%,#f0c246 58%,#c48d14 82%,#e8b22e 100%)}
+.deal-limit{background:#e8b22e;background-image:var(--g-gold);color:#1b120b}
+.coupon-box{position:relative;margin:22px auto 0;max-width:560px;padding:20px 18px 26px;border:2px solid var(--vc);border-radius:12px;background:rgba(255,169,173,.07)}
+.coupon-box::before{content:"";position:absolute;inset:7px;border:1px dashed rgba(255,169,173,.6);border-radius:7px;pointer-events:none}
+.coupon-box::after{content:"";position:absolute;left:-14px;right:-14px;top:50%;height:26px;margin-top:-13px;pointer-events:none;
+  background:radial-gradient(circle at 0 50%,var(--void) 12px,transparent 13px) left/26px 26px no-repeat,radial-gradient(circle at 100% 50%,var(--void) 12px,transparent 13px) right/26px 26px no-repeat}
+.cp-lb{display:flex;justify-content:center;align-items:baseline;gap:10px;margin:0;font-size:clamp(20px,5.6vw,28px);font-weight:500;letter-spacing:.12em;color:#fff}
+.cp-lb span{font:700 clamp(15px,4vw,20px)/1 var(--num);letter-spacing:.2em;color:var(--vc)}
+.coupon-box .deal-big{margin-top:10px}
+.coupon-box .deal-big.is-wide .deal-num{font-size:min(19vw,130px)}
+.coupon-box .deal-big.is-wide .deal-unit{font-size:clamp(22px,6.2vw,44px)}
+.s1{margin-top:14px;padding-top:14px;border-top:1px solid #ecd9df}
+.s1-lb{display:inline-block;margin:0;padding:2px 12px;background:#17090f;color:#fff;font-size:clamp(14px,3.8vw,16px);letter-spacing:.1em}
+.s1-date{margin:10px 0 0;font-size:clamp(14px,3.9vw,17px);letter-spacing:.04em;white-space:nowrap}
+.s1-date b{font:700 clamp(24px,6.8vw,34px)/1 var(--num)}
+.s1-big{display:flex;align-items:baseline;gap:4px;margin:8px 0 0;color:var(--red);line-height:1;white-space:nowrap}
+.s1-big span{font-size:clamp(20px,5.6vw,28px);font-weight:500;margin-right:4px}
+.s1-big b{font:700 min(26vw,150px)/.9 var(--num);letter-spacing:-.01em}
+.s1-big em{font-style:normal;font-size:clamp(30px,8.4vw,48px);font-weight:500}
+
+/* ── クーポン獲得ボタン ─────── */
+.btn-coupon{background:#e8b22e;background-image:var(--g-gold);color:#1b120b;font-weight:500;letter-spacing:.08em}
+.btn-coupon:hover{filter:brightness(1.06)}
+.btn.btn-coupon.is-wait{border:0;background:#e8b22e;background-image:var(--g-gold);color:#1b120b;opacity:1}
+.btn-line.is-wait{border:1px solid var(--neon);color:var(--neon);opacity:1}
+
+/* ── はじめてのお客さま: ピンク地 ─────── */
+.deal.is-pink{background:var(--vc);color:#17090f}
+.deal.is-pink .deal-notice{border-color:#17090f;color:#17090f}
+.deal.is-pink .deal-big{color:#17090f}
+.deal.is-pink .note{color:#3b2129}
+.deal.is-pink .btn-line,.deal.is-pink .btn-line.is-wait{border:1px solid #17090f;color:#17090f;background:transparent}
+.deal.is-pink .btn-line:not(.is-wait){background:#17090f;color:#fff}
+
+/* ── 黒地のネオン看板 → ピンクのステージ ─────── */
+.neon-top{position:relative;overflow:hidden;padding:clamp(20px,5vw,34px) 0 clamp(26px,6vw,40px);background:#0b0709}
+.neon-top::after{content:"";position:absolute;left:0;right:0;bottom:0;height:40%;background:linear-gradient(to top,rgba(255,111,168,.22),transparent);pointer-events:none}
+.neon-sign{position:relative;z-index:1;display:block;width:min(94%,660px);height:auto;margin:0 auto;overflow:visible}
+.neon-sign .gl-a{filter:blur(13px);opacity:.6}
+.neon-sign .gl-b{filter:blur(4px)}
+.lit-3{animation:lit 1.1s steps(1,end) .7s both}
+.fv-dev{position:absolute;left:25cqw;top:4cqw;height:84cqw;width:auto;max-width:none;filter:drop-shadow(0 2cqw 2.4cqw rgba(150,40,90,.45))}
+.fv .fv-box{left:31cqw;top:58cqw;width:60cqw}
+.fv .fv-pouch{left:14cqw;top:80cqw;width:34cqw;transform:rotate(8deg)}
+
+/* ── FV: 背景の上部を見せ、商品は少し小さく。日付は家具のソムリエと同じJost 500 ─────── */
+.fv{aspect-ratio:839/1010}
+.fv-dev{left:29cqw;top:16cqw;height:70cqw}
+.fv .fv-box{left:37cqw;top:64cqw;width:50cqw}
+.fv .fv-pouch{left:19cqw;top:80cqw;width:29cqw}
+.fv-copy{top:98cqw}
+.deal-date b,.s1-date b{font-weight:500;letter-spacing:.03em}
+
+.rail-tag i{font-style:normal;font-size:17px;letter-spacing:.06em;margin-right:4px;color:#fff5f8}
+
+/* ── 期間は時刻まで。開始と終了を2行で ─────── */
+.deal-date{flex-direction:column;align-items:center;gap:6px}
+.deal-date .dd{display:flex;align-items:baseline;gap:3px}
+.deal-date em{font:500 clamp(22px,6.4vw,40px)/1 var(--num);font-style:normal;letter-spacing:.03em;margin-left:8px}
+.deal-date i{margin:0 0 0 8px}
+
+/* ── VCカード: 中央にそろえて、日付と数字の大きさを整理 ─────── */
+.item-card.is-big{text-align:center;padding:14px 14px 24px}
+.item-card.is-big h3{margin-top:6px;font-size:clamp(20px,5.6vw,26px)}
+.item-card.is-big .spec{margin:4px 0 0}
+.item-card.is-big .s1{margin-top:16px;padding-top:18px}
+.s1-lb{padding:3px 16px}
+.s1-date{display:flex;flex-wrap:wrap;justify-content:center;gap:0 10px;margin-top:12px;font-size:clamp(14px,3.9vw,17px)}
+.s1-date span{display:inline-flex;align-items:baseline;gap:3px}
+.s1-date b{font-size:clamp(26px,7.2vw,34px)}
+.s1-date i{font:500 clamp(20px,5.4vw,26px)/1 var(--num);font-style:normal;letter-spacing:.03em;margin-left:6px}
+.item-card.is-big .s1-big{justify-content:center;margin-top:10px}
+
+[hidden]{display:none!important}
+.main .item-card.is-big{margin-top:0}
+/* ── 第一弾〜第三弾: FVのネオン管に寄せた見出し ── */
+.vc-head{text-align:center;margin-bottom:30px}
+.vc-sub{margin:0;font-size:clamp(20px,5.8vw,30px);font-weight:500;line-height:1.5;letter-spacing:.06em;color:#fff}
+.vc-sub em{font-style:normal;font-weight:700;color:var(--neon)}
+.vc-flow{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:22px 0 0;padding:0;counter-reset:none}
+.vc-flow li{position:relative;display:grid;gap:4px;justify-items:center;align-content:start;padding:12px 4px 14px;border:2px solid var(--neon);background:rgba(255,169,173,.07)}
+.vc-flow li+li{border-left:0}
+.vc-flow li:first-child{border-radius:12px 0 0 12px}
+.vc-flow li:last-child{border-radius:0 12px 12px 0}
+.vc-flow li+li::before{content:"";position:absolute;left:-1px;top:50%;width:12px;height:12px;background:var(--neon);clip-path:polygon(0 0,100% 50%,0 100%);transform:translateY(-50%)}
+.vc-flow b{padding:1px 10px;background:var(--neon);border-radius:999px;color:#17090f;font-size:clamp(13px,3.6vw,16px);font-weight:700;letter-spacing:.06em}
+.vc-flow span{font:500 clamp(12px,3.3vw,15px)/1.3 var(--num);color:#fff;letter-spacing:.02em}
+.vc-flow strong{font-size:clamp(13px,3.6vw,17px);font-weight:700;line-height:1.35;letter-spacing:.02em;color:var(--neon)}
+.wave-item{display:inline-block;margin:0 0 10px;padding:3px 14px;border:1px solid rgba(255,169,173,.7);border-radius:999px;font-size:clamp(14px,3.9vw,17px);font-weight:500;letter-spacing:.06em;color:#fff}
+.waves{list-style:none;margin:34px 0 0;padding:0;display:grid;gap:22px;text-align:center}
+.wave{position:relative;padding:28px 14px 30px;border:1px solid rgba(255,169,173,.45);border-radius:16px;background:radial-gradient(120% 60% at 50% 0,rgba(255,61,127,.08),transparent 70%),#0b0709;box-shadow:0 0 10px rgba(255,61,127,.15)}
+.wave-no{--core:#ffd3e2;--glow:255,61,127;--off:#4a2232;position:relative;isolation:isolate;margin:0;font-family:"Noto Sans JP",sans-serif;font-weight:400;font-size:min(19vw,112px);line-height:1.1;letter-spacing:.08em;color:var(--core);
+  --neon:0 0 1px #fff,0 0 3px rgba(var(--glow),1),0 0 7px rgba(var(--glow),.95),0 0 14px rgba(var(--glow),.8),0 0 28px rgba(var(--glow),.55),0 0 48px rgba(var(--glow),.35);
+  text-shadow:var(--neon)}
+/* 管のうしろの壁に光が回り込む感じ */
+.wave-no::before{content:"";position:absolute;left:12%;right:12%;top:18%;bottom:12%;z-index:-1;border-radius:50%;background:rgba(var(--glow),.22);filter:blur(28px);pointer-events:none}
+.wave:nth-child(2) .wave-no{--core:#ffe6c4;--glow:255,140,40;--off:#4a3020}
+.wave-date{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:4px 0;margin:18px 0 0;font-size:clamp(11px,3vw,18px);font-weight:500;color:#fff;white-space:nowrap}
+.wave-date span{display:inline-flex;align-items:baseline}
+.wave-date b{font:500 clamp(18px,5.2vw,40px)/1.15 var(--num);letter-spacing:.02em;margin-right:2px}
+.wave-date i{font:500 clamp(15px,4.2vw,28px)/1 var(--num);font-style:normal;letter-spacing:.02em;margin-left:.45em}
+.wave-date em{font:500 clamp(14px,3.8vw,26px)/1 var(--num);font-style:normal;margin:0 .5em}.wave-head{margin:18px 0 0;font-size:clamp(20px,5.8vw,30px);font-weight:500;letter-spacing:.1em;line-height:1.45;color:#fff}
+.wave .deal-big{margin-top:6px}
+.wave-date+.deal-big{margin-top:20px}
+/* 「%還元」は % と 還元 の2段に */
+.deal-unit.is-stack{display:inline-flex;flex-direction:column;align-items:flex-start;line-height:1;gap:.08em;align-self:flex-end;margin-bottom:.29em}
+/* 「OFF」は「還元」より下の出っ張りが小さいので、その分だけ下げて20の下端にそろえる */
+.deal-unit.is-stack.is-left{margin-bottom:.225em}
+.deal-unit.is-stack.is-left{align-items:flex-start}
+/* 「%」は文字の左に空きがあるので、少し左へ寄せて下の文字と左端をそろえる */
+.deal-unit.is-stack > span:first-child{margin-left:-.07em}
+.wave-head.is-big{font-size:clamp(28px,8.4vw,48px);font-weight:700;letter-spacing:.06em;line-height:1.3}
+/* 「楽天スーパーDEAL」「クーポン」は角丸の枠に */
+.wave-head.is-big{display:inline-block;padding:4px .7em 6px;border:2px solid var(--neon);border-radius:14px;color:#fff;font-size:clamp(24px,7vw,40px)}
+/* 「ポイント」は数字の左に縦書きで */
+.v-lb{writing-mode:vertical-rl;text-orientation:upright;align-self:flex-end;margin:0 calc(min(30vw,180px) * .04) calc(min(30vw,180px) * .1) 0;font-size:calc(min(30vw,180px) * .182);font-weight:700;letter-spacing:0;line-height:1}
+.wave .deal-num{font-size:min(30vw,180px)}
+.wave .btn{margin:22px auto 0;max-width:420px}
+.wave-state{position:absolute;top:-14px;left:50%;transform:translateX(-50%);padding:3px 16px;border-radius:999px;background:var(--neon);color:#17090f;font-size:14px;font-weight:700;letter-spacing:.1em;white-space:nowrap}
+.wave.is-now{border:2px solid #ff6fa0;box-shadow:0 0 16px rgba(255,61,127,.4)}
+.wave.is-past{opacity:.45}
+.wave.is-past .wave-state{background:#5b4a51;color:#fff}
+@media (min-width:768px){.waves{gap:28px}.wave{padding:36px 28px 38px}}
+/* Deep Boost: クーポンと価格をひとつの白枠に */
+.price-box{margin:24px auto 0;max-width:560px;padding:22px 18px 24px;background:var(--paper);color:#21141a;border-radius:14px;text-align:center}
+.price-box .coupon-box{margin:0;background:#fff0f2;border-color:var(--vc2)}
+.price-box .coupon-box::before{border-color:rgba(242,143,151,.7)}
+.price-box .coupon-box::after{display:none}
+.price-box .cp-lb{color:#21141a}
+.price-box .cp-lb span{color:var(--vc2)}
+.price-box .coupon-box .deal-big{color:var(--red)}
+.price-box .coupon-box .deal-big.is-wide .deal-num{font-size:min(15vw,100px)}
+.price-box .coupon-box .deal-big.is-wide .deal-unit{font-size:clamp(20px,5.4vw,36px)}
+.price-box h3{margin:22px 0 0;font-size:clamp(18px,5vw,22px);font-weight:500;line-height:1.4;letter-spacing:.05em}
+.price-box .price{justify-content:center;margin-top:8px}
+.price-box .price span{font-size:16px}
+.price-box .price small{font-size:12px}
+.pb-cp{display:flex;align-items:center;justify-content:center;gap:8px;margin:16px 0 0;font-size:clamp(16px,4.5vw,20px);font-weight:500;letter-spacing:.04em;color:#21141a}
+.pb-cp::before,.pb-cp::after{content:"";width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-top:9px solid var(--red)}
+.price-box .price.is-red{margin-top:8px}
+.price-box .price.is-red b{font-size:clamp(44px,12.8vw,64px)}
+.price-box .price.is-red span{font-size:20px;font-weight:700}
+.price-box{overflow:hidden}
+/* クーポン獲得ボタンは白枠の左右いっぱい・下端までの帯に */
+.price-box .btn.btn-coupon{margin:22px -18px -24px;border-radius:0;min-height:56px}
+/* Deep Boost 価格: 名前と通常価格を1行 → 赤い吹き出し → 大きいクーポン後価格 */
+.pb-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:2px 8px;white-space:nowrap;margin:24px 0 0}
+.pb-name{font-size:clamp(13px,3.6vw,20px);font-weight:700;letter-spacing:.04em}
+.pb-row .price{margin:0}
+.pb-row .price b{font-size:clamp(19px,5.2vw,30px)}
+.pb-row .price span{font-size:clamp(12px,3.3vw,15px)}
+.pb-row .price small{font-size:clamp(10px,2.8vw,12px)}
+.pb-badge{position:relative;max-width:min(76%,380px);margin:14px auto 0;padding:4px 14px 6px;border-radius:999px;background:var(--red);color:#fff;font-size:clamp(15px,4.4vw,22px);font-weight:700;letter-spacing:.06em;line-height:1.3}
+.pb-badge::after{content:"";position:absolute;left:50%;bottom:-9px;margin-left:-9px;border-left:9px solid transparent;border-right:9px solid transparent;border-top:10px solid var(--red)}
+.pb-after{display:flex;justify-content:center;align-items:flex-end;gap:6px;margin:16px 0 0;color:var(--red);line-height:1}
+.pb-after b{font:700 clamp(54px,15.5vw,96px)/.9 var(--num);letter-spacing:-.01em}
+.pb-unit{display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding-bottom:.1em}
+.pb-unit small{font-size:clamp(11px,3vw,15px);color:#21141a;font-weight:500}
+.pb-unit em{font-style:normal;font-size:clamp(22px,6.2vw,36px);font-weight:700}
+.pb-after b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
+/* クーポン獲得ボタン: 角ばった金のボタン＋右に▶（見本どおり） */
+.btn.btn-coupon,.btn.btn-coupon.is-wait{min-height:52px;padding:10px 16px;border-radius:3px;background:#d9b65c;background-image:linear-gradient(90deg,#c9a14a 0%,#e6c873 30%,#f7e7a8 50%,#e6c873 70%,#c9a14a 100%);color:#3b3035;font-size:clamp(15px,4.2vw,18px);font-weight:700;letter-spacing:.06em;box-shadow:none}
+.btn.btn-coupon::after{content:"";flex:none;width:0;height:0;margin-left:4px;border-top:.42em solid transparent;border-bottom:.42em solid transparent;border-left:.62em solid currentColor}
+/* ブラックフライデー期間ずっと: 対象商品を文字で小さく */
+.deal-notice .nb{display:inline-block}
+.targets{max-width:560px;margin:22px auto 0;padding:14px 16px 16px;border:1px solid rgba(255,169,173,.4);border-radius:10px;text-align:left}
+.targets p{margin:0;font-size:12.5px;line-height:1.85;letter-spacing:.04em;color:#e9d9df}
+.targets .targets-lb{margin-bottom:6px;font-size:13.5px;font-weight:700;color:var(--neon);text-align:center}
+/* 生VC美白美容液とDeep Boostの間: 余白を詰めて細いネオンの線 */
+.block.main{padding-bottom:36px}
+#combo{padding-top:52px}
+#combo::before,#trio::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;border-radius:2px;background:#ffd3e2;box-shadow:0 0 4px #ff3d7f,0 0 10px #ff3d7f,0 0 20px rgba(255,61,127,.6)}
+@media (min-width:768px){.block.main{padding-bottom:44px}#combo{padding-top:64px}}
+/* 美容液3種: 背景の柄をなくし、Deep Boostとの間を詰める */
+#trio{background:var(--void);padding-top:52px}
+#trio .rays{display:none}
+#combo{padding-bottom:40px}
+@media (min-width:768px){#trio{padding-top:64px}#combo{padding-bottom:48px}}
+/* 美容液3種: 大きい数字を少し控えめに、比較欄はシンプルに */
+#trio .howto b{margin-top:0;font-size:clamp(17px,4.8vw,22px);line-height:1.35}
+#trio .howto>div{display:flex;flex-direction:column;justify-content:center;gap:6px;padding:12px 10px 14px}
+#trio .howto .howto-lb{margin:0;white-space:nowrap}
+#trio .howto b{white-space:nowrap}
+@media (max-width:600px){#trio .howto{grid-template-columns:1fr;gap:10px}}
+/* 美容液3種: 帯ではなく、美容液ごとの色の角丸に名前 */
+.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:28px 0 0}
+.pill{display:inline-block;padding:6px 20px 8px;border-radius:999px;font-size:clamp(19px,5.4vw,28px);font-weight:500;letter-spacing:.06em;line-height:1.3;color:#1f2228}
+.pill{color:#fff}
+.pill.is-pdrn{background:var(--red)}
+.pill.is-az{background:#3d98a9}
+.pill.is-va{background:#c47a3e}
+/* 生PDRN: 「%／OFF」を20の高さに合わせて2段、クーポンはその下 */
+.deal-big.is-cp3{align-items:stretch}
+.deal-big.is-cp3 .deal-unit.is-stack{align-self:stretch;justify-content:space-between;gap:0;margin:.04em 0 0 6px;font-size:clamp(34px,10vw,64px);line-height:.9}
+.deal-big.is-cp3 .u-cp{font-family:"Noto Sans JP",sans-serif;font-size:.62em;font-weight:700;letter-spacing:.04em;line-height:1.1;margin-left:0!important}
+/* 美容液カード: 見本どおり、名前と内容量の下に線、その下に価格を大きく */
+.items .item-card{grid-template-columns:42% 1fr;gap:clamp(14px,4vw,40px);align-items:center;padding:clamp(12px,3vw,20px)}
+.items .item-card > div{padding-right:clamp(0px,2vw,24px)}
+.items .item-card h3{font-size:clamp(19px,5.4vw,32px);font-weight:700;line-height:1.3;letter-spacing:.04em}
+.items .item-card .spec{margin:4px 0 0;padding-bottom:clamp(8px,2vw,14px);border-bottom:1.5px solid #21141a;font-size:clamp(14px,3.9vw,22px);color:#6d5560}
+.items .item-card .price{margin-top:clamp(8px,2vw,14px)}
+.items .item-card .price b{font-size:clamp(24px,6.8vw,36px)}
+.items .item-card .price span{font-size:clamp(14px,3.9vw,20px)}
+.items .item-card .price small{font-size:clamp(11px,3vw,15px)}
+.items .item-card .price-cp{margin:clamp(4px,1vw,8px) 0 0;font-size:clamp(14px,3.9vw,26px);white-space:nowrap;font-weight:700;line-height:1.35;color:#21141a}
+.items .item-card .price.is-red{margin-top:2px}
+.items .item-card .price.is-red b{font-size:clamp(34px,10vw,62px)}
+.items .item-card .price.is-red span{font-size:clamp(16px,4.6vw,26px)}
+.items .item-card .price.is-red small{font-size:clamp(12px,3.4vw,20px);color:#21141a}
+.items .item-card .price-cp .is-deal{font-size:1.05em}
+/* 流れ図の「第一弾〜第三弾」: 読める程度のやわらかいネオン（大きさはそのまま） */
+.vc-flow b{padding:1px 10px;background:rgba(0,0,0,.35);border:1.5px solid #ff6fa0;color:#ff8fb6;text-shadow:0 0 3px rgba(255,61,127,.5);box-shadow:0 0 6px rgba(255,61,127,.45)}
+.vc-flow li:nth-child(2) b{border-color:#ffa04a;color:#ffb978;text-shadow:0 0 3px rgba(255,140,40,.5);box-shadow:0 0 6px rgba(255,140,40,.45)}
+/* 終わった回はグレーダウン */
+.vc-flow li.is-past{background:rgba(120,120,120,.18)}
+.vc-flow li.is-past > *:not(.flow-end){filter:grayscale(1);opacity:.35}
+.vc-flow .flow-end{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:3px 8px;border-radius:4px;background:#5b5458;color:#fff;font-style:normal;font-size:clamp(11px,3vw,14px);font-weight:700;letter-spacing:.04em;white-space:nowrap}
+/* 開催中の回は目立たせて「開催中」 */
+.vc-flow li.is-now{background:rgba(255,61,127,.22);box-shadow:0 0 0 2px #ff6fa0 inset,0 0 18px rgba(255,61,127,.55);z-index:1}
+.vc-flow .flow-now{position:absolute;left:50%;top:-12px;transform:translateX(-50%);padding:2px 10px;border-radius:999px;background:#ff3d7f;color:#fff;font-style:normal;font-size:clamp(11px,3vw,13px);font-weight:700;letter-spacing:.06em;white-space:nowrap;box-shadow:0 0 10px rgba(255,61,127,.8)}
+.vc-flow{margin-top:30px}
+/* 第二弾・第三弾の「楽天スーパーDEAL」「クーポン」は、枠の左右いっぱいの帯に */
+.wave-head.is-big{display:inline-block;margin:18px auto 0;padding:5px .9em 7px;border:0;border-radius:999px;background:var(--neon);color:#17090f}
+.wave:nth-child(2) .wave-head.is-big{background:#ffb35c}
+/* 第三弾のクーポン獲得ボタンは、枠の左右いっぱい・下端までの帯に */
+.wave .btn.btn-coupon{max-width:none;margin:24px -14px -30px;border-radius:0 0 15px 15px;min-height:56px}
+@media (min-width:768px){.wave .btn.btn-coupon{margin:28px -28px -38px}}
+/* 商品名はアルファベットも含めて Noto Sans JP に */
+.item-card h3,.pill,.pb-name,.wave-item,.set-gift span{font-family:"Noto Sans JP",sans-serif}
+/* 左の案内札: 「ただいま開催中」と残り時間 */
+.rail-tag .rail-live{display:inline-block;padding:3px 12px;border-radius:999px;background:#ff3d7f;color:#fff;font-size:14px;font-weight:700;letter-spacing:.08em;box-shadow:0 0 10px rgba(255,61,127,.7);animation:liveBlink 1.6s ease-in-out infinite}
+.rail-tag .rail-live.is-end{background:#5b5458;box-shadow:none;animation:none}
+.rail-tag .rail-timer{display:grid;justify-items:center;gap:2px;width:100%;margin-top:8px;padding:10px 8px 12px;border-radius:10px;background:rgba(255,61,127,.16);box-shadow:inset 0 0 0 1.5px rgba(255,111,160,.7)}
+.rail-tag .rail-timer[hidden]{display:none}
+.rail-tag .rail-timer em{font-style:normal;font-size:13px;font-weight:700;letter-spacing:.1em;color:#ffb3c8}
+.rail-tag .rail-timer b{font:700 clamp(22px,1.9vw,30px)/1.15 var(--num);letter-spacing:.04em;color:#fff;text-shadow:0 0 6px rgba(255,61,127,.8);font-variant-numeric:tabular-nums}
+.rail-tag.is-ended{filter:grayscale(1);opacity:.6}
+@keyframes liveBlink{50%{opacity:.55}}
+@media (prefers-reduced-motion:reduce){.rail-tag .rail-live{animation:none}}
+/* 第三弾は紫ではなく、ピンク寄りの赤 */
+.wave:nth-child(3) .wave-no{--core:#ffd2dc;--glow:255,40,90;--off:#4a1a26}
+.wave:nth-child(3) .wave-head.is-big{background:#ff5a7e}
+.vc-flow li:nth-child(3) b{border-color:#ff4f78;color:#ff8aa5;text-shadow:0 0 3px rgba(255,40,90,.5);box-shadow:0 0 6px rgba(255,40,90,.45)}
+/* 期間ずっと: 対象商品を写真つきで並べる */
+.targets{max-width:640px;padding:16px 0 18px;border:0}
+.t-grid{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:10px 0 0;padding:0}
+.t-grid a{display:block;height:100%;background:var(--paper);border-radius:8px;overflow:hidden;color:#21141a;text-decoration:none;transition:transform .15s}
+.t-grid a:hover{transform:translateY(-2px)}
+.t-grid img{display:block;width:100%;aspect-ratio:1;object-fit:cover}
+.t-grid .t-name{display:block;padding:8px 10px 2px;font-family:"Noto Sans JP",sans-serif;font-size:clamp(13px,3.6vw,16px);font-weight:500;line-height:1.4;letter-spacing:.02em;text-align:left}
+@media (min-width:768px){.t-grid{grid-template-columns:repeat(4,1fr);gap:14px}}
+/* FV: 商品を合成済みの画像1枚に差し替え（ネオンの看板はそのまま） */
+.fv{aspect-ratio:1200/1620}
+.fv-copy{top:118cqw}
+/* ネオンの看板とFV画像を近づける */
+.neon-top{padding-bottom:4px}
+/* 区切りの線をすべて同じ細いネオンの線に */
+.deal-sub{border-top:0}
+.deal-sub::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;border-radius:2px;background:#ffd3e2;box-shadow:0 0 4px #ff3d7f,0 0 10px #ff3d7f,0 0 20px rgba(255,61,127,.6)}
+/* 美容液3種と期間ずっとの間: 余白を詰めてネオンの線 */
+#trio{padding-bottom:40px}
+#all{padding-top:52px}
+#all::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;border-radius:2px;background:#ffd3e2;box-shadow:0 0 4px #ff3d7f,0 0 10px #ff3d7f,0 0 20px rgba(255,61,127,.6)}
+@media (min-width:768px){#trio{padding-bottom:48px}#all{padding-top:64px}}
+/* カードのクーポン後価格: (税込) が下に落ちないように */
+.items .item-card .price.is-red{flex-wrap:nowrap}
+.items .item-card .price.is-red b{font-size:clamp(32px,9vw,52px)}
+.t-grid .t-price{display:flex;align-items:baseline;gap:1px;padding:0 10px 10px;font-size:12px;font-weight:500;color:#21141a}
+.t-grid .t-price b{font:700 clamp(17px,4.6vw,20px)/1.2 var(--num);letter-spacing:0;margin-right:1px}
+.t-grid .t-price small{font-size:10px;color:#6d5560;margin-left:2px}
+.t-grid a{display:flex;flex-direction:column}
+.t-grid .t-price{margin-top:auto}
+/* FV: 透明部分の後ろは看板と続く暗い色に */
+/* スクロールで下からふわっと出てくる動き */
+.js-rv .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.js-rv .rv.rv-in{opacity:1;transform:none}
+.js-rv .t-grid li.rv:nth-child(4n+2){transition-delay:.08s}
+.js-rv .t-grid li.rv:nth-child(4n+3){transition-delay:.16s}
+.js-rv .t-grid li.rv:nth-child(4n){transition-delay:.24s}
+@media (prefers-reduced-motion:reduce){.js-rv .rv{opacity:1;transform:none;transition:none}}
+/* 「ブラックフライデー期間ずっと」は吹き出し */
+.deal-notice.is-bubble{position:relative;padding:12px 26px 14px;border:0;border-radius:18px;background:var(--neon);color:#17090f;font-weight:700}
+.deal-notice.is-bubble::after{content:"";position:absolute;left:50%;bottom:-14px;margin-left:-12px;border-left:12px solid transparent;border-right:12px solid transparent;border-top:15px solid var(--neon)}
+/* 日付はすべて1行 */
+.deal-date{flex-direction:row;flex-wrap:nowrap;justify-content:center;align-items:baseline;gap:0}
+.deal-date .dd{gap:2px}
+.deal-date b{font-size:clamp(22px,6vw,48px)}
+.deal-date span{font-size:clamp(11px,3vw,20px)}
+.deal-date em{font-size:clamp(16px,4.4vw,32px);margin-left:.35em}
+.deal-date i{font-size:clamp(14px,4vw,28px);margin:0 .4em}
+/* Deep Boost: 美顔器と＋の間を詰める */
+.set-plus.is-first{margin-top:-14px}
+/* 美容液カード（スマホ）: 右側の文字が枠からはみ出さないように */
+@media (max-width:767px){
+  .items .item-card{grid-template-columns:36% 1fr;gap:12px;padding:12px}
+  .items .item-card > div{padding-right:0;min-width:0}
+  .items .item-card h3{font-size:clamp(16px,4.5vw,20px)}
+  .items .item-card .spec{font-size:13px}
+  .items .item-card .price b{font-size:clamp(20px,5.6vw,26px)}
+  .items .item-card .price span{font-size:13px}
+  .items .item-card .price small{font-size:10px}
+  .items .item-card .price-cp{font-size:clamp(13px,3.6vw,16px)}
+  .items .item-card .price.is-red b{font-size:clamp(26px,7.4vw,34px)}
+  .items .item-card .price.is-red span{font-size:14px}
+  .items .item-card .price.is-red small{font-size:10px}
+}
+/* PC: 生VA・生AZは2つ並びのフレーム */
+@media (min-width:768px){
+  #chars-deal{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  #chars-deal .item-card{grid-template-columns:1fr;gap:14px;padding:16px}
+  #chars-deal .item-card img{aspect-ratio:4/3}
+  #chars-deal .item-card > div{padding-right:0}
+  #chars-deal .item-card h3{font-size:24px}
+  #chars-deal .item-card .price-cp{font-size:18px}
+}
+/* 「%還元」「%OFF」の文字を少しだけ大きく */
+.deal-unit.is-stack{font-size:clamp(33px,9.4vw,62px)}
+/* 「楽天スーパーDEAL」「クーポン」の角丸と下の数字の間を少しあける */
+.wave .wave-head.is-big{margin-bottom:16px}
+/* FVの日付の枠: 縦幅を狭める */
+.fv .period{padding-top:1.3cqw;padding-bottom:1.3cqw}
+/* ヘッダー */
+.site-head{position:relative;z-index:20;display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 var(--gut-r) 0 var(--gut-l);background:#0b0709;border-bottom:1px solid rgba(255,169,173,.18)}
+.sh-logo img{display:block;width:auto;height:24px}
+.sh-burger{display:grid;align-content:center;gap:5px;width:40px;height:40px;padding:0 8px;border:0;background:none;cursor:pointer}
+.sh-burger span{display:block;height:2px;border-radius:2px;background:#ffd3e2;transition:transform .25s,opacity .25s}
+.sh-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.sh-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.sh-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.sp-menu{position:absolute;left:0;right:0;z-index:19;background:rgba(11,7,9,.97);border-bottom:2px solid var(--neon);box-shadow:0 10px 30px rgba(0,0,0,.6)}
+.sp-menu ul{list-style:none;margin:0;padding:6px var(--gut-r) 12px var(--gut-l)}
+.sp-menu li+li{border-top:1px solid rgba(255,169,173,.2)}
+.sp-menu a{display:block;padding:14px 4px;color:#fff5f8;text-decoration:none;font-size:15px;font-weight:500;letter-spacing:.04em}
+.sp-menu li:last-child a{color:var(--neon)}
+@media (min-width:768px){.sh-burger,.sp-menu{display:none!important}.site-head{justify-content:center;height:60px}.sh-logo img{height:28px}}
+/* ネオン看板とFV画像をさらに近づける（重ねても色が続くように、どちらも同じ暗い色に） */
+.neon-top::after{display:none}
+.neon-top{padding-bottom:0}
+.fv{background:transparent;margin-top:-8%;z-index:1}
+.neon-top + .fv{margin-top:-8%}
+/* スマホ下の固定バー: PCの左の案内札と同じ内容（今の回・開催中・残り時間） */
+.sp-dock{position:fixed;z-index:30;left:0;right:0;bottom:0;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;min-height:62px;padding:6px 12px calc(6px + env(safe-area-inset-bottom,0px));background:rgba(23,9,15,.96);border-top:2px solid var(--neon);color:#fff;text-decoration:none;box-shadow:0 -6px 20px rgba(0,0,0,.5)}
+.sp-dock .dk-st small{display:block;font-size:11px;line-height:1.3;color:#ffa9ad;max-width:5.5em}
+.sp-dock .rail-live{display:inline-block;padding:3px 8px;border-radius:999px;background:#ff3d7f;color:#fff;font-size:11px;font-weight:700;letter-spacing:.04em;line-height:1.3;max-width:6em;text-align:center;animation:liveBlink 1.6s ease-in-out infinite}
+.sp-dock .rail-live.is-end{background:#5b5458;animation:none}
+.sp-dock .dk-main{display:grid;justify-items:center;line-height:1.1;min-width:0}
+.sp-dock .dk-main small{font-size:11px;letter-spacing:.02em;white-space:nowrap}
+.sp-dock .dk-main span{display:flex;align-items:baseline;gap:2px;white-space:nowrap}
+.sp-dock .dk-main i{font-style:normal;font-size:12px;margin-right:2px}
+.sp-dock .dk-main b{font:700 26px/1 var(--num);color:var(--neon)}
+.sp-dock .dk-main em{font-style:normal;font-size:13px;color:var(--neon)}
+.sp-dock .dk-timer{display:grid;justify-items:center;padding:4px 8px;border-radius:8px;background:rgba(255,61,127,.16);box-shadow:inset 0 0 0 1px rgba(255,111,160,.7)}
+.sp-dock .dk-timer[hidden]{display:none}
+.sp-dock .dk-timer em{font-style:normal;font-size:10px;font-weight:700;color:#ffb3c8;white-space:nowrap}
+.sp-dock .dk-timer b{font:700 15px/1.2 var(--num);font-variant-numeric:tabular-nums;white-space:nowrap;text-shadow:0 0 5px rgba(255,61,127,.8)}
+.sp-dock.is-ended{filter:grayscale(1)}
+body{padding-bottom:calc(66px + env(safe-area-inset-bottom,0px))}
+@media (min-width:1240px){.sp-dock{display:none}body{padding-bottom:0}}
+/* 「ポイント15倍の対象商品」などの見出しを大きく */
+.targets .targets-lb{margin-bottom:12px;font-size:clamp(18px,5vw,26px);letter-spacing:.06em}
+/* 対象商品カード: PC4列では文字を少し小さく、価格の(税込)を折り返さない */
+.t-grid .t-price{flex-wrap:nowrap;white-space:nowrap}
+@media (min-width:768px){.t-grid .t-name{font-size:14px}.t-grid .t-price b{font-size:18px}}
+/* PC左のロゴは店舗トップへのリンク */
+.rail-logo-link{display:flex;justify-content:center;width:100%;transition:opacity .2s}
+.rail-logo-link:hover{opacity:.75}
+/* 「楽天スーパーDEAL」「BIG DEAL対象商品」を大きく */
+.deal-head.is-xl{font-size:clamp(26px,7.4vw,44px);font-weight:700;letter-spacing:.04em;line-height:1.3}
+.deal-head.is-xl + .deal-big{margin-top:14px}
+/* 日付: 曜日と時刻を近づけ、上に「開催期間」を付けてそのブロックの期間だと分かるように */
+.deal-date em{margin-left:.15em}
+.wave-date i{margin-left:.25em}
+.deal-date,.wave-date{flex-wrap:wrap;row-gap:6px}
+.deal-date::before,.wave-date::before{content:"開催期間";flex:0 0 100%;display:block;font-family:"Noto Sans JP",sans-serif;font-size:clamp(11px,3vw,14px);font-weight:700;letter-spacing:.2em;line-height:1.6;text-align:center;color:var(--neon);background:linear-gradient(currentColor,currentColor) left center/calc(50% - 4em) 1px no-repeat,linear-gradient(currentColor,currentColor) right center/calc(50% - 4em) 1px no-repeat}
+.deal.is-pink .deal-date::before{color:#17090f}
+.deal-date .dd,.wave-date span{white-space:nowrap}
+/* PC（左にロゴがある幅）では上のヘッダーは出さない */
+@media (min-width:1240px){.site-head{display:none}}
+/* 生PDRNの20%OFFの下の「クーポン」を大きく */
+.deal-head.is-cp{margin-top:10px;font-size:clamp(32px,9.4vw,58px);font-weight:700;letter-spacing:.12em;line-height:1.2}
+/* ハンバーガーをなくしたので、ヘッダーのロゴは真ん中に */
+.site-head{justify-content:center}
+/* スマホ下はページ内メニューに戻した */
+body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
+@media (min-width:1240px){body{padding-bottom:0}}
+/* 金額のカンマは小さく */
+.cm{font-size:.7em;letter-spacing:0;margin:0 -.02em}
+.deal-num .cm,.price b .cm{font-size:.65em;margin:0 -.03em 0 .01em}
+/* 画面に入ったらネオン管が点くようにピカピカ
+   色は最初から最後の色のまま。光（にじみ）だけがついたり消えたりする */
+.js-flicker .wave:not(.is-lit) .wave-no{color:rgba(var(--glow),.55);text-shadow:none}
+.js-flicker .wave:not(.is-lit) .wave-no::before{opacity:0}
+.js-flicker .wave.is-lit .wave-no{animation:waveOn 1.2s steps(1,end) both}
+.js-flicker .wave.is-lit .wave-no::before{animation:wallOn 1.2s steps(1,end) both}
+.js-flicker .wave.is-on .wave-no,.js-flicker .wave.is-on .wave-no::before{animation:none}
+@keyframes waveOn{
+  0%,13%,29%,37%{color:rgba(var(--glow),.55);text-shadow:none}
+  8%,24%,33%,52%,100%{color:var(--core);text-shadow:var(--neon)}
+}
+@keyframes wallOn{0%,7%,13%,23%,29%,32%,37%,51%{opacity:0}8%,24%,33%,52%,100%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.js-flicker .wave.is-lit .wave-no,.js-flicker .wave.is-lit .wave-no::before{animation:none}}
+</style>
+</head>
+<body>
+<div class="demo-band">制作確認用のデモページです。実際の販売ページではありません</div>
+
+<main class="page">
+
+<!-- ▼ ヘッダー: ロゴで店舗トップへ／スマホはハンバーガーメニュー -->
+<div class="site-head">
+  <a class="sh-logo" href="https://www.rakuten.co.jp/yunth/"><img src="images/logo.png" alt="Yunth 楽天市場店トップへ" width="903" height="299"></a>
+</div>
+
+<!-- ▼ FV -->
+<!-- ▼ 黒地のネオン看板 -->
+<div class="neon-top">
+  <svg class="neon-sign" viewBox="0 0 800 500" role="img" aria-label="Yunth BLACK FRIDAY">
+    <defs>
+      <text id="t-black" font-family="'Russo One',sans-serif" font-size="150" x="400" y="256" text-anchor="middle" textLength="600" lengthAdjust="spacingAndGlyphs" transform="skewX(-7) translate(30 0)">BLACK</text>
+      <text id="t-friday" font-family="'Russo One',sans-serif" font-size="150" x="400" y="416" text-anchor="middle" textLength="660" lengthAdjust="spacingAndGlyphs" transform="skewX(-7) translate(50 0)">FRIDAY</text>
+      <path id="p-top" d="M58 214C44 138 128 124 190 104 268 78 300 26 400 26s132 52 210 78c62 20 146 34 132 110"/>
+      <path id="p-low" d="M28 300c-6 90 14 152 42 188M772 300c6 90-14 152-42 188"/>
+      <g id="i-drop"><path d="M0-34C12-14 24-2 24 12A24 24 0 0 1-24 12C-24-2-12-14 0-34z"/><path d="M-12 12a12 12 0 0 0 12 12"/></g>
+      <g id="i-pouch"><path d="M-48-13h10l9-7h66a11 11 0 0 1 11 11V9a11 11 0 0 1-11 11h-66l-9-7h-10z"/><path d="M-22-9h46a7 7 0 0 1 0 18h-46"/></g>
+      <g id="i-star"><path d="M0-22L5-5 22 0 5 5 0 22-5 5-22 0-5-5z"/></g>
+    </defs>
+
+    <!-- 飾り: 美容液のパウチとしずく、光 -->
+    <g class="lit-3" fill="none" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+      <g class="gl-b" opacity=".7"><use href="#i-pouch" x="706" y="52" stroke="#ffa9ad"/><use href="#i-drop" x="742" y="404" stroke="#ffd9a8"/><use href="#i-star" x="92" y="66" stroke="#ffd9a8"/></g>
+      <use href="#i-pouch" x="706" y="52" stroke="#ffe4e4"/><use href="#i-drop" x="742" y="404" stroke="#fff0d8"/><use href="#i-star" x="92" y="66" stroke="#fff0d8"/>
+      <use href="#i-star" x="150" y="36" stroke="#ffb9c8" transform="translate(150 36) scale(.5) translate(-150 -36)"/>
+      <use href="#i-star" x="58" y="416" stroke="#ffb9c8" transform="translate(58 416) scale(.6) translate(-58 -416)"/>
+    </g>
+
+    <!-- 枠の管 -->
+    <g class="lit-2" fill="none" stroke-linecap="round">
+      <use href="#p-top" stroke="#ffd9a8" stroke-width="8" class="gl-a"/>
+      <use href="#p-top" stroke="#ffd9a8" stroke-width="4" class="gl-b"/>
+      <use href="#p-top" stroke="#fff4e4" stroke-width="2.2"/>
+      <use href="#p-low" stroke="#ff3d7f" stroke-width="8" class="gl-a"/>
+      <use href="#p-low" stroke="#ff3d7f" stroke-width="4" class="gl-b"/>
+      <use href="#p-low" stroke="#ffd9e6" stroke-width="2.2"/>
+    </g>
+
+
+    <!-- BLACK は白い管 -->
+    <g class="lit-1" fill="none" stroke-linejoin="round">
+      <use href="#t-black" x="6" y="6" stroke="#6b5560" stroke-width="1.4"/>
+      <use href="#t-black" stroke="#ffffff" stroke-width="6" class="gl-a"/>
+      <use href="#t-black" stroke="#ffffff" stroke-width="3" class="gl-b" opacity=".6"/>
+      <use href="#t-black" stroke="#ffffff" stroke-width="2.4"/>
+    </g>
+    <!-- FRIDAY はピンクの管 -->
+    <g class="lit-2" fill="none" stroke-linejoin="round">
+      <use href="#t-friday" x="6" y="6" stroke="#8e1c4a" stroke-width="1.4"/>
+      <use href="#t-friday" stroke="#ff3d7f" stroke-width="11" class="gl-a"/>
+      <use href="#t-friday" stroke="#ff3d7f" stroke-width="5" class="gl-b"/>
+      <use href="#t-friday" stroke="#ffe3ec" stroke-width="2.4"/>
+    </g>
+  </svg>
+</div>
+
+<!-- ▼ FV: ピンクのステージに美顔器と美容液 -->
+<header class="fv">
+  <img class="fv-bg" src="images/fv-main.webp?v=2" alt="Yunth 美顔器 Deep Boost、生VC美白美容液、生PDRN美容液、ピュアマスク" width="1200" height="1620">
+  <div class="fv-copy">
+    <a class="period" href="#vc"><span><b>11/19</b>(木) 10:00</span><svg class="arrows" viewBox="0 0 34 12" role="img" aria-label="から"><path d="M0 0l8 6-8 6zM13 0l8 6-8 6zM26 0l8 6-8 6z"/></svg><span><b>11/26</b>(木) 9:59</span></a>
+  </div>
+</header>
+
+<!-- ▼ 主役: 生VC美白美容液 -->
+<section class="block main" id="vc">
+  <!-- 一時非表示: 見出し・説明・ゲーム機。戻すときは hidden を外す -->
+  <h2 hidden><span>生VC美白<sup>※1</sup>美容液<sup>＊</sup></span><br>日替わりキャンペーン</h2>
+  <p class="lead" hidden>期間ごとに内容が切り替わります。<br>タップして内容をご確認ください。</p>
+
+  <div class="vc-head">
+    <p class="deal-notice">生VC美白<sup>※1</sup>美容液<sup>＊</sup></p>
+    <p class="vc-sub">期間ごとに<br><em>お得が3回</em>切り替わります</p>
+    <ol class="vc-flow">
+      <li data-start="2026-11-19T10:00:00+09:00" data-end="2026-11-20T10:00:00+09:00"><b>第一弾</b><span>11/19(木)〜</span><strong>ポイント<br>20倍</strong></li>
+      <li data-start="2026-11-20T10:00:00+09:00" data-end="2026-11-21T10:00:00+09:00"><b>第二弾</b><span>11/20(金)〜</span><strong>スーパーDEAL<br>30%還元</strong></li>
+      <li data-start="2026-11-21T10:00:00+09:00" data-end="2026-11-26T10:00:00+09:00"><b>第三弾</b><span>11/21(土)〜</span><strong>クーポン<br>20%OFF</strong></li>
+    </ol>
+  </div>
+
+  <div class="console" hidden>
+    <div class="bezel">
+      <div class="screen" id="screen">
+        <div class="hud"><span>キャンペーン</span><span id="hudCount">1/3</span></div>
+        <div class="offer" id="offer" aria-live="polite"></div>
+        <ul class="stages" id="stages"></ul>
+      </div>
+    </div>
+    <div class="pad">
+      <div class="dpad" aria-label="キャンペーン切り替え">
+        <button class="l" id="prev" type="button" aria-label="前のキャンペーン">&lt;</button>
+        <button class="r" id="next" type="button" aria-label="次のキャンペーン">&gt;</button>
+      </div>
+      <div class="pad-logo"><img src="images/logo-ink.png" alt="Yunth" width="903" height="299"><small>1ml×28包</small></div>
+      <div class="abxy" aria-hidden="true"><span class="x"></span><span class="y"></span><span class="a"></span><span class="b"></span></div>
+    </div>
+  </div>
+
+  <a class="item-card is-big" href="https://item.rakuten.co.jp/yunth/10000000/">
+    <img src="images/serum-vc.jpg" alt="" width="720" height="720" loading="lazy">
+    <div>
+      <h3>生VC美白<sup>※1</sup>美容液<sup>＊</sup></h3>
+      <p class="spec">1ml×28包</p>
+    </div>
+  </a>
+
+  <!-- 第一弾〜第三弾。開催中/終了の表示は data-start / data-end から自動で切り替わる -->
+  <ol class="waves">
+    <li class="wave" data-start="2026-11-19T10:00:00+09:00" data-end="2026-11-20T10:00:00+09:00">
+      <p class="wave-item">生VC美白<sup>※1</sup>美容液<sup>＊</sup></p>
+      <p class="wave-no">第一弾</p>
+      <p class="wave-date"><span><b>11/19</b>(木)<i>10:00</i><em>〜</em></span><span><b>11/20</b>(金)<i>9:59</i></span></p>
+      <p class="deal-big"><span class="v-lb">ポイント</span><span class="deal-num">20</span><span class="deal-unit">倍</span></p>
+    </li>
+    <li class="wave" data-start="2026-11-20T10:00:00+09:00" data-end="2026-11-21T10:00:00+09:00">
+      <p class="wave-item">生VC美白<sup>※1</sup>美容液<sup>＊</sup></p>
+      <p class="wave-no">第二弾</p>
+      <p class="wave-date"><span><b>11/20</b>(金)<i>10:00</i><em>〜</em></span><span><b>11/21</b>(土)<i>9:59</i></span></p>
+      <p class="wave-head is-big">楽天スーパーDEAL</p>
+      <p class="deal-big"><span class="v-lb">ポイント</span><span class="deal-num">30</span><span class="deal-unit is-stack"><span>%</span><span>還元</span></span></p>
+    </li>
+    <li class="wave" data-start="2026-11-21T10:00:00+09:00" data-end="2026-11-26T10:00:00+09:00">
+      <p class="wave-item">生VC美白<sup>※1</sup>美容液<sup>＊</sup></p>
+      <p class="wave-no">第三弾</p>
+      <p class="wave-date"><span><b>11/21</b>(土)<i>10:00</i><em>〜</em></span><span><b>11/26</b>(木)<i>9:59</i></span></p>
+      <p class="wave-head is-big">クーポン</p>
+      <p class="deal-big"><span class="deal-num">20</span><span class="deal-unit is-stack is-left"><span>%</span><span>OFF</span></span></p>
+      <a class="btn btn-coupon" data-link="vcCoupon" href="#">20%OFFクーポン獲得</a>
+    </li>
+  </ol>
+
+  <div class="main-cta">
+    <a class="btn btn-main" href="https://item.rakuten.co.jp/yunth/10000000/"><span>生VC美白<sup>※1</sup>美容液<sup>＊</sup>の商品ページへ</span></a>
+  </div>
+  <p class="note">※1 メラニンの生成を抑え、しみ・そばかすを防ぐ<br>＊医薬部外品 薬用ホワイトエッセンスPVC α</p>
+</section>
+
+<!-- ▼ Deep Boost -->
+<section class="block deal" id="combo">
+  
+  <h2 class="deal-title"><small>美顔器</small><b>Deep Boost</b></h2>
+  <p class="deal-date"><span class="dd"><b>11/19</b><span>(木)</span><em>10:00</em><i>〜</i></span><span class="dd"><b>11/26</b><span>(木)</span><em>9:59</em></span></p>
+  <div class="set-visual">
+    <img class="set-dev" src="images/device-white.png" alt="美顔器 Deep Boost" width="430" height="1200" loading="lazy">
+    <img class="set-dev" src="images/device-pink.png" alt="" width="430" height="1200" loading="lazy">
+  </div>
+  <p class="set-plus is-first" aria-label="と">＋</p>
+  <img class="set-box" src="images/vc-set.png" alt="生VC美白美容液の箱とパウチ" width="1046" height="593" loading="lazy">
+  <p class="set-gift"><span><i>美顔器に</i>生VC美白<sup>※1</sup>美容液<sup>＊</sup></span><b>1箱が特別セット</b></p>
+  <p class="set-plus" aria-label="さらに">＋</p>  <div class="price-box">
+    <div class="coupon-box">
+      <p class="cp-lb"><span>COUPON</span></p>
+      <p class="deal-big is-wide"><span class="deal-num">7,809</span><span class="deal-unit">円OFF</span></p>
+    </div>
+    <p class="pb-row"><span class="pb-name">美顔器 Deep Boost</span><span class="price"><b>33,000</b><span>円</span><small>(税込)</small></span></p>
+    <p class="pb-badge">クーポン利用で</p>
+    <p class="pb-after"><b>25,191</b><span class="pb-unit"><small>(税込)</small><em>円</em></span></p>
+    <a class="btn btn-coupon" data-link="deepboostCoupon" href="#">7,809円OFFクーポン獲得</a>
+  </div>
+  <div class="btns">
+    <a class="btn btn-main" href="https://item.rakuten.co.jp/yunth/yth-260/">Deep Boostの商品ページへ</a>
+  </div>
+  <p class="note">※1 メラニンの生成を抑え、しみ・そばかすを防ぐ　＊医薬部外品 薬用ホワイトエッセンスPVC α</p>
+</section>
+
+<!-- ▼ 美容液3種 -->
+<section class="block deal deal-2" id="trio">
+  <i class="rays" aria-hidden="true"></i>
+  <p class="deal-notice">美容液3種</p>
+  <p class="deal-date"><span class="dd"><b>11/19</b><span>(木)</span><em>10:00</em><i>〜</i></span><span class="dd"><b>11/26</b><span>(木)</span><em>9:59</em></span></p>
+  <div class="howto">
+    <div class="howto-cp">
+      <p class="howto-lb">ブラックフライデークーポン</p>
+      <p><b>20%OFFクーポン</b></p>
+    </div>
+    <div class="howto-deal">
+      <p class="howto-lb">楽天スーパーDEAL</p>
+      <p><b>20%ポイント還元</b></p>
+    </div>
+  </div>
+  <p class="pills"><span class="pill is-pdrn">生PDRN<sup>※2</sup>美容液</span></p>
+  <p class="deal-big"><span class="deal-num">20</span><span class="deal-unit is-stack is-left"><span>%</span><span>OFF</span></span></p>
+  <p class="deal-head is-cp">クーポン</p>
+  <div class="items" id="chars"></div>
+  <div class="deal-sub">
+    <p class="pills"><span class="pill is-va">生VA美容液<sup>＊</sup></span><span class="pill is-az">生AZ美容液</span></p>
+    <p class="deal-head is-xl">楽天スーパーDEAL</p>
+    <p class="deal-big"><span class="v-lb">ポイント</span><span class="deal-num">20</span><span class="deal-unit is-stack"><span>%</span><span>還元</span></span></p>
+    <div class="items" id="chars-deal"></div>
+  </div>
+  <p class="note">※2 サーモン抽出物：DNA-Na(整肌)　＊医薬部外品 薬用VAセラム</p>
+</section>
+
+<!-- ▼ ブラックフライデー通しの企画（期間中ずっと） -->
+<section class="block deal" id="all">
+  
+  <p class="deal-notice is-bubble"><span class="nb">ブラックフライデー</span><span class="nb">期間ずっと</span></p>
+  <p class="deal-date"><span class="dd"><b>11/19</b><span>(木)</span><em>10:00</em><i>〜</i></span><span class="dd"><b>11/26</b><span>(木)</span><em>9:59</em></span></p>
+  <p class="deal-limit">対象商品</p>
+  <p class="deal-big"><span class="v-lb">ポイント</span><span class="deal-num">15</span><span class="deal-unit">倍</span></p>
+  <div class="targets">
+    <p class="targets-lb">ポイント15倍の対象商品</p>
+    <ul class="t-grid"><li><a href="https://item.rakuten.co.jp/yunth/500-08/"><img src="images/targets/500-08.jpg" alt="" loading="lazy"><span class="t-name">選べる楽天市場限定セット 洗顔 クリアフォーム</span><span class="t-price"><b>2,200</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/10000007/"><img src="images/targets/10000007.jpg" alt="" loading="lazy"><span class="t-name">生VC美白クリーム</span><span class="t-price"><b>3,960</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-120-001/"><img src="images/targets/yb-120-001.jpg" alt="" loading="lazy"><span class="t-name">フュージョンクレンジング</span><span class="t-price"><b>3,289</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-113-001/"><img src="images/targets/yb-113-001.jpg" alt="" loading="lazy"><span class="t-name">美白ハンドセラム</span><span class="t-price"><b>1,980</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-118-001/"><img src="images/targets/yb-118-001.jpg" alt="" loading="lazy"><span class="t-name">VAリンクルアイセラム</span><span class="t-price"><b>4,950</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-121-001/"><img src="images/targets/yb-121-001.jpg" alt="" loading="lazy"><span class="t-name">マルチスクエアシートマスク</span><span class="t-price"><b>2,640</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-127-001/"><img src="images/targets/yb-127-001.jpg" alt="" loading="lazy"><span class="t-name">ピュアマスク 大容量ボックス 28枚入り</span><span class="t-price"><b>2,640</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/pokemon/"><img src="images/targets/pokemon.jpg" alt="" loading="lazy"><span class="t-name">ポケモンパッケージ 美容液</span><span class="t-price"><b>3,960</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/toystory/"><img src="images/targets/toystory.jpg" alt="" loading="lazy"><span class="t-name">トイストーリーコラボ 美容液</span><span class="t-price"><b>3,960</b>円〜<small>(税込)</small></span></a></li></ul>
+  </div>
+  <div class="deal-sub">
+    <p class="deal-head is-xl">BIG DEAL対象商品</p>
+    <p class="deal-big is-sub"><span class="v-lb">ポイント</span><span class="deal-num">20</span><span class="deal-unit is-stack"><span>%</span><span>還元</span></span></p>
+    <div class="targets">
+      <p class="targets-lb">BIG DEAL 20%還元の対象商品</p>
+      <ul class="t-grid"><li><a href="https://item.rakuten.co.jp/yunth/yb-116-001/"><img src="images/targets/yb-116-001.jpg" alt="" loading="lazy"><span class="t-name">生VA美容液</span><span class="t-price"><b>4,950</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-125-001/"><img src="images/targets/yb-125-001.jpg" alt="" loading="lazy"><span class="t-name">生AZ美容液</span><span class="t-price"><b>3,960</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/ys-r184/"><img src="images/targets/ys-r184.jpg" alt="" loading="lazy"><span class="t-name">美顔器 Deep Boostセット</span><span class="t-price"><b>40,370</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/111-01/"><img src="images/targets/111-01.jpg" alt="" loading="lazy"><span class="t-name">生VC美白化粧水</span><span class="t-price"><b>3,960</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/112/"><img src="images/targets/112.jpg" alt="" loading="lazy"><span class="t-name">生VCトーンアップUV</span><span class="t-price"><b>2,970</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-115-001/"><img src="images/targets/yb-115-001.jpg" alt="" loading="lazy"><span class="t-name">生VCホワイトクリアフォーム</span><span class="t-price"><b>3,960</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-123-001/"><img src="images/targets/yb-123-001.jpg" alt="" loading="lazy"><span class="t-name">クッションファンデーション エアレス</span><span class="t-price"><b>3,960</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-114-001/"><img src="images/targets/yb-114-001.jpg" alt="" loading="lazy"><span class="t-name">生VCリップ美容液</span><span class="t-price"><b>1,650</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/yb-117-001/"><img src="images/targets/yb-117-001.jpg" alt="" loading="lazy"><span class="t-name">生VCホワイト乳液</span><span class="t-price"><b>3,960</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/10000001/"><img src="images/targets/10000001.jpg" alt="" loading="lazy"><span class="t-name">美白シートマスク 6枚</span><span class="t-price"><b>1,980</b>円〜<small>(税込)</small></span></a></li><li><a href="https://item.rakuten.co.jp/yunth/ys-r129/"><img src="images/targets/ys-r129.jpg" alt="" loading="lazy"><span class="t-name">ピュアマスク 4袋・8袋セット</span><span class="t-price"><b>3,410</b>円〜<small>(税込)</small></span></a></li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ▼ 新規購入者 -->
+<section class="block deal is-pink" id="new">
+  
+  <p class="deal-notice">はじめてのお客さま</p>
+  <p class="deal-date"><span class="dd"><b>11/19</b><span>(木)</span><em>20:00</em><i>〜</i></span><span class="dd"><b>11/25</b><span>(水)</span><em>1:59</em></span></p>
+  <p class="deal-limit">新規購入者限定 エントリーが2つ</p>
+  <div class="entry2">
+    <div>
+      <p class="deal-big is-sub"><span class="deal-num">+4</span><span class="deal-unit">倍</span></p>
+      <a class="btn btn-line" href="https://event.rakuten.co.jp/incentive/ichiba/henbai/event/202611195x">＋4倍にエントリー</a>
+    </div>
+    <div>
+      <p class="deal-big is-sub"><span class="deal-num">+19</span><span class="deal-unit">倍</span></p>
+      <a class="btn btn-line" data-link="entry19" href="#">＋19倍にエントリー</a>
+    </div>
+  </div>
+  <p class="note">条件はエントリーページをご確認ください。</p>
+</section>
+
+<section class="caution">
+  <h2>ご注意</h2>
+  <ul>
+    <li>ポイント・還元・クーポンの内容と条件は、各キャンペーンページをご確認ください。</li>
+    <li>クーポンは取得が必要です。使える商品と回数には条件があります。</li>
+    <li>【公式】Yunth Store楽天市場店でのご購入に限ります。</li>
+    <li>価格は2026年11月7日時点の税込価格です。クーポン利用後の価格は目安です。</li>
+  </ul>
+</section>
+
+<footer>
+  <img src="images/logo.png" alt="Yunth" width="903" height="299" loading="lazy">
+  <a class="btn btn-main" href="https://www.rakuten.co.jp/yunth/">Yunth 楽天市場店トップへ</a>
+  <a class="law" href="https://www.rakuten.co.jp/yunth/info.html">特定商取引法に基づく表記</a>
+</footer>
+</main>
+
+<aside class="rail rail-l" aria-label="キャンペーン概要">
+  <a class="rail-logo-link" href="https://www.rakuten.co.jp/yunth/"><img class="rail-logo" src="images/logo.png" alt="Yunth 楽天市場店トップへ" width="903" height="299"></a>
+  <p class="rail-sign"><span>BLACK</span><span>FRIDAY</span></p>
+  <p class="rail-period"><b>11/19</b>(木) 10:00 〜<br><b>11/26</b>(木) 9:59</p>
+  <a class="rail-tag" href="#vc" id="railTag"></a>
+</aside>
+<aside class="rail rail-r" aria-label="ページ案内">
+  <p class="rail-title">ページ案内</p>
+  <ul class="rail-nav">
+    <li><a href="#vc" data-nav="vc"><span>生VC美白<sup>※1</sup>美容液<sup>＊</sup><br>日替わりキャンペーン</span><em>1</em></a></li>
+    <li><a href="#combo" data-nav="combo"><span>Deep Boost</span><em>2</em></a></li>
+    <li><a href="#trio" data-nav="trio"><span>美容液3種<br>クーポン・楽天スーパーDEAL</span><em>3</em></a></li>
+    <li><a href="#all" data-nav="all"><span>ブラックフライデー<br>期間ずっと</span><em>4</em></a></li>
+    <li><a href="#new" data-nav="new"><span>はじめてのお客さま</span><em>5</em></a></li>
+  </ul>
+</aside>
+
+<nav class="tabbar" aria-label="ページ内メニュー">
+  <a href="#vc" data-nav="vc">日替わり</a>
+  <a href="#combo" data-nav="combo">Deep<br>Boost</a>
+  <a href="#trio" data-nav="trio">美容液<br>3種</a>
+  <a href="#all" data-nav="all">期間<br>ずっと</a>
+  <a href="#new" data-nav="new">はじめて<br>の方</a>
+</nav>
+<div class="dock"><a class="btn btn-main" href="https://item.rakuten.co.jp/yunth/10000000/"><span>生VC美白<sup>※1</sup>美容液<sup>＊</sup>を見る</span></a></div>
+
+<script>
+/* ▼ 編集箇所 ───────────────────────────
+   STAGES の start / end : 各キャンペーンの期間。NOW 表示は現在時刻から自動で判定する。
+   LINKS     : クーポンなどのURL。"#" の間は「準備中」表示になる。 */
+const LINKS = {
+  vcCoupon: "#",
+  deepboostCoupon: "#",
+  pdrnCoupon: "#",
+  entry19: "#"
+};
+/* ▲ 編集箇所 ─────────────────────────── */
+
+const STAGES = [
+  {label:"ポイント20倍", pre:"ポイント", num:"20", unit:"倍", period:"11/19(木) 10:00 〜 11/20(金) 9:59", start:"2026-11-19T10:00:00+09:00", end:"2026-11-20T10:00:00+09:00", color:"var(--vc)"},
+  {label:"楽天スーパーDEAL 30%還元", pre:"楽天スーパーDEAL", num:"30", unit:"%還元", period:"11/20(金) 10:00 〜 11/21(土) 9:59", start:"2026-11-20T10:00:00+09:00", end:"2026-11-21T10:00:00+09:00", color:"var(--vc)"},
+  {label:"クーポン20%OFF", pre:"クーポン", num:"20", unit:"%OFF", period:"11/21(土) 10:00 〜 11/26(木) 9:59", start:"2026-11-21T10:00:00+09:00", end:"2026-11-26T10:00:00+09:00", color:"var(--vc)"}
+];
+const SERUMS = [
+  {code:"yb-126-001", img:"serum-pdrn.jpg", name:"生PDRN<sup>※2</sup>美容液", vol:"1ml×28包", price:3960, link:"pdrnCoupon", type:"coupon"},
+  {code:"yb-116-001", img:"serum-va.jpg", name:"生VA美容液<sup>＊</sup>", vol:"1ml×28包", price:4950, type:"deal"},
+  {code:"yb-125-001", img:"serum-az.jpg", name:"生AZ美容液", vol:"1g×28包", price:3960, type:"deal"}
+];
+const yen = n => n.toLocaleString("ja-JP");
+
+const WAIT_TEXT = "クーポン準備中";
+const AUTO_MS = 3400;
+
+function renderSerums() {
+  const card = s => `
+    <div class="item-wrap">
+      <a class="item-card" href="https://item.rakuten.co.jp/yunth/${s.code}/">
+        <img src="images/${s.img}" alt="" width="720" height="720" loading="lazy">
+        <div>
+          <h3>${s.name}</h3>
+          <p class="spec">${s.vol}</p>
+          <p class="price"><b>${yen(s.price)}</b><span>円〜</span><small>(税込)</small></p>
+          ${s.type === "coupon"
+            ? `<p class="price-cp">クーポン利用で</p>
+          <p class="price is-red"><b>${yen(Math.round(s.price * 0.8))}</b><span>円〜</span><small>(税込)</small></p>`
+            : `<p class="price-cp">楽天スーパーDEAL<br><b class="is-deal">ポイント20%還元</b></p>`}
+        </div>
+      </a>
+      ${s.type === "coupon"
+        ? `<a class="btn btn-coupon" data-link="${s.link}" href="#">20%OFFクーポン獲得</a>`
+        : `<a class="btn btn-main" href="https://item.rakuten.co.jp/yunth/${s.code}/">商品ページへ</a>`}
+    </div>`;
+  document.getElementById("chars").innerHTML = SERUMS.filter(s => s.type === "coupon").map(card).join("");
+  document.getElementById("chars-deal").innerHTML = SERUMS.filter(s => s.type === "deal").map(card).join("");
+}
+
+function applyLinks() {
+  document.querySelectorAll("[data-link]").forEach(el => {
+    const url = LINKS[el.dataset.link];
+    if (url && url !== "#") {
+      el.href = url;
+      return;
+    }
+    /* URL未設定の間は押せないだけで、見た目と文言はそのまま */
+    el.classList.add("is-wait");
+    el.setAttribute("aria-disabled", "true");
+    el.tabIndex = -1;
+  });
+}
+
+function setupConsole() {
+  const screen = document.getElementById("screen");
+  const offer = document.getElementById("offer");
+  const count = document.getElementById("hudCount");
+  const list = document.getElementById("stages");
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const now = Date.now();
+  const nowIndex = STAGES.findIndex(s => now >= Date.parse(s.start) && now < Date.parse(s.end));
+  let current = Math.max(nowIndex, 0);
+  let timer = null;
+
+  list.innerHTML = STAGES.map((s, i) => `
+    <li><button type="button" data-i="${i}">
+      <span class="cur">&gt;</span>
+      <span class="lv">第${i + 1}弾</span>
+      <span>${s.label}${nowIndex === i ? '<span class="now">NOW</span>' : ""}</span>
+      <span class="dt">${s.period}</span>
+    </button></li>`).join("");
+  const buttons = [...list.querySelectorAll("button")];
+
+  function show(index) {
+    current = (index + STAGES.length) % STAGES.length;
+    const s = STAGES[current];
+    screen.style.setProperty("--c", s.color);
+    count.textContent = `${current + 1}/${STAGES.length}`;
+    offer.innerHTML = `
+      <div class="st">第${current + 1}弾</div>
+      <div class="pre">${s.pre}</div>
+      <div class="val"><span class="tube num">${s.num}</span><span class="unit">${s.unit}</span></div>
+      <div class="per">${s.period}</div>`;
+    offer.classList.remove("pop");
+    void offer.offsetWidth;
+    offer.classList.add("pop");
+    buttons.forEach((b, i) => b.classList.toggle("is-on", i === current));
+  }
+  function stopAuto() {
+    clearInterval(timer);
+    timer = null;
+  }
+
+  buttons.forEach(b => b.addEventListener("click", () => { stopAuto(); show(Number(b.dataset.i)); }));
+  document.getElementById("prev").addEventListener("click", () => { stopAuto(); show(current - 1); });
+  document.getElementById("next").addEventListener("click", () => { stopAuto(); show(current + 1); });
+
+  show(current);
+  if (!reduceMotion) timer = setInterval(() => show(current + 1), AUTO_MS);
+}
+
+function setupRails() {
+  // 左の案内札: 日時で第一弾→第二弾→第三弾に自動で切り替え、開催中かどうかと残り時間を表示
+  const pad = n => String(n).padStart(2, "0");
+  const left = ms => {
+    const t = Math.max(0, Math.floor(ms / 1000));
+    const d = Math.floor(t / 86400), h = Math.floor(t % 86400 / 3600), m = Math.floor(t % 3600 / 60), sec = t % 60;
+    return (d ? `${d}日 ` : "") + `${pad(h)}:${pad(m)}:${pad(sec)}`;
+  };
+  let lastKey = "";
+  const drawRail = () => {
+    const now = Date.now();
+    const i = STAGES.findIndex(s => now >= Date.parse(s.start) && now < Date.parse(s.end));
+    const before = now < Date.parse(STAGES[0].start);
+    const after = now >= Date.parse(STAGES[STAGES.length - 1].end);
+    const idx = i >= 0 ? i : (after ? STAGES.length - 1 : 0);
+    const s = STAGES[idx];
+    const key = `${idx}-${i >= 0}-${after}`;
+    const status = i >= 0 ? `<b class="rail-live">ただいま開催中</b>` : after ? `<b class="rail-live is-end">終了しました</b>` : `<small>11/19(木) 10:00 スタート</small>`;
+    const timer = i >= 0 ? ["終了まで あと", left(Date.parse(s.end) - now)] : before ? ["開始まで あと", left(Date.parse(STAGES[0].start) - now)] : null;
+    const tag = document.getElementById("railTag");
+    if (key !== lastKey) {
+      lastKey = key;
+      tag.classList.toggle("is-ended", after);
+      tag.innerHTML = status +
+        `<strong>生VC美白<sup>※1</sup>美容液<sup>＊</sup> 第${"一二三"[idx]}弾</strong>` +
+        `<span><i>${s.pre}</i><b class="tube">${s.num}</b><em>${s.unit}</em></span>` +
+        `<div class="rail-timer"><em></em><b></b></div>`;
+      // スマホ下の固定バーにも同じ内容を（小さくまとめて）
+      const dock = document.getElementById("spDock");
+      if (dock) {
+        dock.classList.toggle("is-ended", after);
+        dock.innerHTML =
+          `<span class="dk-st">${i >= 0 ? '<b class="rail-live">ただいま開催中</b>' : after ? '<b class="rail-live is-end">終了しました</b>' : '<small>11/19(木)<br>10:00〜</small>'}</span>` +
+          `<span class="dk-main"><small>生VC美白美容液 第${"一二三"[idx]}弾</small><span><i>${s.pre}</i><b>${s.num}</b><em>${s.unit}</em></span></span>` +
+          `<span class="dk-timer"><em></em><b></b></span>`;
+      }
+    }
+    const dk = document.getElementById("spDock");
+    if (dk) {
+      const dt = dk.querySelector(".dk-timer");
+      dt.hidden = !timer;
+      if (timer) { dt.querySelector("em").textContent = timer[0]; dt.querySelector("b").textContent = timer[1]; }
+    }
+    const tm = tag.querySelector(".rail-timer");
+    tm.hidden = !timer;
+    if (timer) { tm.querySelector("em").textContent = timer[0]; tm.querySelector("b").textContent = timer[1]; }
+  };
+  drawRail();
+  setInterval(drawRail, 1000);
+
+  const links = [...document.querySelectorAll("[data-nav]")];
+  if (!("IntersectionObserver" in window)) return;
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      links.forEach(a => a.classList.toggle("is-here", a.dataset.nav === e.target.id));
+    });
+  }, {rootMargin: "-45% 0px -50% 0px"});
+  ["vc", "combo", "trio", "all", "new"].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) io.observe(el);
+  });
+}
+
+function markWaves() {
+  const now = Date.now();
+  // 上の3マスの流れ図も、終わった回はグレーにして「終了しました」
+  document.querySelectorAll(".vc-flow li").forEach(li => {
+    const st = Date.parse(li.dataset.start), en = Date.parse(li.dataset.end);
+    li.classList.toggle("is-now", now >= st && now < en);
+    li.classList.toggle("is-past", now >= en);
+    if (now >= en) li.insertAdjacentHTML("beforeend", '<em class="flow-end">終了しました</em>');
+    if (now >= st && now < en) li.insertAdjacentHTML("afterbegin", '<em class="flow-now">開催中</em>');
+  });
+  document.querySelectorAll(".wave").forEach(w => {
+    const st = Date.parse(w.dataset.start), en = Date.parse(w.dataset.end);
+    const label = now >= en ? "終了しました" : now >= st ? "開催中" : "";
+    w.classList.toggle("is-now", now >= st && now < en);
+    w.classList.toggle("is-past", now >= en);
+    if (label) w.insertAdjacentHTML("afterbegin", `<span class="wave-state">${label}</span>`);
+  });
+
+  // 画面に入ったときに一度だけネオンが点く
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  let rest = [...document.querySelectorAll(".wave")];
+  document.querySelector(".waves").classList.add("js-flicker");
+  // スクロール位置を短い間隔で見て、画面の下から1/4まで来たら点灯
+  const check = () => {
+    const line = innerHeight * .75;
+    rest = rest.filter(w => {
+      const r = w.getBoundingClientRect();
+      if (r.top < line && r.bottom > 0) {
+        w.classList.add("is-lit");
+        // 点滅のあとは必ず点いた状態にしておく
+        setTimeout(() => w.classList.add("is-on"), 1300);
+        return false;
+      }
+      return true;
+    });
+    if (!rest.length) { clearInterval(timer); removeEventListener("scroll", check); }
+  };
+  const timer = setInterval(check, 200);
+  addEventListener("scroll", check, {passive: true});
+  check();
+}
+
+// 金額の「,」だけ小さくする（数字と数字の間のカンマを <span class="cm"> で包む）
+function shrinkCommas() {
+  const walker = document.createTreeWalker(document.querySelector("main"), NodeFilter.SHOW_TEXT);
+  const hits = [];
+  while (walker.nextNode()) if (/\d,\d{3}/.test(walker.currentNode.nodeValue)) hits.push(walker.currentNode);
+  hits.forEach(node => {
+    // span だと「円」用の文字サイズ指定に巻き込まれるので bdi で包む
+    const wrap = document.createElement("bdi");
+    wrap.innerHTML = node.nodeValue.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/(\d),(?=\d{3})/g, '$1<bdi class="cm">,</bdi>');
+    node.replaceWith(wrap);
+  });
+}
+
+
+// スクロールで要素が下からふわっと出てくる（動きを減らす設定の人には出さない）
+function setupReveal() {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const sel = ".deal-notice,.deal-title,.deal-date,.vc-head,.howto,.pills,.deal-big,.deal-head,.deal-desc,.item-card.is-big,.wave,.item-wrap,.set-visual,.set-box,.set-gift,.price-box,.t-grid li,.entry2 > div,.deal-limit";
+  let rest = [...document.querySelectorAll(sel)].filter(el => !el.closest(".rv"));
+  rest.forEach(el => el.classList.add("rv"));
+  document.documentElement.classList.add("js-rv");
+  const check = () => {
+    const line = innerHeight * .9;
+    rest = rest.filter(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < line && r.bottom > 0) { el.classList.add("rv-in"); return false; }
+      return true;
+    });
+    if (!rest.length) { clearInterval(t); removeEventListener("scroll", check); }
+  };
+  const t = setInterval(check, 150);
+  addEventListener("scroll", check, {passive: true});
+  check();
+}
+
+// スマホのハンバーガーメニュー
+function setupMenu() {
+  const btn = document.querySelector(".sh-burger"), menu = document.getElementById("spMenu");
+  if (!btn || !menu) return;
+  const set = open => { btn.setAttribute("aria-expanded", open); btn.setAttribute("aria-label", open ? "メニューを閉じる" : "メニューを開く"); menu.hidden = !open; };
+  btn.addEventListener("click", () => set(btn.getAttribute("aria-expanded") !== "true"));
+  menu.addEventListener("click", e => { if (e.target.closest("a")) set(false); });
+}
+
+renderSerums();
+shrinkCommas();
+markWaves();
+applyLinks();
+setupConsole();
+setupRails();
+setupReveal();
+</script>
+</body>
+</html>
