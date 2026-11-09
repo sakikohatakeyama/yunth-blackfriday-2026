@@ -788,6 +788,8 @@ body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
 .fc-ticket b,.fc-ticket span{background:linear-gradient(#fff7d0,#e9c260 55%,#b9872c);-webkit-background-clip:text;background-clip:text;color:transparent}
 .fc-ticket b{font:700 20cqw/1 var(--num);letter-spacing:-.03em}
 .fc-ticket span{font:900 7.4cqw/1.08 "Noto Sans JP",sans-serif;letter-spacing:.02em}
+.fv-card.is-img{background:none;border-radius:0}
+.fv-card.is-img img{display:block;width:100%;height:auto}
 </style>
 </head>
 <body>
@@ -865,27 +867,8 @@ body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
 
 <!-- ▼ FV下: 2つの目玉 -->
 <nav class="fv-cards" aria-label="目玉企画">
-  <a class="fv-card" href="#vc">
-    <p class="fc-date">11/19<small>(木)</small>10:00<br><span>〜</span>11/20<small>(金)</small>9:59</p>
-    <div class="fc-body">
-      <span class="fc-pill">VC美容液</span>
-      <img class="fc-img" src="images/vc-box-front.webp" alt="生VC美白美容液" width="1089" height="516">
-      <p class="fc-big"><span class="fc-vl">ポイント</span><b>20</b><em>倍</em></p>
-    </div>
-  </a>
-  <a class="fv-card" href="#combo">
-    <p class="fc-date">11/19<small>(木)</small>10:00<br><span>〜</span>11/26<small>(木)</small>9:59</p>
-    <div class="fc-body">
-      <span class="fc-pill is-en">Deep Boost</span>
-      <div class="fc-set">
-        <img class="fc-dev" src="images/device-pink.png" alt="美顔器 Deep Boost" width="430" height="1200">
-        <p class="fc-catch">VC美容液<br>特別セット</p>
-        <span class="fc-plus" aria-hidden="true">+</span>
-        <img class="fc-box" src="images/vc-box-front.webp" alt="生VC美白美容液" width="1089" height="516">
-      </div>
-      <p class="fc-ticket"><b>7,809</b><span>円OFF<br>クーポン</span></p>
-    </div>
-  </a>
+  <a class="fv-card is-img" href="#vc"><img src="images/fv-card-vc.webp" alt="11/19(木)10:00〜11/20(金)9:59 VC美容液 ポイント20倍" width="695" height="940"></a>
+  <a class="fv-card is-img" href="#combo"><img src="images/fv-card-device.webp" alt="11/19(木)10:00〜11/26(木)9:59 Deep Boost VC美容液特別セット 7,809円OFFクーポン" width="695" height="940"></a>
 </nav>
 
 <!-- ▼ 主役: 生VC美白美容液 -->
