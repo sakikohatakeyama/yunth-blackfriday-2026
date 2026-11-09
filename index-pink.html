@@ -810,6 +810,17 @@ body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
 .items .item-card .price.is-red small{font-size:14px}
 }
 .fv-cards-note{grid-column:1/-1;list-style:none;margin:2px 0 0;padding:0;font-size:clamp(10px,2.8vw,12px);line-height:1.6;letter-spacing:.02em;color:rgba(255,255,255,.75)}
+.item-card[hidden]{display:none}
+.wave-img{display:block;width:78%;height:auto;margin:18px auto 0;filter:drop-shadow(0 8px 14px rgba(0,0,0,.45))}
+.wave-img + .deal-big{margin-top:10px}
+/* ページ案内: 1行に収める */
+@media (min-width:1310px){
+  .rail{width:330px;padding:24px 22px}
+  .rail-l{left:calc(50% - 325px - 330px)}
+  .rail-r{right:calc(50% - 325px - 330px)}
+  .rail-nav a{font-size:12px;letter-spacing:0;white-space:nowrap;padding:10px 12px}
+}
+@media (min-width:1260px) and (max-width:1309px){.rail{display:none!important}.tabbar{display:grid!important}body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))!important}}
 </style>
 </head>
 <body>
@@ -931,7 +942,8 @@ body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
     </div>
   </div>
 
-  <a class="item-card is-big" href="https://item.rakuten.co.jp/yunth/10000000/">
+  <!-- 一時非表示: 美容液の大きい写真カード。戻すときは hidden を外す -->
+  <a class="item-card is-big" href="https://item.rakuten.co.jp/yunth/10000000/" hidden>
     <img src="images/serum-vc.jpg" alt="" width="720" height="720" loading="lazy">
     <div>
       <h3>生VC美白<sup>※1</sup>美容液<sup>＊</sup></h3>
@@ -945,6 +957,7 @@ body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
       <p class="wave-item">生VC美白<sup>※1</sup>美容液<sup>＊</sup></p>
       <p class="wave-no">第一弾</p>
       <p class="wave-date"><span><b>11/19</b>(木)<i>10:00</i><em>〜</em></span><span><b>11/20</b>(金)<i>9:59</i></span></p>
+      <img class="wave-img" src="images/wave1-vc.webp" alt="生VC美白美容液" width="996" height="490">
       <p class="deal-big"><span class="v-lb">ポイント</span><span class="deal-num">20</span><span class="deal-unit">倍</span></p>
     </li>
     <li class="wave" data-start="2026-11-20T10:00:00+09:00" data-end="2026-11-21T10:00:00+09:00">
