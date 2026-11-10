@@ -836,6 +836,9 @@ body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
 .t-grid .t-name sup{font-size:.6em;vertical-align:top;margin-left:1px}
 .t-note{margin:8px 0 0;font-size:11px;line-height:1.5;color:rgba(255,255,255,.75);text-align:left}
 .deal.is-pink .t-note{color:#3a2530}
+.rail-tag > span{gap:2px;line-height:1}
+.rail-tag > span i{margin-right:6px}
+.rail-tag .pt-note{margin-top:2px;font-size:10.5px;line-height:1.55;letter-spacing:.02em;color:rgba(255,255,255,.62)}
 </style>
 </head>
 <body>
@@ -1287,7 +1290,7 @@ function setupRails() {
       tag.innerHTML = status +
         `<strong>生VC美白<sup>※1</sup>美容液<sup>＊</sup> 第${"一二三"[idx]}弾</strong>` +
         `<span><i>${s.pre}</i><b class="tube">${s.num}</b><em>${s.unit}</em></span>` +
-        (idx < 2 ? `<small class="pt-note">※エントリー・購入条件あり。獲得ポイントには上限があります。</small>` : "") +
+        (idx < 2 ? `<small class="pt-note">※エントリー・購入条件あり。<br>獲得ポイントには上限があります。</small>` : "") +
         `<div class="rail-timer"><em></em><b></b></div>`;
       // スマホ下の固定バーにも同じ内容を（小さくまとめて）
       const dock = document.getElementById("spDock");
