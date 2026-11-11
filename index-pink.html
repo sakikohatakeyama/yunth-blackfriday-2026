@@ -984,7 +984,7 @@ body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
       <p class="wave-date"><span><b>11/19</b>(木)<i>10:00</i><em>〜</em></span><span><b>11/20</b>(金)<i>9:59</i></span></p>
       <img class="wave-img" src="images/wave1-vc.webp" alt="生VC美白美容液" width="996" height="490">
       <p class="deal-big"><span class="v-lb">ポイント</span><span class="deal-num">20</span><span class="deal-unit">倍</span></p>
-      <p class="pt-note">※エントリー・購入条件あり。<br>獲得ポイントには上限があります。</p>
+      <p class="pt-note">※獲得ポイントには上限があります。</p>
       <a class="wave-link" href="https://item.rakuten.co.jp/yunth/10000000/" aria-label="生VC美白美容液の商品ページへ"></a>
     </li>
     <li class="wave" data-start="2026-11-20T10:00:00+09:00" data-end="2026-11-21T10:00:00+09:00">
@@ -1296,7 +1296,7 @@ function setupRails() {
       tag.innerHTML = status +
         `<strong>生VC美白<sup>※1</sup>美容液<sup>＊</sup> 第${"一二三"[idx]}弾</strong>` +
         `<span><i>${s.pre}</i><b class="tube">${s.num}</b><em>${s.unit}</em></span>` +
-        (idx < 2 ? `<small class="pt-note">※エントリー・購入条件あり。<br>獲得ポイントには上限があります。</small>` : "") +
+        (idx === 0 ? `<small class="pt-note">※獲得ポイントには上限があります。</small>` : idx === 1 ? `<small class="pt-note">※エントリー・購入条件あり。<br>獲得ポイントには上限があります。</small>` : "") +
         `<div class="rail-timer"><em></em><b></b></div>`;
       // スマホ下の固定バーにも同じ内容を（小さくまとめて）
       const dock = document.getElementById("spDock");
