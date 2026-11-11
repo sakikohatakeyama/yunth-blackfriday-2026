@@ -853,6 +853,12 @@ body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
 .fv-newbtn .nb-sub{font-size:clamp(12px,3.3vw,14px);font-weight:500;letter-spacing:.08em}
 .fv-newbtn .nb-sub i{font-style:normal;margin-left:.4em;font-size:.85em}
 .fv-newnote{grid-column:1/-1;margin:2px 0 0;font-size:clamp(10px,2.8vw,12px);line-height:1.6;color:rgba(255,255,255,.75);text-align:center}
+/* ページ案内: 番号を先頭に／はじめてのお客さまは金色 */
+.rail-nav a{justify-content:flex-start}
+.rail-nav em{order:-1;flex:0 0 auto;min-width:1.1em;text-align:center}
+.rail-nav a.is-gold{background:#e8b22e;background-image:var(--g-gold);border-color:#e8b22e;color:#1b120b}
+.rail-nav a.is-gold em{color:#1b120b}
+.rail-nav a.is-gold:hover,.rail-nav a.is-gold.is-here{background:#e8b22e;background-image:var(--g-gold);border-color:#fff3c4;color:#1b120b;box-shadow:0 0 14px rgba(232,178,46,.5)}
 </style>
 </head>
 <body>
@@ -1155,7 +1161,7 @@ body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
     <li><a href="#combo" data-nav="combo"><span>Deep Boost</span><em>2</em></a></li>
     <li><a href="#trio" data-nav="trio"><span>美容液3種 クーポン・楽天スーパーDEAL</span><em>3</em></a></li>
     <li><a href="#all" data-nav="all"><span>ブラックフライデー 期間ずっと</span><em>4</em></a></li>
-    <li><a href="#new" data-nav="new"><span>はじめてのお客さま</span><em>5</em></a></li>
+    <li><a class="is-gold" href="#new" data-nav="new"><span>はじめてのお客さま</span><em>5</em></a></li>
   </ul>
 </aside>
 
