@@ -1188,9 +1188,9 @@ const LINKS = {
 /* ▲ 編集箇所 ─────────────────────────── */
 
 const STAGES = [
-  {label:"ポイント20倍", pre:"ポイント", num:"20", unit:"倍", period:"11/19(木) 10:00 〜 11/20(金) 9:59", start:"2026-11-19T10:00:00+09:00", end:"2026-11-20T10:00:00+09:00", color:"var(--vc)"},
-  {label:"楽天スーパーDEAL 30%還元", pre:"楽天スーパーDEAL", num:"30", unit:"%還元", period:"11/20(金) 10:00 〜 11/21(土) 9:59", start:"2026-11-20T10:00:00+09:00", end:"2026-11-21T10:00:00+09:00", color:"var(--vc)"},
-  {label:"クーポン20%OFF", pre:"クーポン", num:"20", unit:"%OFF", period:"11/21(土) 10:00 〜 11/26(木) 9:59", start:"2026-11-21T10:00:00+09:00", end:"2026-11-26T10:00:00+09:00", color:"var(--vc)"}
+  {no:"一", note:"※獲得ポイントには上限があります。", label:"ポイント20倍", pre:"ポイント", num:"20", unit:"倍", period:"11/19(木) 10:00 〜 11/20(金) 9:59", start:"2026-11-19T10:00:00+09:00", end:"2026-11-20T10:00:00+09:00", color:"var(--vc)"},
+  {no:"二", note:"※エントリー・購入条件あり。<br>獲得ポイントには上限があります。", label:"楽天スーパーDEAL 30%還元", pre:"楽天スーパーDEAL", num:"30", unit:"%還元", period:"11/20(金) 10:00 〜 11/21(土) 9:59", start:"2026-11-20T10:00:00+09:00", end:"2026-11-21T10:00:00+09:00", color:"var(--vc)"},
+  {no:"三", note:"", label:"クーポン20%OFF", pre:"クーポン", num:"20", unit:"%OFF", period:"11/21(土) 10:00 〜 11/26(木) 9:59", start:"2026-11-21T10:00:00+09:00", end:"2026-11-26T10:00:00+09:00", color:"var(--vc)"}
 ];
 const SERUMS = [
   {code:"yb-126-001", img:"serum-pdrn.jpg", name:"生PDRN<sup>※2</sup>美容液", vol:"1ml×28包", price:3960, link:"pdrnCoupon", type:"coupon"},
@@ -1304,24 +1304,24 @@ function setupRails() {
     const idx = i >= 0 ? i : (after ? STAGES.length - 1 : 0);
     const s = STAGES[idx];
     const key = `${idx}-${i >= 0}-${after}`;
-    const status = i >= 0 ? `<b class="rail-live">ただいま開催中</b>` : after ? `<b class="rail-live is-end">終了しました</b>` : `<small>11/19(木) 10:00 スタート</small>`;
+    const status = i >= 0 ? `<b class="rail-live">ただいま開催中</b>` : after ? `<b class="rail-live is-end">終了しました</b>` : `<small>${STAGES[0].period.split(" 〜")[0]} スタート</small>`;
     const timer = i >= 0 ? ["終了まで あと", left(Date.parse(s.end) - now)] : before ? ["開始まで あと", left(Date.parse(STAGES[0].start) - now)] : null;
     const tag = document.getElementById("railTag");
     if (key !== lastKey) {
       lastKey = key;
       tag.classList.toggle("is-ended", after);
       tag.innerHTML = status +
-        `<strong>生VC美白<sup>※1</sup>美容液<sup>＊</sup> 第${"一二三"[idx]}弾</strong>` +
+        `<strong>生VC美白<sup>※1</sup>美容液<sup>＊</sup> 第${s.no}弾</strong>` +
         `<span><i>${s.pre}</i><b class="tube">${s.num}</b><em>${s.unit}</em></span>` +
-        (idx === 0 ? `<small class="pt-note">※獲得ポイントには上限があります。</small>` : idx === 1 ? `<small class="pt-note">※エントリー・購入条件あり。<br>獲得ポイントには上限があります。</small>` : "") +
+        (s.note ? `<small class="pt-note">${s.note}</small>` : "") +
         `<div class="rail-timer"><em></em><b></b></div>`;
       // スマホ下の固定バーにも同じ内容を（小さくまとめて）
       const dock = document.getElementById("spDock");
       if (dock) {
         dock.classList.toggle("is-ended", after);
         dock.innerHTML =
-          `<span class="dk-st">${i >= 0 ? '<b class="rail-live">ただいま開催中</b>' : after ? '<b class="rail-live is-end">終了しました</b>' : '<small>11/19(木)<br>10:00〜</small>'}</span>` +
-          `<span class="dk-main"><small>生VC美白美容液 第${"一二三"[idx]}弾</small><span><i>${s.pre}</i><b>${s.num}</b><em>${s.unit}</em></span></span>` +
+          `<span class="dk-st">${i >= 0 ? '<b class="rail-live">ただいま開催中</b>' : after ? '<b class="rail-live is-end">終了しました</b>' : `<small>${STAGES[0].period.split(" ")[0]}<br>${STAGES[0].period.split(" ")[1]}〜</small>`}</span>` +
+          `<span class="dk-main"><small>生VC美白美容液 第${s.no}弾</small><span><i>${s.pre}</i><b>${s.num}</b><em>${s.unit}</em></span></span>` +
           `<span class="dk-timer"><em></em><b></b></span>`;
       }
     }
