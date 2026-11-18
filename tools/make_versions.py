@@ -38,7 +38,10 @@ def common(s):
 def fix_last_comma(s):
     return re.sub(r'\},(\n\];\nconst SERUMS)', r'}\1', s)
 
-v2 = common(base)
+# 第二弾版: FV下の左カードを第二弾（楽天スーパーDEAL 30%還元）の画像に。注釈は画像の中にあるので外す
+v2 = rep(base, '<img src="images/fv-card-vc.webp?v=3" alt="11/19(木)10:00〜11/20(金)9:59 生VC美白美容液 ポイント20倍"',
+               '<img src="images/dai2-fv-card-vc.webp?v=1" alt="11/20(金)10:00〜11/21(土)9:59 生VC美容液 楽天スーパーDEAL ポイント30%還元"')
+v2 = rep(v2, '\n    <li>※獲得ポイントには上限があります。</li>', "")
 v2 = wave("第一弾")(v2)
 v2 = fix_last_comma(stage("一")(v2))
 v2 = rep(v2, "<title>", "<title>【第二弾】")
