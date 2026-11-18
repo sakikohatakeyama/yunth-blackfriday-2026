@@ -838,6 +838,10 @@ body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
 .deal.is-pink .t-note{color:#3a2530}
 .rail-tag > span{gap:2px;line-height:1}
 .rail-tag > span i{margin-right:6px}
+.rail-tag > span em{white-space:nowrap}
+/* 「楽天スーパーDEAL」のように長いときは、文字を上の段に置いて数字と単位を下にそろえる */
+.rail-tag > span.is-long{flex-wrap:wrap;justify-content:center;row-gap:8px}
+.rail-tag > span.is-long i{flex-basis:100%;margin-right:0}
 .rail-tag .pt-note{margin-top:2px;font-size:10.5px;line-height:1.55;letter-spacing:.02em;color:rgba(255,255,255,.62)}
 .fv-newbtn{grid-column:1/-1;display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:12px;margin-top:6px;padding:12px 20px 13px;border-radius:999px;background:#ffa9ad;color:#17090f;text-decoration:none;box-shadow:0 0 14px rgba(255,61,127,.35);transition:transform .2s,box-shadow .2s}
 .fv-newbtn span{grid-column:1;font-size:clamp(11px,3vw,13px);font-weight:500;letter-spacing:.08em;line-height:1.3;text-align:center}
@@ -1312,7 +1316,7 @@ function setupRails() {
       tag.classList.toggle("is-ended", after);
       tag.innerHTML = status +
         `<strong>生VC美白<sup>※1</sup>美容液<sup>＊</sup> 第${s.no}弾</strong>` +
-        `<span><i>${s.pre}</i><b class="tube">${s.num}</b><em>${s.unit}</em></span>` +
+        `<span${s.pre.length > 6 ? ' class="is-long"' : ""}><i>${s.pre}</i><b class="tube">${s.num}</b><em>${s.unit}</em></span>` +
         (s.note ? `<small class="pt-note">${s.note}</small>` : "") +
         `<div class="rail-timer"><em></em><b></b></div>`;
       // スマホ下の固定バーにも同じ内容を（小さくまとめて）
