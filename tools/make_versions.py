@@ -16,7 +16,7 @@ def rep(s, a, b):
 def wave(no):  # 第○弾の <li class="wave"> を丸ごと消す
     def f(s):
         k = s.index(f'<p class="wave-no">{no}</p>')
-        i = s.rindex('<li class="wave"', 0, k); j = s.index("</li>", k) + len("</li>")
+        i = s.rindex('<li class="wave', 0, k); j = s.index("</li>", k) + len("</li>")
         while s[i-1] == " ": i -= 1
         if s[i-1] == "\n": i -= 1
         return s[:i] + s[j:]

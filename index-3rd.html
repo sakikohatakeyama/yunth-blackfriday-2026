@@ -839,14 +839,16 @@ body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
 .rail-tag > span{gap:2px;line-height:1}
 .rail-tag > span i{margin-right:6px}
 .rail-tag > span em{white-space:nowrap}
+/* 第二弾ブロックの「ポイント30%還元」はFV下カードのピンクに合わせる */
+.wave.is-deal .deal-big{color:#ff86ad;text-shadow:0 0 4px rgba(255,100,155,.55)}
 /* 楽天スーパーDEAL: FV下のカード画像と同じバランス・太さ */
-.rail-tag .rt-deal{display:grid;justify-items:center;gap:4px;margin:4px 0 0;color:#ffa9ad;text-shadow:0 0 3px rgba(255,140,170,.9),0 0 10px rgba(255,90,140,.5)}
+.rail-tag .rt-deal{display:grid;justify-items:center;gap:4px;margin:4px 0 0;color:#ff86ad;text-shadow:0 0 3px rgba(255,120,165,.9),0 0 10px rgba(255,80,140,.5)}
 .rail-tag .rt-deal p{margin:0}
 .rail-tag .rt-h{font-size:21px;font-weight:900;letter-spacing:.01em;line-height:1.1;white-space:nowrap}
 .rail-tag .rt-row{display:flex;align-items:center;gap:4px;line-height:1}
-.rail-tag .rt-v{writing-mode:vertical-rl;text-orientation:upright;font-style:normal;font-size:15px;font-weight:900;letter-spacing:0;line-height:1;margin:0;color:#ffa9ad}
-.rail-tag .rt-n{font:800 84px/.9 var(--num);letter-spacing:-.02em;color:#ffa9ad}
-.rail-tag .rt-u{display:flex;flex-direction:column;align-items:flex-start;font-style:normal;color:#ffa9ad;line-height:1}
+.rail-tag .rt-v{writing-mode:vertical-rl;text-orientation:upright;font-style:normal;font-size:15px;font-weight:900;letter-spacing:0;line-height:1;margin:0;color:inherit}
+.rail-tag .rt-n{font:800 84px/.9 var(--num);letter-spacing:-.02em;color:inherit}
+.rail-tag .rt-u{display:flex;flex-direction:column;align-items:flex-start;font-style:normal;color:inherit;line-height:1}
 .rail-tag .rt-u b:first-child{font:800 38px/.9 var(--num)}
 .rail-tag .rt-u b:last-child{font-size:27px;font-weight:900;letter-spacing:.02em}
 .rail-tag .pt-note{margin-top:2px;font-size:10.5px;line-height:1.55;letter-spacing:.02em;color:rgba(255,255,255,.62)}
