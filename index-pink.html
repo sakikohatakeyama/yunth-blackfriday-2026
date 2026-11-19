@@ -839,9 +839,16 @@ body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
 .rail-tag > span{gap:2px;line-height:1}
 .rail-tag > span i{margin-right:6px}
 .rail-tag > span em{white-space:nowrap}
-/* 「楽天スーパーDEAL」のように長いときは、文字を上の段に置いて数字と単位を下にそろえる */
-.rail-tag > span.is-long{flex-wrap:wrap;justify-content:center;row-gap:8px}
-.rail-tag > span.is-long i{flex-basis:100%;margin-right:0}
+/* 楽天スーパーDEAL: FV下のカード画像と同じバランス・太さ */
+.rail-tag .rt-deal{display:grid;justify-items:center;gap:2px;margin:4px 0 0;color:#ffa9ad}
+.rail-tag .rt-deal p{margin:0}
+.rail-tag .rt-h{font-size:25px;font-weight:900;letter-spacing:.01em;line-height:1.1;white-space:nowrap}
+.rail-tag .rt-row{display:flex;align-items:center;gap:4px;line-height:1}
+.rail-tag .rt-v{writing-mode:vertical-rl;text-orientation:upright;font-style:normal;font-size:15px;font-weight:900;letter-spacing:0;line-height:1;margin:0;color:#ffa9ad}
+.rail-tag .rt-n{font:800 84px/.9 var(--num);letter-spacing:-.02em;color:#ffa9ad}
+.rail-tag .rt-u{display:flex;flex-direction:column;align-items:flex-start;font-style:normal;color:#ffa9ad;line-height:1}
+.rail-tag .rt-u b:first-child{font:800 38px/.9 var(--num)}
+.rail-tag .rt-u b:last-child{font-size:27px;font-weight:900;letter-spacing:.02em}
 .rail-tag .pt-note{margin-top:2px;font-size:10.5px;line-height:1.55;letter-spacing:.02em;color:rgba(255,255,255,.62)}
 .fv-newbtn{grid-column:1/-1;display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:12px;margin-top:6px;padding:12px 20px 13px;border-radius:999px;background:#ffa9ad;color:#17090f;text-decoration:none;box-shadow:0 0 14px rgba(255,61,127,.35);transition:transform .2s,box-shadow .2s}
 .fv-newbtn span{grid-column:1;font-size:clamp(11px,3vw,13px);font-weight:500;letter-spacing:.08em;line-height:1.3;text-align:center}
@@ -1193,7 +1200,7 @@ const LINKS = {
 
 const STAGES = [
   {no:"一", note:"※獲得ポイントには上限があります。", label:"ポイント20倍", pre:"ポイント", num:"20", unit:"倍", period:"11/19(木) 10:00 〜 11/20(金) 9:59", start:"2026-11-19T10:00:00+09:00", end:"2026-11-20T10:00:00+09:00", color:"var(--vc)"},
-  {no:"二", note:"※エントリー・購入条件あり。<br>獲得ポイントには上限があります。", label:"楽天スーパーDEAL 30%還元", pre:"楽天スーパーDEAL", num:"30", unit:"%還元", period:"11/20(金) 10:00 〜 11/21(土) 9:59", start:"2026-11-20T10:00:00+09:00", end:"2026-11-21T10:00:00+09:00", color:"var(--vc)"},
+  {no:"二", deal:true, note:"※エントリー・購入条件あり。<br>獲得ポイントには上限があります。", label:"楽天スーパーDEAL 30%還元", pre:"楽天スーパーDEAL", num:"30", unit:"%還元", period:"11/20(金) 10:00 〜 11/21(土) 9:59", start:"2026-11-20T10:00:00+09:00", end:"2026-11-21T10:00:00+09:00", color:"var(--vc)"},
   {no:"三", note:"", label:"クーポン20%OFF", pre:"クーポン", num:"20", unit:"%OFF", period:"11/21(土) 10:00 〜 11/26(木) 9:59", start:"2026-11-21T10:00:00+09:00", end:"2026-11-26T10:00:00+09:00", color:"var(--vc)"}
 ];
 const SERUMS = [
@@ -1316,7 +1323,10 @@ function setupRails() {
       tag.classList.toggle("is-ended", after);
       tag.innerHTML = status +
         `<strong>生VC美白<sup>※1</sup>美容液<sup>＊</sup> 第${s.no}弾</strong>` +
-        `<span${s.pre.length > 6 ? ' class="is-long"' : ""}><i>${s.pre}</i><b class="tube">${s.num}</b><em>${s.unit}</em></span>` +
+        (s.deal
+          // 楽天スーパーDEAL: FV下のカード画像と同じ組み方（上に太字の見出し、縦書き「ポイント」＋大きい数字＋「%／還元」の2段）
+          ? `<div class="rt-deal"><p class="rt-h">${s.pre}</p><p class="rt-row"><i class="rt-v">ポイント</i><b class="rt-n">${s.num}</b><em class="rt-u"><b>%</b><b>還元</b></em></p></div>`
+          : `<span><i>${s.pre}</i><b class="tube">${s.num}</b><em>${s.unit}</em></span>`) +
         (s.note ? `<small class="pt-note">${s.note}</small>` : "") +
         `<div class="rail-timer"><em></em><b></b></div>`;
       // スマホ下の固定バーにも同じ内容を（小さくまとめて）
