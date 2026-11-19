@@ -46,7 +46,7 @@ v2 = rep(v2, '<img src="images/fv-card-device.webp?v=4" alt="11/19(木)10:00〜1
 v2 = v2.replace('width="695" height="940"></a>', 'width="781" height="1023"></a>')
 # 新しいカード画像は外側にネオンの光（約6%）が入っているので、内側どうしを重ねてカードの間をつめる
 v2 = rep(v2, '<nav class="fv-cards" ', '<nav class="fv-cards is-glow" ')
-v2 = rep(v2, "</style>", ".fv-cards.is-glow{column-gap:0}\n.fv-cards.is-glow .fv-card:nth-child(1){margin-right:-4%}\n.fv-cards.is-glow .fv-card:nth-child(2){margin-left:-4%}\n</style>")
+v2 = rep(v2, "</style>", ".fv-cards.is-glow{column-gap:0}\n.fv-cards.is-glow .fv-card:nth-child(1){margin-right:-2.5%}\n.fv-cards.is-glow .fv-card:nth-child(2){margin-left:-2.5%}\n</style>")
 v2 = rep(v2, '\n    <li>※獲得ポイントには上限があります。</li>', "")
 v2 = wave("第一弾")(v2)
 v2 = fix_last_comma(stage("一")(v2))
