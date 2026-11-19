@@ -842,7 +842,9 @@ body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
 /* 第二弾ブロックの「ポイント30%還元」はFV下カードのピンクに合わせる */
 .wave.is-deal .deal-big{color:#ff86ad;text-shadow:0 0 4px rgba(255,100,155,.55)}
 /* 楽天スーパーDEAL: FV下のカード画像と同じバランス・太さ */
-.rail-tag .rt-deal{display:grid;justify-items:center;gap:4px;margin:4px 0 0;color:#ff86ad;text-shadow:0 0 3px rgba(255,120,165,.9),0 0 10px rgba(255,80,140,.5)}
+.rail-tag .rt-deal{display:grid;justify-items:center;gap:4px;margin:4px 0 0;color:#ff86ad}
+/* FV下カードと同じ、上が濃く下が明るいグラデのピンク（光らせない） */
+.rail-tag .rt-h,.rail-tag .rt-v,.rail-tag .rt-n,.rail-tag .rt-u b{background:linear-gradient(180deg,#ff6c9d 0%,#ff8db4 55%,#ffaacb 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
 .rail-tag .rt-deal p{margin:0}
 .rail-tag .rt-h{font-size:21px;font-weight:900;letter-spacing:.01em;line-height:1.1;white-space:nowrap}
 .rail-tag .rt-row{display:flex;align-items:center;gap:4px;line-height:1}
