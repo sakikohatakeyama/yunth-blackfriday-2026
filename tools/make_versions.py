@@ -27,14 +27,6 @@ def stage(no):  # STAGES の第○弾の行を消す
         return re.sub(r'\n  \{no:"%s".*?\},?' % no, "", s, count=1)
     return f
 
-def common(s):
-    # FV下: 第一弾（VC ポイント20倍）のカードと、その注釈を外す
-    s = re.sub(r'\n  <a class="fv-card is-img" href="#vc">.*?</a>', "", s, count=1)
-    s = rep(s, '\n    <li>※獲得ポイントには上限があります。</li>', "")
-    s = rep(s, '<nav class="fv-cards" ', '<nav class="fv-cards is-one" ')
-    s = rep(s, "</style>", ".fv-cards.is-one .fv-card{grid-column:1/-1;justify-self:center;width:min(62%,340px)}\n</style>")
-    return s
-
 def fix_last_comma(s):
     return re.sub(r'\},(\n\];\nconst SERUMS)', r'}\1', s)
 
@@ -52,7 +44,14 @@ v2 = wave("第一弾")(v2)
 v2 = fix_last_comma(stage("一")(v2))
 v2 = rep(v2, "<title>", "<title>【第二弾】")
 
-v3 = common(base)
+# 第三弾版: 左カードを第三弾（20%OFFクーポン）の画像に。右の Deep Boost は第二弾と同じ光つきカード
+v3 = rep(base, '<img src="images/fv-card-vc.webp?v=3" alt="11/19(木)10:00〜11/20(金)9:59 生VC美白美容液 ポイント20倍"',
+               '<img src="images/dai3-fv-card-vc.webp?v=1" alt="11/21(土)10:00〜11/26(木)9:59 生VC美容液 20%OFFクーポン"')
+v3 = rep(v3, '<img src="images/fv-card-device.webp?v=4" alt=', '<img src="images/dai2-fv-card-device.webp?v=1" alt=')
+v3 = v3.replace('width="695" height="940"></a>', 'width="781" height="1023"></a>')
+v3 = rep(v3, '<nav class="fv-cards" ', '<nav class="fv-cards is-glow" ')
+v3 = rep(v3, "</style>", ".fv-cards.is-glow{column-gap:0}\n.fv-cards.is-glow .fv-card:nth-child(1){margin-right:-2.5%}\n.fv-cards.is-glow .fv-card:nth-child(2){margin-left:-2.5%}\n</style>")
+v3 = rep(v3, '\n    <li>※獲得ポイントには上限があります。</li>', "")
 v3 = wave("第一弾")(v3); v3 = wave("第二弾")(v3)
 v3 = fix_last_comma(stage("二")(stage("一")(v3)))
 v3 = rep(v3, "<title>", "<title>【第三弾】")
