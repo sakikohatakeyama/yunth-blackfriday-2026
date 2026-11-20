@@ -854,6 +854,11 @@ body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
 .rail-tag .rt-u{display:flex;flex-direction:column;align-items:flex-start;font-style:normal;color:inherit;line-height:1}
 .rail-tag .rt-u b:first-child{font:800 38px/.9 var(--num)}
 .rail-tag .rt-u b:last-child{font-size:27px;font-weight:900;letter-spacing:.02em}
+.rail-tag > span.rt-cp{align-items:flex-end;gap:6px}
+.rail-tag .rt-cu{display:flex;flex-direction:column;width:min-content;margin-bottom:.3em;line-height:1;white-space:normal}
+.rail-tag .rt-cu b{display:block;white-space:nowrap}
+.rail-tag .rt-cu b:first-child{font:700 27px/1 var(--num);letter-spacing:.01em}
+.rail-tag .rt-cu b:last-child{font-size:17px;font-weight:900;letter-spacing:0;text-align-last:justify;text-align:justify;margin-top:3px}
 .rail-tag .pt-note{margin-top:2px;font-size:10.5px;line-height:1.55;letter-spacing:.02em;color:rgba(255,255,255,.62)}
 .fv-newbtn{grid-column:1/-1;display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:12px;margin-top:6px;padding:12px 20px 13px;border-radius:999px;background:#ffa9ad;color:#17090f;text-decoration:none;box-shadow:0 0 14px rgba(255,61,127,.35);transition:transform .2s,box-shadow .2s}
 .fv-newbtn span{grid-column:1;font-size:clamp(11px,3vw,13px);font-weight:500;letter-spacing:.08em;line-height:1.3;text-align:center}
@@ -1188,7 +1193,7 @@ const LINKS = {
 /* ▲ 編集箇所 ─────────────────────────── */
 
 const STAGES = [
-  {no:"三", note:"", label:"クーポン20%OFF", pre:"クーポン", num:"20", unit:"%OFF", period:"11/21(土) 10:00 〜 11/26(木) 9:59", start:"2026-11-21T10:00:00+09:00", end:"2026-11-26T10:00:00+09:00", color:"var(--vc)"}
+  {no:"三", coupon:true, note:"", label:"クーポン20%OFF", pre:"クーポン", num:"20", unit:"%OFF", period:"11/21(土) 10:00 〜 11/26(木) 9:59", start:"2026-11-21T10:00:00+09:00", end:"2026-11-26T10:00:00+09:00", color:"var(--vc)"}
 ];
 const SERUMS = [
   {code:"yb-126-001", img:"serum-pdrn.jpg", name:"生PDRN<sup>※2</sup>美容液", vol:"1ml×28包", price:3960, link:"pdrnCoupon", type:"coupon"},
@@ -1313,6 +1318,8 @@ function setupRails() {
         (s.deal
           // 楽天スーパーDEAL: FV下のカード画像と同じ組み方（上に太字の見出し、縦書き「ポイント」＋大きい数字＋「%／還元」の2段）
           ? `<div class="rt-deal"><p class="rt-h">${s.pre}</p><p class="rt-row"><i class="rt-v">ポイント</i><b class="rt-n">${s.num}</b><em class="rt-u"><b>%</b><b>還元</b></em><i class="rt-k">※</i></p></div>`
+          : s.coupon
+          ? `<span class="rt-cp"><b class="tube">${s.num}</b><em class="rt-cu"><b>${s.unit}</b><b>${s.pre}</b></em></span>`
           : `<span><i>${s.pre}</i><b class="tube">${s.num}</b><em>${s.unit}</em></span>`) +
         (s.note ? `<small class="pt-note">${s.note}</small>` : "") +
         `<div class="rail-timer"><em></em><b></b></div>`;
