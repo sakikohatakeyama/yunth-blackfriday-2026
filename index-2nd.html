@@ -854,14 +854,20 @@ body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
 .rail-tag .rt-u{display:flex;flex-direction:column;align-items:flex-start;font-style:normal;color:inherit;line-height:1}
 .rail-tag .rt-u b:first-child{font:800 38px/.9 var(--num)}
 .rail-tag .rt-u b:last-child{font-size:27px;font-weight:900;letter-spacing:.02em}
-.wave.is-cp .deal-big .deal-num,.wave.is-cp .deal-big .deal-unit span,.rail-tag .rt-cp .tube,.rail-tag .rt-cu b{background:linear-gradient(180deg,#fe739d 0%,#fe88ae 50%,#fe9cbe 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;text-shadow:none;filter:none}
+.wave.is-cp .deal-big .deal-num,.wave.is-cp .deal-big .deal-unit span,.rail-tag .rt-cp .tube,.wave.is-cp .cpx b,.rail-tag .rt-cu b{background:linear-gradient(180deg,#fe739d 0%,#fe88ae 50%,#fe9cbe 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;text-shadow:none;filter:none}
 .wave.is-cp .wave-head.is-big{background:linear-gradient(180deg,#fe739d 0%,#fe88ae 50%,#fe9cbe 100%)}
-.rail-tag > span.rt-cp{align-items:flex-end;gap:.11em;font-size:clamp(50px,4vw,72px)}
+.deal-big.is-cpx{align-items:flex-end;gap:.025em;font-size:min(30vw,180px)}
+.deal-big.is-cpx .deal-num{font-size:1em;line-height:1}
+.deal-big .cpx{display:flex;flex-direction:column;width:min-content;margin-bottom:.123em;line-height:1;text-align:left}
+.deal-big .cpx b{display:block;white-space:nowrap}
+.deal-big .cpx b:first-child{font:700 .444em/1 var(--num);letter-spacing:.01em}
+.deal-big .cpx b:last-child{font-family:var(--font-body);font-size:.33em;font-weight:900;letter-spacing:-.05em;text-align-last:justify;text-align:justify;margin-top:-.02em}
+.rail-tag > span.rt-cp{align-items:flex-end;gap:.06em;font-size:clamp(50px,4vw,72px)}
 .rail-tag .rt-cp .tube{font-size:1em}
-.rail-tag .rt-cu{display:flex;flex-direction:column;width:min-content;font-size:1em;margin-bottom:.107em;line-height:1;white-space:normal}
+.rail-tag .rt-cu{display:flex;flex-direction:column;width:min-content;font-size:1em;margin-bottom:.09em;line-height:1;white-space:normal}
 .rail-tag .rt-cu b{display:block;white-space:nowrap}
-.rail-tag .rt-cu b:first-child{font:700 .482em/1 var(--num);letter-spacing:.01em}
-.rail-tag .rt-cu b:last-child{font-size:.304em;font-weight:900;letter-spacing:0;text-align-last:justify;text-align:justify;margin-top:.18em}
+.rail-tag .rt-cu b:first-child{font:700 .444em/1 var(--num);letter-spacing:.01em}
+.rail-tag .rt-cu b:last-child{font-size:.33em;font-weight:900;letter-spacing:-.05em;text-align-last:justify;text-align:justify;margin-top:-.02em}
 .rail-tag .pt-note{margin-top:2px;font-size:10.5px;line-height:1.55;letter-spacing:.02em;color:rgba(255,255,255,.62)}
 .fv-newbtn{grid-column:1/-1;display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:12px;margin-top:6px;padding:12px 20px 13px;border-radius:999px;background:#ffa9ad;color:#17090f;text-decoration:none;box-shadow:0 0 14px rgba(255,61,127,.35);transition:transform .2s,box-shadow .2s}
 .fv-newbtn span{grid-column:1;font-size:clamp(11px,3vw,13px);font-weight:500;letter-spacing:.08em;line-height:1.3;text-align:center}
@@ -1042,7 +1048,7 @@ main .pt-note{white-space:nowrap;font-size:min(12px,2.7vw);letter-spacing:0}
       <p class="wave-no">第三弾</p>
       <p class="wave-date"><span><b>11/21</b>(土)<i>10:00</i><em>〜</em></span><span><b>11/26</b>(木)<i>9:59</i></span></p>
       <p class="wave-head is-big">クーポン</p>
-      <p class="deal-big"><span class="deal-num">20</span><span class="deal-unit is-stack is-left"><span>%</span><span>OFF</span></span></p>
+      <p class="deal-big is-cpx"><span class="deal-num">20</span><span class="cpx"><b>%OFF</b><b>クーポン</b></span></p>
       <a class="btn btn-coupon" data-link="vcCoupon" href="#">20%OFFクーポン獲得</a>
       <a class="wave-link" href="https://item.rakuten.co.jp/yunth/10000000/" aria-label="生VC美白美容液の商品ページへ"></a>
     </li>
